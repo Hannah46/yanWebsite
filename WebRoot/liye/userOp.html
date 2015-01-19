@@ -1,0 +1,46 @@
+﻿<#include "header.html"/>
+<#include "footer.html"/>
+<@header logged/>
+
+<center>
+<div id="op">
+<table width="800">
+	<tr>	
+	<td align="right" width="200">当前状态：</td>
+	<td width="600">
+		<#if post.refused=0>尚未处理</#if>
+		<#if post.refused=1>公司已拒绝</#if>
+		<#if post.refused=2>已拒绝</#if>
+		<#if post.refused=3>公司已录用</#if>
+	</td>
+	</tr>
+	<tr>
+		<td align="right" width="200">公司附言：</td>
+		<td width="600">
+			${(post.desc1)!}
+		</td>
+	</tr>
+</table>
+<br /><br /><br />
+<#if post.refused=3>
+
+<form method="post" action="${path!}/post/doUserOp">
+<table width="800">
+	<caption>如果您要拒绝公司的录用，请填写下面的表单</caption>
+	<tr>
+		<td colspan="2"><input type="hidden" name="postedNotification.id" value="${(post.id)!}"></td>
+	</tr>
+	<tr>
+		<td width="200" align="right">附言：</td>
+		<td width="600"><textarea name="postedNotification.desc2" cols="60"></textarea></td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center"><input type="submit" value="拒绝"></td>
+	</tr>
+</table>
+</form>
+</#if>
+
+</div>
+</center>
+<@footer/>

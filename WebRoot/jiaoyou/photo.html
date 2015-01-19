@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>个人照片</title>
+<script type="text/JavaScript" src="${path!}/user/jquery-1.11.1.min.js"></script>
+<script type="text/JavaScript" src="${path!}/user/jquery.form.js"></script>
+<script type="text/JavaScript" src="${path!}/user/photo.js"></script>
+</head>
+
+<body>
+<center>
+<table width="603" height="148" border="1">
+  <tr>
+    <td width="120"><div id="photo1">
+    	<#if (user.photo1b) ??><a href="${path!}/photo/show/${user.photo1}" target="_blank"><img src="../photo/show/${user.photo1b}" /></a></#if>
+    </div></td>
+    <td width="120"><div id="photo2">
+    	<#if (user.photo2b) ??><a href="${path!}/photo/show/${user.photo2}" target="_blank"><img src="../photo/show/${user.photo2b}" /></a></#if>
+    </div></td>
+    <td width="120"><div id="photo3">
+    	<#if (user.photo3b) ??><a href="${path!}/photo/show/${user.photo3}" target="_blank"><img src="../photo/show/${user.photo3b}" /></a></#if>
+    </div></td>
+    <td width="120"><div id="photo4">
+    	<#if (user.photo4b) ??><a href="${path!}/photo/show/${user.photo4}" target="_blank"><img src="../photo/show/${user.photo4b}" /></a></#if>
+    </div></td>
+    <td width="120"><div id="photo5">
+    	<#if (user.photo5b) ??><a href="${path!}/photo/show/${user.photo5}" target="_blank"><img src="../photo/show/${user.photo5b}" /></a></#if> 
+    </div></td>
+  </tr>
+</table>
+<br /><br /><br /><br />
+
+<form id="photo1_qiNiu" method="post" action="http://up.qiniu.com/" 
+	enctype="multipart/form-data">
+	<table width="603">
+		<tr><td width="52">
+			<input name="key" id="key" type="hidden" />
+  			<input name="token" id="token" type="hidden" />
+  			<input type="hidden" name="MAX_FILE_SIZE" value="4096" />
+  			</td>
+	<td width="51">照片1</td><td width="384"><input type="file" name="file" /></td>
+	<td width="96"><button type="button" id="button1" onclick="submitPhoto1()">上传</button></td>
+	</tr></table>
+</form>
+<form id="photo1_my" name="photo1_my" method="post" action="updatePhoto">
+	<input type="hidden" value="${(user.id)!}" name="user.id" />
+	<input id="user.photo1" name="user.photo1" type="hidden"/>
+</form>
+
+<form id="photo2_qiNiu" method="post" action="http://up.qiniu.com/" 
+	enctype="multipart/form-data">
+	<table width="603">
+		<tr><td width="52">
+			<input name="key" id="key" type="hidden" />
+  			<input name="token" id="token" type="hidden" />
+  			<input type="hidden" name="MAX_FILE_SIZE" value="4096" />
+  			</td>
+	<td width="51">照片2</td><td width="388"><input type="file" name="file" /></td>
+	<td width="96"><button type="button" id="button1" onclick="submitPhoto2()">上传</button></td>
+	</tr></table>
+</form>
+<form id="photo2_my" name="photo2_my" method="post" action="updatePhoto">
+	<input type="hidden" value="${(user.id)!}" name="user.id" />
+	<input id="user.photo2" name="user.photo2" type="hidden"/>
+</form>
+
+<form id="photo3_qiNiu" method="post" action="http://up.qiniu.com/" 
+	enctype="multipart/form-data">
+	<table width="603">
+		<tr><td width="52">
+			<input name="key" id="key" type="hidden" />
+  			<input name="token" id="token" type="hidden" />
+  			<input type="hidden" name="MAX_FILE_SIZE" value="4096" />
+  			</td>
+	<td width="51">照片3</td><td width="392"><input type="file" name="file" /></td>
+	<td width="96"><button type="button" id="button1" onclick="submitPhoto3()">上传</button></td>
+	</tr></table>
+</form>
+<form id="photo3_my" name="photo3_my" method="post" action="updatePhoto">
+	<input type="hidden" value="${(user.id)!}" name="user.id" />
+	<input id="user.photo3" name="user.photo3" type="hidden"/>
+</form>
+
+<form id="photo4_qiNiu" method="post" action="http://up.qiniu.com/" 
+	enctype="multipart/form-data">
+	<table width="603">
+		<tr><td width="52">
+			<input name="key" id="key" type="hidden" />
+  			<input name="token" id="token" type="hidden" />
+  			<input type="hidden" name="MAX_FILE_SIZE" value="4096" />
+  			</td>
+	<td width="51">照片4</td><td width="388"><input type="file" name="file" /></td>
+	<td width="96"><button type="button" id="button1" onclick="submitPhoto4()">上传</button></td>
+	</tr></table>
+</form>
+<form id="photo4_my" name="photo4_my" method="post" action="updatePhoto">
+	<input type="hidden" value="${(user.id)!}" name="user.id" />
+	<input id="user.photo4" name="user.photo4" type="hidden"/>
+</form>
+
+<form id="photo5_qiNiu" method="post" action="http://up.qiniu.com/" 
+	enctype="multipart/form-data">
+	<table width="603">
+		<tr><td width="52">
+			<input name="key" id="key" type="hidden" />
+  			<input name="token" id="token" type="hidden" />
+  			<input type="hidden" name="MAX_FILE_SIZE" value="4096" />
+  			</td>
+	<td width="51">照片5</td><td width="386"><input type="file" name="file" /></td>
+	<td width="96"><button type="button" id="button1" onclick="submitPhoto5()">上传</button></td>
+	</tr></table>
+</form>
+<form id="photo5_my" name="photo5_my" method="post" action="updatePhoto">
+	<input type="hidden" value="${(user.id)!}" name="user.id" />
+	<input id="user.photo5" name="user.photo5" type="hidden"/>
+</form>
+</center>
+</body>
+</html>

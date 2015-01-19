@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>demo</title>
+<script type="text/javascript" src="http://www.jq-school.com/js/jquery-1.7.2.min.js"></script>
+<link href="css/test_base.css" rel="stylesheet" type="text/css" />
+<link href="css/tabs.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery.tabs.js"></script>
+</head>
+<style type="text/css">
+	.tabs{
+		margin:0 auto;
+		margin-bottom: 20px;
+	}
+</style>
+<body>
+<label><a href="./mail/add">发送新的私信</a></label>
+<div id="tabs4">
+  <div class="tabs-title">
+    <div class="tabs-lbg"></div>
+    <ul class="tabs-list">
+      <li class="tabs-option">
+        <span class="tabs-option-lbg"></span>
+        <span class="tabs-option-text">加入的话题</span>
+        <span class="tabs-option-rbg"></span>
+      </li>
+      <li class="tabs-option">
+        <span class="tabs-option-lbg"></span>
+        <span class="tabs-option-text">发起的话题</span>
+        <span class="tabs-option-rbg"></span>
+      </li>
+      <li class="tabs-option">
+        <span class="tabs-option-lbg"></span>
+        <span class="tabs-option-text">垃圾箱</span>
+        <span class="tabs-option-rbg"></span>
+      </li>
+    </ul>
+    <div class="tabs-rbg"></div>
+    <div class="clear"></div>
+  </div>
+  <div class="tabs-box">
+    <div class="fatbox">
+    <div class="tabs-content">
+    <table class="admin">
+		<table class="list" width="900">
+			<thead>
+			<tr>
+				<td></td>
+			</tr>
+			<tr>
+            	<th width="10" style="text-align:center;"></th>
+            	<th width="100" style="text-align:center;">话题发起人</th>
+            	<th width="200" style="text-align:center;">主题</th>
+            	<th width="50" style="text-align:center;">状态</th>
+				<th width="140" style="text-align:center;">发送时间</th>  
+				<th width="140" style="text-align:center;">操作</th>            
+			</tr>
+			</thead>
+			<tr>
+				<td>&nbsp;</td>
+			</tr>
+			<tbody>
+			<#list recieveMailList as x>
+			<tr>
+            <td>
+            <input type="hidden" value="${(x.id)!}" />
+            </td>
+            	<td style="text-align:center;">${(x.from_name)!}</td>
+               	<td style="text-align:center;">${(x.title)!}</td></a> 
+				<td style="text-align:center;">
+                	<#if ((x.flag)!0) == 0>
+						<label>未读</label>
+					<#else>
+						<label>已读</label>
+					</#if>
+                </td>
+				<td style="text-align:center;">${(x.pub_date)!}</td>
+				<td style="text-align:center;">
+					<a href="/yanyuan/mail/viewReply/${(x.id)!}-${(x.from_name)!}">查看会话内容并回复</a>
+				   	<a href="/yanyuan/mail/setSpam/${(x.id)!}">标记为垃圾</a>&nbsp;&nbsp;
+          			<a href="/mail/delete/${(x.id)!}" onclick="return confirm('删除后私信将不可恢复，您确定要删除这条私信吗？');">删除</a>
+				</td>
+			</tr>
+			</#list>
+		</tbody>
+	</table>
+  </table>
+	</div>
+    <div class="tabs-content">
+    <table class="admin">
+    <table class="list" width="900">
+			<thead>
+			<tr>
+				<td></td>
+			</tr>
+			<tr>
+            	<th width="10" style="text-align:center;"></th>
+            	<th width="100" style="text-align:center;">邀请加入人</th>
+            	<th width="200" style="text-align:center;">主题</th>
+            	<th width="50" style="text-align:center;">状态</th>
+				<th width="140" style="text-align:center;">发送时间</th>  
+				<th width="140" style="text-align:center;">操作</th>            
+			</tr>
+			</thead>
+			<tr>
+				<td>&nbsp;</td>
+			</tr>
+			<tbody>
+			<#list sendMailList as x>
+			<tr>
+            <td>
+            <input type="hidden" value="${(x.id)!}" />
+            </td>
+            	<td style="text-align:center;">${(x.to_name)!}</td>
+               	<td style="text-align:center;">${(x.title)!}</td></a> 
+				<td style="text-align:center;">
+                	<#if ((x.flag)!0) == 0>
+						<label>未读</label>
+					<#else>
+						<label>已读</label>
+					</#if>
+                </td>
+				<td style="text-align:center;">${(x.pub_date)!}</td>
+				<td style="text-align:center;">
+					<a href="/yanyuan/mail/viewReply/${(x.id)!}-我">查看会话内容并回复</a>
+					<a href="/yanyuan/mail/setSpam/${(x.id)!}">标记为垃圾</a>&nbsp;&nbsp;
+          			<a href="/mail/delete/${(x.id)!}" onclick="return confirm('删除后私信将不可恢复，您确定要删除这条私信吗？');">删除</a>
+				</td>
+			</tr>
+			</#list>
+		</tbody>
+	</table>
+    
+  </table>
+    </div>
+    <div class="tabs-content">
+    <table class="admin">
+		<table class="list" width="900" height="">
+			<thead>
+			<tr>
+				<td></td>
+			</tr>
+			<tr>
+            	<th width="10" style="text-align:center;"></th>
+            	<th width="100" style="text-align:center;">发件人</th>
+            	<th width="200" style="text-align:center;">主题</th>
+            	<th width="50" style="text-align:center;">状态</th>
+				<th width="140" style="text-align:center;">发送时间</th>  
+				<th width="140" style="text-align:center;">操作</th>              
+			</tr>
+			</thead>
+			<tr>
+				<td>&nbsp;</td>
+			</tr>
+			<tbody>
+			<#list spamMailList as x>
+			<tr>
+            <td>
+            <input type="hidden" value="${(x.id)!}" />
+            </td>
+            	<td style="text-align:center;">${(x.to_name)!}</td>
+               	<td style="text-align:center;">${(x.title)!}</td></a> 
+				<td style="text-align:center;">
+                	<#if ((x.flag)!0) == 0>
+						<label>未读</label>
+					<#else>
+						<label>已读</label>
+					</#if>
+                </td>
+				<td style="text-align:center;">${(x.pub_date)!}</td>
+				<td style="text-align:center;">
+					<a href="/yanyuan/mail/viewReply/${(x.id)!}-${(x.to_name)!}">查看会话内容并回复</a>
+				   	<a href="/yanyuan/mail/setSpam/${(x.id)!}">标记为正常</a>&nbsp;&nbsp;
+          			<a href="/mail/delete/${(x.id)!}" onclick="return confirm('删除后私信将不可恢复，您确定要删除这条私信吗？');">删除</a>
+				</td>
+			</tr>
+			</#list>
+		</tbody>
+	</table>
+    
+  </table>
+    </div>
+    <div class="clear"></div>
+    </div>
+  </div>	
+</div>
+<script type="text/javascript">
+	$("#tabs4").tabs({_event:1});
+</script>
+
+</body>
+</html>

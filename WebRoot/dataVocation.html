@@ -1,0 +1,494 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<script type="text/javascript" src="js/jquery-1.4.4.min.js"></script>
+<link type="text/css" href="css/commen.css" rel="stylesheet"/>
+<script type="text/javascript" src="js/jscommen.js"></script>
+<style type="text/css">
+    body{background:none;}
+    
+</style>
+</head>
+<body>
+<!--区域弹出层-->
+<div  >
+  <div class="zhilei " >
+    <div class="popupBox" style="height:238px">
+      <div class="lp"></div>
+      <div class="mp">
+        <div class="areaCon">
+          <div  class="tl">已选择：</div>
+          <div class="tm" id="selected"> </div>
+          <div class="promptBox" style=" margin-left:450px; margin-top:30px; position:absolute; display:none " id="AreaValadate">
+            <div class="arrowRedL png"></div>
+            <div class="promptConShadowL">
+              <div class="promptRedCon"> 您好，最多只能选择10个类别！ </div>
+            </div>
+          </div>
+          <div class="tr">
+            <button onclick="sub()" class="gbtn80 png">确定</button>
+            <input type="button" class="gbtn80 png" onclick="top.m1.Close()" value="取 消"/>
+          </div>
+          <div class="popLine"></div>
+          <div id="province" class="smaCity"  >
+<span><a href="javascript:openCity1('1000','IT|通信|电子|互联网');">IT|通信|电子|互联网 </a>
+</span> <span><a href="javascript:openCity2('2000','金融业');">金融业 </a>
+</span> <span><a href="javascript:openCity3('3000','房地产|建筑业');">房地产|建筑业</a>
+</span> <span><a href="javascript:openCity4('4000','商业服务');">商业服务 </a>
+</span> <span><a href="javascript:openCity5('5000','贸易|批发|零售|租赁业');">贸易|批发|零售|租赁业 </a></span> 
+
+</span> <span><a href="javascript:openCity6('6000','文体教育|工艺美术');">文体教育|工艺美术</a></span>
+ <span><a href="javascript:openCity7('7000','生产|加工|制造');">生产|加工|制造 </a>
+</span> <span><a href="javascript:openCity8('8000','交通|运输|物流|仓储');">交通|运输|物流|仓储 </a>
+</span> <span><a href="javascript:openCity9('9000','服务业');">服务业</a>
+</span> <span><a href="javascript:openCity10('10000','文化|传媒|娱乐|体育');">文化|传媒|娱乐|体育 </a>
+</span> <span><a href="javascript:openCity11('11000','能源|矿产|环保');">能源|矿产|环保 </a></span> 
+<span><a href="javascript:openCity12('12000','政府|非盈利机构');">政府|非盈利机构 </a></span>
+ <span><a href="javascript:openCity13('13000','农|林|牧|渔|其他');">农|林|牧|渔|其他 </a></span></div></div>
+          <div class="smaCityChild" id="hidden_div11" style="display:none;">
+            <div class="t png"></div>
+            <div class="m png">
+              <div class="tit" id="provincename"></div>
+              <div class="smaCityChildbox" id="theCity"></div>
+            </div>
+            <div class="bot">
+              <input type="button" class="close_sma" value=""  id="smaCityChildClose" />
+            </div>
+            <div class="b png"></div>
+          </div>
+        </div>
+      </div>
+      <div class="lp"></div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+    $(function () {
+        document.getElementById('selected').innerHTML= top.document.getElementById('RegionJobBusinessTag2').innerHTML;
+        $("#smaCityChildClose").click(function () {
+            $("#hidden_div11").hide();
+        });
+    });
+    function selectCity(id, name) {
+        //最大选择5个
+        var SelectedCount = 1;
+        $("#selected span").each(function () {
+            SelectedCount = SelectedCount + 1;
+        });
+        if (SelectedCount <= 5) {
+            if ($('#' + id).attr('checked') == true) {
+                var str = "";
+                str += "<span ty='r' id='" + id + "_ed'>";
+                str += "<a href=\"#\">" + name + "</a>";
+                str += "<input type='button' onclick='del(" + id + ")' name='selectedCity'  id='" + id + "_ch' class=\"city_det\" />";
+                str += "</span>";
+                if ($("#selected").html().indexOf(id) == -1) {
+                    $("#selected").append(str);
+                }
+                $("#AreaValadate").hide();
+            }
+            else {
+                $("#AreaValadate").hide();
+                del(id);
+            }
+        }
+        else {
+
+            $('#' + id).attr('checked', false);
+             del(id); 
+            $("#AreaValadate").show();
+                    
+        }
+    }
+    function del(id) {
+        $("#AreaValadate").hide();
+        $('#' + id).attr('checked', false);
+        $('#' + id + '_ed').remove();
+    }
+    function openCity1(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'互联网/电子商务','Value':1301},{'Key':'计算机软件','Value':1302},{'Key':'IT服务(系统/数据/维护)','Value':1303},{'Key':'电子技术/半导体/集成电路','Value':1304},{'Key':'计算机硬件','Value':1305},{'Key':'通信/电信/网络设备','Value':1306},{'Key':'通信/电信运营、增值服务','Value':1307},{'Key':'网络游戏','Value':1308}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+  function openCity2(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'基金/证券/期货/投资','Value':1401},{'Key':'保险','Value':1402},{'Key':'银行','Value':1403},{'Key':'信托/担保/拍卖/典当','Value':1404}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+function openCity3(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'房地产/建筑/建材/工程','Value':1501},{'Key':'家居/室内设计/装饰装潢','Value':1502},{'Key':'物业管理/商业中心','Value':1503}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+function openCity4(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'专业服务/咨询(财会/法律/人力资源等)','Value':1601},{'Key':'广告/会展/公关','Value':1602},{'Key':'中介服务','Value':1603},{'Key':'检验/检测/认证','Value':1604},{'Key':'外包服务','Value':1605}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+function openCity5(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'快速消费品（食品/饮料/烟酒/日化','Value':1701},{'Key':'耐用消费品（服饰/纺织/皮革/家具/家电','Value':1702},{'Key':'贸易/进出口','Value':1703},{'Key':'零售/批发','Value':1704},{'Key':'租赁服务','Value':1705}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+function openCity6(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'教育/培训/院校','Value':1801},{'Key':'礼品/玩具/工艺美术/收藏品/奢侈品','Value':1802},{'Key':'汽车/摩托车','Value':1803},{'Key':'大型设备/机电设备/重工业','Value':1804}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+function openCity7(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'加工制造（原料加工/模具）','Value':1901},{'Key':'仪器仪表及工业自动化','Value':1902},{'Key':'印刷/包装/造纸','Value':1903},{'Key':'医药/生物工程','Value':1904},{'Key':'医疗设备/器械','Value':1905},{'Key':'航空/航天研究与制造','Value':1906}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+
+function openCity8(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'交通/运输','Value':2201},{'Key':'物流/仓储','Value':2202}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+function openCity9(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'医疗/护理/美容/保健/卫生服务','Value':2301},{'Key':'酒店/餐饮','Value':2302},{'Key':'旅游/度假','Value':2303}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+function openCity10(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'媒体/出版/影视/文化传播','Value':2401},{'Key':'娱乐/体育/休闲','Value':2402}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+
+
+
+
+
+function openCity11(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'能源/矿产/采掘/冶炼','Value':2501},{'Key':'石油/石化/化工','Value':2502},{'Key':'电气/电力/水利','Value':2503},{'Key':'环保','Value':2503}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+
+function openCity12(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'政府/公共事业/非盈利机构','Value':2601},{'Key':'学术/科研','Value':2602}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	
+	
+	
+	
+function openCity13(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'农/林/牧/渔','Value':2601},{'Key':'跨领域经营','Value':2602},{'Key':'其他','Value':2603}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	
+    function sub() {
+        top.document.getElementById('RegionJobBusinessTag2').innerHTML = document.getElementById('selected').innerHTML;
+        var cityNames = "";
+        top.$("#RegionJobBusinessTag2 span a").each(function () {
+            cityNames += $(this).html() + " ";
+        });
+        top.$("#vocation").val(cityNames);
+
+        var cityIDs = "";
+        top.$("#RegionJobBusinessTag2 span input").each(function () {
+            cityIDs += $(this).attr("id").toString().split('_')[0] + ",";
+        });
+        cityIDs = cityIDs.substring(0, cityIDs.length - 1);
+   
+
+        top.m1.Close();
+    }
+
+        function request(paras) {
+        var url = location.href;
+        var paraString = url.substring(url.indexOf("?") + 1, url.length).split("&");
+        var paraObj = {}
+        for (i = 0; j = paraString[i]; i++) {
+            paraObj[j.substring(0, j.indexOf("=")).toLowerCase()] = j.substring(j.indexOf("=") + 1, j.length);
+        }
+        var returnValue = paraObj[paras.toLowerCase()];
+        if (typeof (returnValue) == "undefined") {
+            return "";
+        } else {
+            return returnValue;
+        }
+    }
+</script>
+</body>
+</html>

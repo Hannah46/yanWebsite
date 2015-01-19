@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script type="text/javascript" src="../js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="../js/core.js"></script>
+<script type="text/javascript" src="../js/client.js"></script>
+<script type="text/javascript" src="../js/messageboxnotitle.js"></script>
+<script type="text/javascript" src="../js/drag_v1.0.js"></script>
+<script type="text/javascript" src="../js/jquery-1.4.4.min.js"></script>
+</head>
+<body>
+ <form action="update" method="post">
+ <p></p>
+<table width="400" border="0">
+
+  <tr>
+    <td align="right" valign="middle">学校</td>
+    <td><input type="text" name="university.name" id="university_test" value="${(university.name)!}" onkeypress="javascript:return false;" onclick="selectUniversity()"/></td>
+    <td align="left" valign="middle"><label name="university.test" ></label></td>
+  </tr>
+  <tr>
+    <td align="right" valign="middle">所在区域</td>
+    <td><label name="university.province">${(university.province)!}</label></td>
+    <td align="left" valign="middle">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="right" valign="middle">所在城市</td>
+    <td><label name="university.city">${(university.city)!}</label></td>
+    <td align="left" valign="middle">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="right" valign="middle">社团联合会负责人</td>
+    <td><input type="text" name="university.group_leader" id="group_leader" value="${(university.group_leader)!}"/></td>
+    <td align="left" valign="middle">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="right" valign="middle">负责人电子邮箱</td>
+    <td><input type="text" name="university.email" id="email" value="${(university.email)!}"/></td>
+    <td align="left" valign="middle">${emailMsg!}</td>
+  </tr>
+  <tr>
+    <td align="right" valign="middle">负责人密码</td>
+    <td><input type="password" name="university.passwd" id="passwd" value="${(university.passwd)!}"/></td>
+    <td align="left" valign="middle">${passwdMsg!}</td>
+  </tr>
+  <tr>
+    <td align="right" valign="middle">&nbsp;</td>
+    <td><input type="hidden" value="${(university.id)!}" name="university.id" />
+        <label>${postResult!}</label>
+    </td>
+    <td align="left" valign="middle">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="3" align="center" valign="middle">
+      <input type="submit" name="Submit" id="login" value="提交" /></td>
+    </tr>
+</table>
+
+<script type="text/javascript" language="javascript">
+
+var univ_name, univ_id;
+
+function onMSGClosed(){
+	if( univ_name !="")
+	  { //$("#university_test").val( univ_name );
+	    self.location = 'university/' + univ_id;
+	  }
+}
+function selectUniversity() {
+	    univ_name = "";
+        window.m2 = new MessageBox(onMSGClosed, "");
+        m2.CloseButtonValue = "";
+        m2.Title = "";
+        m2.InnerDivHeight = 700;
+        m2.InnerDivWidth = 825;
+        m2.ShowIframeDialog("../data3.html");
+};
+ 
+
+</script>    
+</body>
+</html>

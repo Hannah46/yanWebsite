@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script type="text/javascript" src="${path}/js/jquery-1.8.0.min.js"></script>
+<title>用户注册</title>
+
+<script type="text/JavaScript">
+function filter() {
+	var email = $("#email").val();
+	var flag = $("#flag").val();
+	if ( email == "" || ( email == null ) )
+		alert("请先输出查询条件");
+	else {
+		location.href='${path!}/user/userList/'+ "1-" + email + "-" + flag;
+	}
+}
+
+</script>
+
+
+<script type="text/JavaScript">
+function age1() {
+	var table = document.getElementById("table1");
+	var count = table.rows.length;
+	for(var i = 0; i<count; i++)
+		{
+		var nowdate = new Date();
+		var birth = table.rows[i].cells[3].innerText;
+		alert(birth);
+		var age = nowdate.getFullYear() - birth.substr(0,4) + 1;
+		alert(age);
+		table.rows[i].cells[3].text = age;
+		}
+	}
+
+</script>
+</head>
+<body>
+	<div class="form_box" >
+	<table class="list" width="800" id="table1">
+			<thead>
+			<tr>
+            	<th width="1%" style="text-align:center;"></th>
+            	<th width="20%" style="text-align:center;">照片</th>
+            	<th width="14%" style="text-align:center;">昵称</th>
+            	<th width="15%" style="text-align:center;">年龄</th>  
+				<th width="15%" style="text-align:center;">毕业院校</th>            
+				<th width="15%" style="text-align:center;">身高</th> 
+				<th width="20%" style="text-align:center;">操作</th>  	
+			</tr>
+			</thead>
+			<tr>
+				<td>&nbsp;</td>
+			</tr>
+			<tbody>
+			<#list userList as user>
+			<tr>
+            <td>
+            <input type="hidden" value="${(user.id)!}" />
+            </td>
+ 			<td><img src="${path!}/photo/show/${(user.iden_picture2)!}" /></td>
+               	<td style="text-align:center;">${(user.nickname)!}</td>
+				<td style="text-align:center;" id="birth${user.id}">
+				${(user.birth)!}</td>
+				<td style="text-align:center;">${(user.university)!}</td>
+				<td style="text-align:center;">${(user.height)!}</td>
+				<td style="text-align:center;">
+				   	<a id="view" href="#">查看详细信息
+				   	</a>&nbsp;&nbsp;
+				</td>
+			</tr>
+			</#list>
+		</tbody>
+	</table>
+	</body>
+	</div>
+	

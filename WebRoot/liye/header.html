@@ -1,0 +1,44 @@
+<#macro header log_flag>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>立业 - 豫见</title>
+<link rel="Stylesheet" type="text/css" href="${path}/css_model/style_job.css">
+</head>
+
+<body>
+<div id="container">
+<div id="content">
+  <!-- header -->
+  <div id="header">
+    <div id="header_login">&nbsp;</div>
+    <div id="header_nav">
+      <div id="nav_top">
+        <ul>
+           <#if !log_flag?? || log_flag==0>
+             <li><a href="${path}/jiayuan/login.html" target="_self">登录</a></li>
+             <li><a href="${path}/mblog/to_new" target="_self">注册</a></li>
+           <#elseif log_flag==1>
+             <li><a href="${path}/job" target="_self">找工作</a></li>
+             <li><a href="${path}/job/auto_match" target="_self">自动匹配</a></li>
+             <li><a href="${path}/collection/myCollections" target="_self">我的收藏</a></li>
+             <li><a href="${path}/post/listForUser" target="_self">我的申请</a></li>
+             <li><a href="${path}/resume" target="_self">我的简历</a></li>
+             <li><a href="" target="_self">我的豫见</a></li>
+             <li><a href="${path}/friend/logout/2" target="_self">退出</a></li>
+           <#elseif log_flag==2>
+             <li><a href="${path}/company/menu" target="_self">企业信息</a></li>
+             <li><a href="${path}/job/listForCompany" target="_self">职位管理</a></li>
+             <li><a href="${path}/post/listForCompany" target="_self">招聘管理</a></li>
+             <li><a href="${path}/friend/logout/2" target="_self">退出</a></li>
+           <#elseif log_flag==3 || log_flag==4>
+             <li><a href="${path}/friend/logout/2" target="_self">退出</a></li>
+           </#if>        
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- main -->  
+  <div id="main">
+  </#macro>

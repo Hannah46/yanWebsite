@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<table  border="0" align="center">
+  <tr>
+     <td></td>
+     <td></td>
+     <td></td>
+     <td></td>
+     <td></td>
+     <td></td>
+     <td></td>
+     <td><a href="../association/to_add/${university_id}">添加社团</a></td>
+  </tr>
+  <tr>
+    <td width="300" align="center" valign="middle">社团名称</td>
+    <td width="60" align="center" valign="middle">负责人</td>
+    <td width="80" align="center" valign="middle">电话</td>
+    <td width="120" align="center" valign="middle">电子邮箱</td>
+    <td width="40" align="center" valign="middle">状态</td>
+    <td width="80" align="center" valign="middle">注册日期</td>
+    <td align="center" valign="middle">&nbsp;</td>
+    <td align="center" valign="middle">&nbsp;</td>
+  </tr>
+  <#list page.list as association>
+  <tr>
+    <td width="300" align="left" valign="middle">${(association.name)!}</td>
+    <td width="60" align="left" valign="middle">${(association.person)!}</td>
+    <td width="80" align="left" valign="middle">${(association.tel)!}</td>
+    <td width="120" align="left" valign="middle">${(association.email)!}</td>
+    <#if association.flag == 1>
+       <td width="40" align="center" valign="middle">正常</td>
+       <td width="80" align="center" valign="middle">${(association.regdate)!}</td>
+       <td valign="middle"><a onClick="pause_aso(${association.id},1,${association.id_university},${page.pageNumber})">暂停它</a></td>
+    <#else>
+       <td width="40" align="center" valign="middle">暂停</td>
+       <td width="80" align="center" valign="middle">${(association.regdate)!}</td>
+       <td valign="middle"><a onClick="pause_aso(${association.id},0,${association.id_university},${page.pageNumber})">恢复它</a></td>
+    </#if>
+    <td valign="middle"><a onClick="edit_aso(${association.id},${association.id_university},${page.pageNumber})">编辑</a></td>
+    <td valign="middle"><a onClick="del_aso(${association.id},${association.id_university},${page.pageNumber})">删除</a></td>
+  </tr>
+  </#list>
+  <tr>
+    <td colspan="8" align="right" valign="middle">
+	  <#include "_paginate.html" />
+	  <@paginate currentPage=page.pageNumber totalPage=page.totalPage actionUrl="../association/list/${university_id}-" />
+	</td>
+  </tr>
+</table>
+
+</body>
+</html>

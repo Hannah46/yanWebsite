@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="${path}/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="${path}/js/upload.js"></script>
+<script type="text/javascript" src="${path}/jiayuan_cs_js/association_detail.js"></script>
+</head>
+<body>
+<center>
+<table width="505" border="0" align="center">
+  <tr>
+    <td width="84">社团名称：</td>
+    <#if edit_mode==1>
+      <td width="235">${(association.name)!}</td>
+    <#else>
+      <td width="235"><input name="association.name" id="association_name"  type="text" value="${(association.name)!}" maxlength="120" /></td>
+    </#if>    
+    <td width="68">&nbsp;</td>
+    <td width="100" rowspan="6" align="left" valign="top"><img src="${path}/photo/show/${(association.pict1)!}" alt="" width="100" height="100" id="pict1" /></td>
+  </tr>
+  <tr>
+    <td>所在学校：</td><td>${(association.university_name)!}</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>负&nbsp;责&nbsp;人：</td>
+    <#if edit_mode==1>
+      <td>${(association.person)!}</td>
+    <#else>
+      <td><input name="association.person" id="association_person"  type="text" value="${(association.person)!}" maxlength="30" /></td>
+    </#if>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>联系电话：</td><td><input name="association.tel" id="association_tel"  type="text" value="${(association.tel)!}" maxlength="20" /></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>电子邮件：</td><td><input name="association.email" id="association_email" type="text" value="${(association.email)!}" maxlength="50" /></td>
+    <td><label id="aso_detail_errorMsg"></label></td>
+  </tr>
+  <tr>
+    <td>密&nbsp;&nbsp;&nbsp;&nbsp;码：</td>
+    <td><input name="association.passwd" id="association_passwd" type="password" value="${(association.passwd)!}" maxlength="50" /></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>选择图片：</td>
+    <td>
+      <input id="token" type="hidden" name="token" class="ipt" value="${token}">
+      <input id="key" type="hidden" name="key" class="ipt" value="${key}">
+      <input id="file" name="file" class="ipt" type="file" />
+    </td>
+    <td><div id="progressbar"></div></td>
+    <td>&nbsp;</td>
+  </tr>
+  <#if edit_mode!=3>
+  <tr>
+    <td>审核状态：</td><td>
+	<#if association.flag==1>已开通
+	<#else>已暂停
+	</#if>
+	</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  </#if>
+  <tr>
+    <td>社团介绍：</td>
+    <td><textarea name="association.intro" cols="30" rows="8" id="association_intro" >${(association.intro)!}
+    </textarea></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td></td>
+    <#if edit_mode!=3>
+      <td><input name="association.id" id="association_id" type="hidden" value="${(association.id)!}" /></td>
+    <#else>
+      <td><input id="university_id" type="hidden" value="${(university_id)!}" /></td>   
+    </#if>
+    <td>
+      <input type="hidden" name="association.pict1" id="association_pict1" value="${(association.pict1)!}"/>
+    </td>
+  </tr>
+  			 
+  
+  <tr>
+    <td colspan="3" align="center"><input  onclick="association_detail_Click(${edit_mode});"  type="submit" name="Submit" value="保存" /></td>
+    <td><div id="for_thumb"></div></td>
+  </tr>
+</table>
+
+</center>
+</body>
+</html>

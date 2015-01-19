@@ -1,0 +1,67 @@
+	<div class="form_box">
+	<table class="list" width="900">
+			<thead>
+			<tr>
+            	<th width="1%" style="text-align:center;"></th>
+            	<th width="10%" style="text-align:center;">证件照片</th>
+            	<th width="10%" style="text-align:center;">证件类型</th>
+            	<th width="14%" style="text-align:center;">昵称</th>
+            	<th width="10%" style="text-align:center;">真实姓名</th>  
+				<th width="10%" style="text-align:center;">毕业学校</th>            
+				<th width="10%" style="text-align:center;">最高学历</th> 
+				<th width="10%" style="text-align:center;">入学年份</th> 
+				<th width="10%" style="text-align:center;">状态</th>
+				<th width="15%" style="text-align:center;">操作</th>  	
+			</tr>
+			</thead>
+			<tr>
+				<td>&nbsp;</td>
+			</tr>
+			<tbody>
+			<#list userPage.getList() as user>
+			<tr>
+            <td>
+            <input type="hidden" value="${(user.id)!}" />
+            </td>
+ 			<td><img src="${path!}/photo/show/${(user.iden_picture2)!}" /></td>
+ 				<td style="text-align:center;">
+               		<#if ((user.iden_type)!0) == 0>
+						<label>学生证</label>
+					<#elseif ((user.iden_type)!0) == 1>
+						<label>身份证</label>
+					<#else>
+						<label>其他</label>
+					</#if>
+               	</td>
+               	<td style="text-align:center;">${(user.nickname)!}</td>
+				<td style="text-align:center;">${(user.name)!}</td>
+				<td style="text-align:center;">${(user.university)!}</td>
+ 				<td style="text-align:center;">
+               		<#if ((user.education)!0) == 0><label>中专或相当学历</label>
+					<#elseif ((user.education)!0) == 1><label>大专</label>
+					<#elseif ((user.education)!0) == 2><label>本科</label>
+					<#elseif ((user.education)!0) == 3><label>双学士</label>
+					<#elseif ((user.education)!0) == 4><label>硕士</label>
+					<#elseif ((user.education)!0) == 5><label>博士</label>
+					<#elseif ((user.education)!0) == 6><label>博士后</label>
+					</#if>
+               	</td>
+				<td style="text-align:center;">${(user.eyear)!}</td>
+				<td style="text-align:center;">
+					<#if flag == 0><label>未认证</label>
+					<#elseif flag == 1><label>已认证</label>
+					</#if>
+				</td>
+				<td style="text-align:center;">
+				   	<a href="${path!}/user/identify/${flag}-${(user.id)!}">
+				   	<#if flag == 0><label>确定认证</label>
+					<#elseif flag == 1><label>取消认证</label>
+					</#if>
+				   	</a>&nbsp;&nbsp;
+				</td>
+			</tr>
+			</#list>
+		</tbody>
+	</table>
+	</div>
+	

@@ -1,0 +1,216 @@
+<div id="RegionJobBusinessTag1" style="display:none"></div>
+<div id="RegionJobBusinessTag2" style="display:none"></div>
+<center>
+<table width="600" border="0">
+	<tr>
+		<td colspan="3">
+			<input type="hidden" value="${(resume.id)!}" name="resume.id" />
+			<input type="hidden" value="${(resumeUser.id)!}" name="resume.id_user" />
+		</td>
+	</tr>
+  <tr>
+    <td width="119" height="34"><div align="right">姓名</div></td>
+    <td width="352" height="34">
+ 
+        <input type="text" name="user.name" value="${(resumeUser.name)!}" />
+    </td>
+    <td width="115" height="34">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td colspan="2">&nbsp;</td>
+    </tr>
+  <tr>
+    <td height="34"><div align="right">性别</div></td>
+    <td>
+    <input type="radio" name="user.sex" value="男" <#if ((resumeUser.sex)!'男') = '男'>checked="checked"</#if> ></input>男
+    <input type="radio" name="user.sex" value="女" <#if ((resumeUser.sex)!'男') = '女'>checked="checked"</#if> ></input>
+      女</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td colspan="2">&nbsp;</td>
+    </tr>
+  <tr>
+    <td height="34"><div align="right">出生日期</div></td>
+    <td><input type="text" name="resumeUser.birth" value="${(resumeUser.birth)!}"/></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td colspan="2">&nbsp;</td>
+    </tr>
+       <tr>
+    <td><div align="right">*期待工作性质</div></td>
+    <td><input name="resume.property" type="radio" value="0" <#if ((resume.property)!0) = 0>checked="checked"</#if> ></input>
+      全职
+    <input type="radio" name="resume.property" value="1" <#if ((resume.property)!0) = 1>checked="checked"</#if> ></input>
+      兼职
+      <input type="radio" name="resume.property" value="2" <#if ((resume.property)!0) = 2>checked="checked"</#if> ></input>
+      实习
+      </td>
+    <td>${propertyMsg!}</td>
+  </tr>
+  <tr>
+    <td><div align="right"></div></td>
+    <td colspan="2">&nbsp;</td>
+    </tr>
+  <tr>
+  <tr>
+    <td><div align="right" >*行业类别</div></td>
+    <td><input type="text" id="vocation" name="resume.vocation" onkeypress="javascript:return false;" onclick="selectVocation()" value="${(resume.vocation)!}"/></td>
+    <td>${vocationMsg!}</td>
+  </tr>
+  <tr>
+    <td><div align="right"></div></td>
+    <td colspan="2">&nbsp;</td>
+    </tr>
+    <tr>
+    <td><div align="right">*职位</div></td>
+    <td><input type="text" id="job" name="resume.job" onkeypress="javascript:return false;" onclick="selectJob()" value="${(resume.job)!}"/></td>
+    <td>${jobMsg!}</td>
+  </tr>
+  <tr>
+    <td><div align="right"></div></td>
+    <td colspan="2">&nbsp;</td>
+    </tr>
+    <tr>
+    <td><div align="right">*期待薪金</div></td>
+    <td><select id="resume.sala" name="resume.sala">
+    <option value="0">--请选择--</option>
+    <option value="1" <#if ((resume.sala)!0) = 1>selected="selected"</#if> >1000元/月以下</option>
+    <option value="2" <#if ((resume.sala)!0) = 2>selected="selected"</#if> >1000-2000元/月</option>
+    <option value="3" <#if ((resume.sala)!0) = 3>selected="selected"</#if> >2001-4000元/月</option>
+    <option value="4" <#if ((resume.sala)!0) = 4>selected="selected"</#if> >4001-6000元/月</option>
+    <option value="5" <#if ((resume.sala)!0) = 5>selected="selected"</#if> >6001-8000元/月</option>
+    <option value="6" <#if ((resume.sala)!0) = 6>selected="selected"</#if> >8001-10000元/月</option>
+    <option value="7" <#if ((resume.sala)!0) = 7>selected="selected"</#if> >10001-15000元/月</option>
+    <option value="8" <#if ((resume.sala)!0) = 8>selected="selected"</#if> >15001-25000元/月</option>
+    <option value="9" <#if ((resume.sala)!0) = 9>selected="selected"</#if> >25000元以上/月</option>
+    <option value="10" <#if ((resume.sala)!0) = 10>selected="selected"</#if> >面议</option>
+    </select></td>
+    <td>${salaMsg!}</td>
+  </tr>
+  <tr>
+    <td><div align="right"></div></td>
+    <td colspan="2">&nbsp;</td>
+    </tr>
+      <tr>
+    <td height="34"><div align="right">*自我评价</div></td>
+    <td><textarea name="resume.self_intro" cols="40" rows="10">${(resume.self_intro)!}</textarea> </td>
+    <td>${emailMsg!}</td>
+  </tr>
+  <tr>
+    <td><div align="right"></div></td>
+    <td colspan="2">&nbsp;</td>
+    </tr>
+    </table>
+    
+    <table width="600" border="0">
+    <tr>
+<td colspan="3"><label>最高学历</label></td>
+</tr>
+    <tr>
+    <td><div align="right"></div></td>
+    <td colspan="2">&nbsp;</td>
+    </tr>
+    <tr>
+    <td width="119"><div align="right">*入学时间</div></td>
+    <td width="400"><input name="resume.year1" width="40" value="${(resume.year1)!}"/>
+    <label>年</label>
+    <input name="resume.month1" width="40" value="${(resume.month1)!}"/>
+    <label>月 </label>
+    </td>
+    </tr>
+    <tr>
+    <td width="119"><div align="right">*毕业时间</div></td>
+    <td  width="400">
+    <input name="resume.year2" width="40" value="${(resume.year2)!}"/>
+    <label>年</label>
+    <input name="resume.month2" width="40" value="${(resume.month2)!}"/>
+    <label>月</label>
+    </td>
+  </tr>
+    <tr>
+    <td><div align="right"></div></td>
+    <td colspan="2">&nbsp;</td>
+    </tr> 
+  <tr>
+    <td><div align="right">*学校名称</div></td>
+    <td><input type="text" name="resume.university" value="${(resume.university)!}"></td>
+    <td>${universityMsg!}</td>
+  </tr>
+  <tr>
+    <td><div align="right"></div></td>
+    <td colspan="2">&nbsp;</td>
+    </tr> 
+    <tr>
+    <td><div align="right">*专业名称</div></td>
+    <td><input type="text" name="resume.major" value="${(resume.major)!}" /></td>
+    <td>${majorMsg!}</td>
+  </tr>
+  <tr>
+    <td><div align="right"></div></td>
+    <td colspan="2">&nbsp;</td>
+    </tr> 
+      <tr>
+    <td><div align="right">*学历学位</div></td>
+    <td><select id="resume.degree" name="resume.degree">
+    <option value="0">--请选择--</option>
+    <option value="1" <#if ((resume.degree)!0) = 1>selected="selected"</#if>>大专</option>
+    <option value="2" <#if ((resume.degree)!0) = 2>selected="selected"</#if>>本科</option>
+    <option value="3" <#if ((resume.degree)!0) = 3>selected="selected"</#if>>硕士</option>
+    <option value="4" <#if ((resume.degree)!0) = 4>selected="selected"</#if>>博士</option>
+    <option value="5" <#if ((resume.degree)!0) = 5>selected="selected"</#if>>MBA</option>
+    <option value="6" <#if ((resume.degree)!0) = 6>selected="selected"</#if>>EMBA</option>
+    <option value="7" <#if ((resume.degree)!0) = 7>selected="selected"</#if>>中专</option>
+    <option value="8" <#if ((resume.degree)!0) = 8>selected="selected"</#if>>中技</option>
+    <option value="9" <#if ((resume.degree)!0) = 9>selected="selected"</#if>>高中</option>
+    <option value="10" <#if ((resume.degree)!0) = 10>selected="selected"</#if>>初中</option>
+    <option value="11" <#if ((resume.degree)!0) = 11>selected="selected"</#if>>其他</option>
+    </select></td>
+    <td>${degreeMsg!}</td>
+  </tr>
+  <tr>
+    <td><div align="right"></div></td>
+    <td colspan="2">&nbsp;</td>
+    </tr>
+  <tr>
+    <td colspan="3"><div align="center">
+	    <center>
+        <input type="submit" name="Submit" value="提交" />
+		</center>
+    </div></td>
+    </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  
+  <tr>
+  <td colspan="3"><a href="${path!}/experience/${(resume.id)!}">查看工作经验</a>
+  </td></tr>
+</table>
+</center>
+
+<script type="text/javascript" language="javascript">
+function selectJob() {
+    window.m = new MessageBox(null, "");
+    m.CloseButtonValue = "";
+    m.Title = "";	
+    m.InnerDivHeight = 810;
+    m.InnerDivWidth = 830;
+    m.ShowIframeDialog("${path!}/dataJob.html");
+};
+
+function selectVocation() {
+	window.m1 = new MessageBox(null, "");
+    m1.CloseButtonValue = "";
+    m1.Title = "";	
+    m1.InnerDivHeight = 300;
+    m1.InnerDivWidth = 825;
+    m1.ShowIframeDialog("${path!}/dataVocation.html");
+};
+</script>

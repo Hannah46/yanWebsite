@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>兴趣爱好</title>
+
+<style type="text/css">
+li
+{
+	list-style-type:none;
+	width : 25%;
+	float:left;
+}
+</style>
+
+</head>
+
+<body>
+	<center>
+		<form id="personalInfo" name="personalInfo" method="post"
+			action="${path!}/user/updateInterest">
+			<table width="510" border="0">
+				<tr>
+					<td ><input type="hidden" value="${(user.id)!}" name="user.id" /></td>
+				</tr>
+				<tr>
+					<td ><div align="center">喜欢的体育运动</div></td>
+				</tr>
+				<tr><td><ul>
+					<#assign sportNum=1 />
+					<#list ["足球","篮球","排球","网球","羽毛球","乒乓球","壁球","保龄球","手球","橄榄球","棒球",
+					"高尔夫","健身","跑步","自行车","摩托车","汽车","舞蹈","体操","跆拳道","柔道","空手道","游泳",
+					"潜水","水上运动","航海","滑雪/滑冰","拳击","钓鱼","瑜伽","武术","其他","不喜欢运动"] as sport>
+						<li><input type="checkbox" name="user.sport${sportNum}" id="user.sport${sportNum}" value="1"
+						<#if (user["sport"+sportNum]!0)=1> checked="checked" </#if>
+						/>${sport}</li>
+						<#assign sportNum=sportNum+1 />
+					</#list>
+				</ul></td></tr>
+				<tr>
+					<td>${sportMsg!}</td>
+				</tr>
+				
+				<tr>
+					<td ><div align="center">喜欢的食物</div></td>
+				</tr>
+				<tr><td><ul>
+					<#assign foodNum=1 />
+					<#list ["中国菜","印度菜","泰国菜","法国菜","意大利菜","日本菜","俄罗斯菜",
+					"烧烤","健康食品","素食","快餐","巧克力和甜点","其他","无特殊爱好"] as food>
+						<li><input type="checkbox" name="user.food${foodNum}" id="user.food${foodNum}" value="1"
+						<#if (user["food"+foodNum]!0)=1> checked="checked" </#if>
+						/>${food}</li>
+						<#assign foodNum=foodNum+1 />
+					</#list>
+				</ul></td></tr>
+				<tr>
+					<td>${foodMsg!}</td>
+				</tr>
+				
+				<tr>
+					<td ><div align="center">喜欢的书籍</div></td>
+				</tr>
+				<tr><td><ul>
+					<#assign bookNum=1 />
+					<#list ["校园青春","文学","艺术与摄影","励志与成功","动漫与幽默","政治与军事","哲学与宗教",
+					"历史传记","运动健身","健康与养生","烹饪与饮食","旅游","投资理财","婚恋与家庭","期刊杂志","娱乐时尚",
+					"人文社科","自然科学","收藏与鉴赏","其他","什么都看"] as book>
+						<li><input type="checkbox" name="user.book${bookNum}" id="user.book${bookNum}" value="1"
+						<#if (user["book"+bookNum]!0)=1> checked="checked" </#if>
+						/>${book}</li>
+						<#assign bookNum=bookNum+1 />
+					</#list>
+				</ul></td></tr>
+				<tr>
+					<td>${bookMsg!}</td>
+				</tr>
+				
+				<tr>
+					<td ><div align="center">喜欢的电影</div></td>
+				</tr>
+				<tr><td><ul>
+					<#assign filmNum=1 />
+					<#list ["爱情","喜剧","动作冒险","古装武侠","科幻魔幻","悬疑推理","惊悚恐怖",
+					"动画","战争","音乐歌舞","纪录片","剧情","西部","历史传记","其他","什么都看"] as film>
+						<li><input type="checkbox" name="user.film${filmNum}" id="user.film${filmNum}" value="1"
+						<#if (user["film"+filmNum]!0)=1> checked="checked" </#if>
+						/>${film}</li>
+						<#assign filmNum=filmNum+1 />
+					</#list>
+				</ul></td></tr>
+				<tr>
+					<td>${filmMsg!}</td>
+				</tr>
+				
+				<tr>
+					<td ><div align="center">关注的节目</div></td>
+				</tr>
+				<tr><td><ul>
+					<#assign progNum=1 />
+					<#list ["政治事件","娱乐八卦","体育赛事","理财投资","相声曲艺","海选活动","畅销书","影视热片",
+					"休闲生活","行业发展","其他","暂无"] as prog>
+						<li><input type="checkbox" name="user.prog${progNum}" id="user.prog${progNum}" value="1"
+						<#if (user["prog"+progNum]!0)=1> checked="checked" </#if>
+						/>${prog}</li>
+						<#assign progNum=progNum+1 />
+					</#list>
+				</ul></td></tr>
+				<tr>
+					<td>${progMsg!}</td>
+				</tr>
+				
+				<tr>
+					<td ><div align="center">娱乐休闲</div></td>
+				</tr>
+				<tr><td><ul>
+					<#assign amuNum=1 />
+					<#list ["饭店","商场","剧院","酒吧","电影院","音乐会","迪斯科","网吧",
+					"温泉","图书馆/书店","咖啡厅","游乐场","卡拉OK","体育馆","逛街",
+					"在自己或朋友家里","其它","不想说"] as amu>
+						<li><input type="checkbox" name="user.amu${amuNum}" id="user.amu${amuNum}" value="1"
+						<#if (user["amu"+amuNum]!0)=1> checked="checked" </#if>
+						/>${amu}</li>
+						<#assign amuNum=amuNum+1 />
+					</#list>
+				</ul></td></tr>
+				<tr>
+					<td>${amuMsg!}</td>
+				</tr>
+				
+				<tr>
+					<td ><div align="center">业余爱好</div></td>
+				</tr>
+				<tr><td><ul>
+					<#assign hobbyNum=1 />
+					<#list ["网络","汽车","动物","摄影","影视","音乐","写作",
+					"购物","手工艺","园艺","舞蹈","展览","烹饪","读书","绘画","计算机","体育运动",
+					"旅游","电子游戏","其它"] as hobby>
+						<li><input type="checkbox" name="user.hobby${hobbyNum}" id="user.hobby${hobbyNum}" value="1"
+						<#if (user["hobby"+hobbyNum]!0)=1> checked="checked" </#if>
+						/>${hobby}</li>
+						<#assign hobbyNum=hobbyNum+1/>
+					</#list>
+				</ul></td></tr>
+				<tr>
+					<td>${hobbyMsg!}</td>
+				</tr>
+				
+				<tr>
+					<td ><div align="center">喜欢的旅游去处</div></td>
+				</tr>
+				<tr><td><ul>
+					<#assign touNum=1 />
+					<#list ["惬意海岛","名山古刹","繁华都市","风情名城","广袤森林","高原雪域","秀美山水",
+					"历史遗迹","江河大川","峻秀峡谷","小桥流水人家","其他选择","还没想好"] as tou>
+						<li><input type="checkbox" name="user.tou${touNum}" id="user.tou${touNum}" value="1"
+						<#if (user["tou"+touNum]!0)=1> checked="checked" </#if>
+						/>${tou}</li>
+						<#assign touNum=touNum+1 />
+					</#list>
+				</ul></td></tr>
+				<tr>
+					<td>${touMsg!}</td>
+				</tr>
+				
+				<tr>
+					<td ><div align="center">
+							<center>
+								<input type="submit" name="Submit" value="提交" />
+							</center>
+						</div></td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+			</table>
+		</form>
+	</center>
+</body>
+</html>

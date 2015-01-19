@@ -1,0 +1,86 @@
+﻿<#include "header.html"/>
+<#include "footer.html"/>
+<@header logged/>
+
+<script type="text/JavaScript" src="${path!}/user/jquery-1.11.1.min.js"></script>
+<script type="text/JavaScript" >
+function addReaders(id){
+	$.ajax({
+        type: "GET",
+        url: "${path!}/willing/addReaders",
+		data: "id=" + id,
+        success: function(data){
+        	$("#readers" + id).html(data);
+        },
+		error: function (XMLHttpRequest, textStatus, errorThrown) { 
+			alert("呃，操作失败了，请待会再试试！");
+		} 
+    });
+}
+function addAgrees(id){
+	$.ajax({
+        type: "GET",
+        url: "${path!}/willing/addAgrees",
+		data: "id=" + id,
+        success: function(data){
+        	$("#agrees" + id).html(data);
+        },
+		error: function (XMLHttpRequest, textStatus, errorThrown) { 
+			alert("呃，操作失败了，请待会再试试！");
+		} 
+    });
+}
+function setCookie(id)
+{		
+	//alert(document.cookie);
+		var cookieArray=document.cookie.split(";"); //得到分割的cookie名值对
+		for (var i=0;i<cookieArray.length;i++)
+		{
+			var arr=cookieArray[i].split("=");       //将名和值分开
+			if(arr[0]==id && arr[1]=="0")
+				{
+					alert("您操作的频率过于频繁，请休息一下吧！");
+					return;
+				}
+			}
+		addAgrees(id);
+		var exp = new Date();
+		exp.setTime(exp.getTime() + 60*1000);
+		document.cookie = id + "=0" + ";expires=" + exp.toGMTString() + ";";
+	}
+</script>
+
+ 
+<center>
+<table border="1">
+	<caption>愿望列表</caption>
+	<tr>
+		<th>昵称</th>
+		<th>头像</th>
+		<th>内容</th>
+		<th>发布时间</th>
+		<th>阅读数</th>
+		<th>点赞数</th>
+		<th>阅读</th>
+		<th>点赞</th>
+	</tr>
+		
+	<#list willingPage.getList() as willing>
+		<tr>
+			<td>${(willing.nickname)!}</td>
+			<td><img src="${path!}/photo/show/${(willing.photo1b)!}" /></td>
+			<td>${(willing.desc)!}</td>
+			<td>${(willing.pub_date)!}</td>
+			<td id="readers${(willing.ID)!}">${(willing.readers)!}</td>
+			<td id="agrees${(willing.ID)!}">${(willing.agrees)!}</td>
+			<td><a href="javascript:addReaders(${(willing.ID)!})">阅读</a></td>
+			<td><a href="javascript:setCookie(${(willing.ID)!})">点赞</a></td>
+		</tr>
+	</#list>
+</table>
+
+<#include "/_paginate.html" />
+<@paginate currentPage=willingPage.pageNumber totalPage=willingPage.totalPage actionUrl="${path!}/willing/list/" />
+</center>
+
+<@footer/>

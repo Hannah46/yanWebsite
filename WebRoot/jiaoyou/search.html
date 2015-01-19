@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>用户注册</title>
+<script type="text/javascript" src="${path}/js/core.js"></script>
+<script type="text/javascript" src="${path}/js/client.js"></script>
+<script type="text/javascript" src="${path}/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="${path}/js/drag_v1.0.js"></script>
+<script type="text/javascript" src="${path}/js/messageboxnotitle.js"></script>
+<link type="text/css" href="${path}/css/commen.css" rel="stylesheet"/>
+
+</head>
+<script type="text/javascript" language="javascript">
+function openwin(){
+    window.m = new MessageBox(null, "");
+    m.CloseButtonValue = "";
+    m.Title = "";	
+    m.InnerDivHeight = 600;
+    m.InnerDivWidth = 1200;
+    m.ShowIframeDialog("${path!}/jiaoyou/search_condition.html");
+}
+</script>
+<body>
+	<center>
+	<table width="1000">
+	<tr>	
+		<td colspan="2" align="left">
+			<a onClick="openwin()">选择搜索条件</a>
+		</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;</td>
+		<td>${sql!}</td>
+		<td><input type="hidden" value=${paras!}></input></td>
+	</tr>	
+	</table>	
+
+	<#include "../jiaoyou/showUser.html" />
+	</center>
+</body>
+
+</html>
+
+
+
+

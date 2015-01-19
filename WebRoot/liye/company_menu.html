@@ -1,0 +1,45 @@
+﻿<#include "header.html"/>
+<#include "footer.html"/>
+<@header logged/>
+
+<link rel="stylesheet" href="../jiayuan_cs_js/association_menu.css" type="text/css">
+<script src="../user/jquery-1.11.1.min.js"></script>
+<script src="../user/jquery.form.js"></script>
+<script src="../jiayuan_cs_js/h_slide_menu.js"></script>
+<script src="../js/upload.js"></script>
+<script src="../js/company_menu.js"></script>
+<script>
+$(function(){
+  $("#menu1").load("../association/detail");
+  $("#menu2").load("../company/toDetail");
+  $("#menu4").load("../company/toPhoto2");
+  $("#menu4").load("../company/toPhoto1");
+});
+</script>
+ 
+<div class="h_slide_menu" id="h_slide_menu">
+  <div class="title cf">
+    <h2 class="fl">企业信息</h2>
+    <ul class="title-list fr cf ">
+      <li class="on">基本信息</li>
+      <li>详细信息</li>
+      <li>营业执照</li>
+      <li>LOGO图片</li>
+      <p><b></b></p>  <!--red line-->  
+    </ul>
+  </div>
+  <div class="menu-wrap">
+    <!--menu1-->
+    <div class="menu show" id="menu1">
+    </div>
+    <!--menu2-->
+    <div class="menu" id="menu2">
+    </div>
+    <div class="menu" id="menu3">
+    </div>
+    <div class="menu" id="menu4">
+    </div>
+  </div>
+</div>
+
+<@footer/>

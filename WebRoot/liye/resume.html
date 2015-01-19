@@ -1,0 +1,52 @@
+﻿<#include "header.html"/>
+<#include "footer.html"/>
+<@header logged/>
+
+<div class="table_box" align="center">
+	<table class="list" width="800">
+        <tr>
+        <a href="${path!}/resume/add">添加简历</a>
+        </tr>
+		<tbody>
+			<tr>
+            	<th width="1%"></th>
+				<th width="14%">撰写时间</th>
+				<th width="5%">语言版本</th>
+                <th width="14%">简历名称</th>
+                <th width="5%">是否开放</th>
+				<th width="14%">操作</th>
+			</tr>
+			
+			<#list resumeList as x>
+			<tr>
+            <td>
+            <input type="hidden" value="${(x.id)!}" />
+            </td>
+				<td style="text-align:center;">${(x.version)!}</td>
+				<td style="text-align:center;">
+				<#if ((x.lang)!0) == 0>
+					<label>中文</label>
+				<#else>
+					<label>英文</label>
+				</#if>
+				</td>
+               <td style="text-align:center;">简历_&nbsp;${(x.job)!}</td> 
+                <td style="text-align:center;">
+                <#if ((x.open)!1) == 1>
+						<label>开放</label>
+				<#else>
+						<label>未开放</label>
+				</#if>
+                </td>
+				<td style="text-align:center;">
+                	<a href="${path!}/resume/edit_resume/${(x.id)!}">修改</a>
+					&nbsp;&nbsp;<a href="${path!}/resume/delete/${(x.id)!}">删除</a>
+				</td>
+			</tr>
+			</#list>
+		</tbody>
+	</table>
+
+</div>
+
+<@footer/>

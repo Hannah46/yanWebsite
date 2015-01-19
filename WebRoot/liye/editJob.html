@@ -1,0 +1,52 @@
+﻿<#include "header.html"/>
+<#include "footer.html"/>
+<@header logged/>
+
+<!--<script type="text/javascript" src="../js/jquery-1.8.0.min.js"></script> -->
+<script type="text/javascript" src="${path!}/js/core.js"></script>
+<script type="text/javascript" src="${path!}/js/client.js"></script>
+<script type="text/javascript" src="${path!}/js/messageboxnotitle.js"></script>
+<script type="text/javascript" src="${path!}/js/drag_v1.0.js"></script>
+<script type="text/javascript" src="${path!}/js/jquery-1.4.4.min.js"></script> 
+<link type="text/css" href="${path!}/css/commen.css" rel="stylesheet"/>
+
+ 
+<div id="RegionJobBusinessTag1" style="display:none"></div>
+<div id="RegionJobBusinessTag2" style="display:none"></div>
+<div id="RegionJobBusinessTag3" style="display:none"></div>
+	<center>
+		<form id="addJob" name="addJob" method="post" action="${path!}/job/doEdit">
+			<#include "form_job.html" />
+		</form>
+	</center>
+	
+<script type="text/javascript" language="javascript">
+function selectCity() {
+        window.m2 = new MessageBox(null, "");
+        m2.CloseButtonValue = "";
+        m2.Title = "";
+        m2.InnerDivHeight = 850;
+        m2.InnerDivWidth = 825;
+        m2.ShowIframeDialog("${path!}/js/data2.html");
+};
+
+function selectJob() {
+    window.m = new MessageBox(null, "");
+    m.CloseButtonValue = "";
+    m.Title = "";	
+    m.InnerDivHeight = 810;
+    m.InnerDivWidth = 830;
+    m.ShowIframeDialog("${path!}/js/dataJob.html");
+}
+
+function selectVocation() {
+	window.m1 = new MessageBox(null, "");
+    m1.CloseButtonValue = "";
+    m1.Title = "";	
+    m1.InnerDivHeight = 300;
+    m1.InnerDivWidth = 825;
+    m1.ShowIframeDialog("${path!}/js/dataVocation.html");
+}
+</script>
+  
+<@footer/>

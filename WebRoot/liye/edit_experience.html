@@ -1,0 +1,18 @@
+﻿<#include "header.html"/>
+<#include "footer.html"/>
+<@header logged/>
+<link type="text/css" href="${path!}/css/commen.css" rel="stylesheet"/>
+<script type="text/javascript" src="${path!}/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="${path!}/js/core.js"></script>
+<script type="text/javascript" src="${path!}/js/client.js"></script>
+<script type="text/javascript" src="${path!}/js/messageboxnotitle.js"></script>
+<script type="text/javascript" src="${path!}/js/drag_v1.0.js"></script>
+
+<h1>工作经验管理 ---&gt;编辑工作经验 
+</h1>
+<div class="form_box">
+	<form action="${path!}/experience/update" method="post">
+		<#include "form_experience.html" />
+	</form>
+</div>
+<@footer/>

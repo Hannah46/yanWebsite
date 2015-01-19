@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="${path}/js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="${path}/js/upload.js"></script>
+<script type="text/javascript" src="${path}/jiayuan_cs_js/mblog.js"></script>
+</head>
+<body>
+<center>
+<div>
+<table width="400" border="0">
+<#if company_type==0>
+  <tr><td colspan="2">
+    <#list channel_list as channela>
+      <input name="mblog.id_channel" type="radio" value="${(channela.id)!}">${(channela.name)!}<span class="interv"/>
+    </#list>
+  </td></tr>
+</#if>
+  <tr>
+    <td colspan="2" height="120"><textarea name="mblog.content" cols="60" rows="9" id="mblog_content"></textarea>
+       <input type="hidden" name="mblog.photo1" id="mblog_photo1">
+    </td>
+    
+  </tr>
+<#if company_type==0>  
+  <tr>
+    <td colspan="2"><input name="mblog.public" type="radio" value="1" checked>公开<span class="interv"/>
+	<input name="mblog.public" type="radio" value="0">半公开
+	</td>
+  </tr>
+</#if>  
+  <tr>
+    <td> 
+      <input id="token" type="hidden" name="token" class="ipt" value="${token}">
+      <input id="key" type="hidden" name="key" class="ipt" value="${key}">
+      <input id="file" name="file" class="ipt" type="file" />
+    </td>
+    <td>
+       <div id="progressbar" align="left"></div>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center" valign="middle"><input type="button" value="发表" onclick="process_file(${company_type})"></td>
+  </tr>
+</table>
+</div>
+</center>
+</body>
+</html>

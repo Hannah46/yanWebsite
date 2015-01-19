@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>外貌体型</title>
+</head>
+
+<body>
+	<center>
+		<form id="appearance" name="appearance" method="post" action="${path!}/user/updateAppearance">
+			<table width="437" border="0">
+				<tr>
+					<td colspan="3">
+						<input type="hidden" value="${(user.id)!}" name="user.id" />
+					</td>
+				</tr>
+				
+				<tr>
+					<td width="82" height="34"><div align="right">身高</div></td>
+					<td width="214" height="34">
+						<select name="user.height" id="user.height">
+							<#list 130..226 as heightValue>  
+								<option label="${heightValue}" value="${heightValue-130}"
+								<#if ((user.height)!0)=(heightValue-130)> selected="secleted"</#if> >${heightValue}</option>
+							</#list>  
+						</select>&nbsp;厘米
+					</td>
+					<td width="127" height="34">${heightMsg!}</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td colspan="2">&nbsp;</td>
+				</tr>
+				
+				<tr>
+					<td height="34"><div align="right">体重</div></td>
+					<td>
+						<input type="text" name="user.weight" id="user.weight" value="${(user.weight)!}"/>&nbsp;公斤</td>
+					<td>${weightMsg!}</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td colspan="2">&nbsp;</td>
+				</tr>
+				
+				<tr>
+					<td height="34"><div align="right">发型</div></td>
+					<td>
+						<select name="user.fair" id="user.fair">
+							<option value="0">--请选择--</option>
+							<#assign fairValue=1 />
+							<#list ["顺直长发","卷曲长发","中等长度","短发","很短","光头","其它"] as fair>
+							<option label="${fair}" value="${fairValue}"
+							<#if ((user.fair)!0)=fairValue> selected="secleted"</#if> >${fair!}</option>
+							<#assign fairValue=fairValue+1 />
+							</#list>
+						</select>
+					</td>
+					<td>${fairMsg!}</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td colspan="2">&nbsp;</td>
+				</tr>
+				
+				<tr>
+					<td height="34"><div align="right">发色</div></td>
+					<td>
+						<select name="user.fair_color" id="user.fair_color">
+							<option value="0">--请选择--</option>
+							<#assign fair_colorValue=1 />
+							<#list ["黑色","金色","褐色","栗色","灰色","红色","白色","挑染","光头","其它"] as fair_color>
+							<option label="${fair_color}" value="${fair_colorValue}"
+							<#if ((user.fair_color)!0)=fair_colorValue> selected="secleted"</#if> >${fair_color!}</option>
+							<#assign fair_colorValue=fair_colorValue+1 />
+							</#list>
+						</select>
+					</td>
+					<td>${fair_colorMsg!}</td>
+				</tr>
+				
+				<tr>
+					<td><div align="right"></div></td>
+					<td colspan="2">&nbsp;</td>
+				</tr>
+				<tr>
+					<td><div align="right">脸型</div></td>
+					<td>
+						<select name="user.face" id="user.face">
+							<option value="0">--请选择--</option>
+							<#assign faceValue=1 />
+							<#list ["圆脸型","方脸型","长脸型","瓜子脸型","鸭蛋脸型","国字脸型","三角脸型","菱形脸型","保密"] as face>
+							<option label="${face}" value="${faceValue}"
+							<#if ((user.face)!0)=faceValue> selected="secleted"</#if> >${face!}</option>
+							<#assign faceValue=faceValue+1 />
+							</#list>
+						</select>
+					</td>
+					<td>${faceMsg!}</td>
+				</tr>
+				<tr>
+					<td><div align="right"></div></td>
+					<td colspan="2">&nbsp;</td>
+				</tr>
+				<tr>
+					<td><div align="right">体型</div></td>
+					<td>
+						<select name="user.body" id="user.body">
+							<option value="0">--请选择--</option>
+							<#assign bodyValue=1 />
+							<#list ["苗条","匀称","高挑","丰满","健壮","魁梧"] as body>
+							<option label="${body}" value="${bodyValue}"
+							<#if ((user.body)!0)=bodyValue> selected="secleted"</#if> >${body!}</option>
+							<#assign bodyValue=bodyValue+1 />
+							</#list>
+						</select>
+					</td>
+					<td>${bodyMsg!}</td>
+				</tr>
+				
+				<tr>
+					<td><div align="right"></div></td>
+					<td colspan="2">&nbsp;</td>
+				</tr>
+				
+				<tr>
+					<td><div align="right">外貌自评</div></td>
+					<td>
+						<select name="user.face_score" id="user.face_score">
+							<option value="0">--请选择--</option>
+							<#assign face_scoreValue=1 />
+							<#list ["文质彬彬型","西部牛仔型","阳光帅气型","风度翩翩型","成熟魅力型","健壮高大型","朴实无华型","内敛酷男型"] as face_score>
+							<option label="${face_score}" value="${face_scoreValue}"
+							<#if ((user.face_score)!0)=face_scoreValue> selected="secleted"</#if> >${face_score!}</option>
+							<#assign face_scoreValue=face_scoreValue+1 />
+							</#list>
+						</select>
+					</td>
+					<td>${face_scoreMsg!}</td>
+				</tr>
+				<tr>
+					<td><div align="right"></div></td>
+					<td colspan="2">&nbsp;</td>
+				</tr>
+				
+				<tr>
+					<td colspan="3"><div align="center">
+							<center>
+								<input type="submit" name="Submit" value="提交" />
+							</center>
+						</div></td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+				</tr>
+			</table>
+		</form>
+	</center>
+</body>
+</html>

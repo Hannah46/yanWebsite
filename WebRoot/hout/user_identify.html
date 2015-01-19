@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script type="text/javascript" src="${path}/js/jquery-1.8.0.min.js"></script>
+<title>用户注册</title>
+
+<script type="text/JavaScript">	
+	function filter() {
+		var email = $("#email").val();
+		var flag = $("#flag").val();
+		if ( email == "" || ( email == null ) )
+			alert("请先输出查询条件");
+		else {
+			//$.ajax({
+			//url:'${path!}/user/userList/'+ email + "-1" + "-" + flag,
+			//type:'post',
+			//dataType:'json',
+			//data:{r
+			location.href='${path!}/user/userList/'+ "1-" + email + "-" + flag;
+		}
+	}
+</script>
+
+</head>
+
+<body>
+	<center>
+	<table width="800">
+	<tr>
+		<td colspan ="2" align="center">
+		<input id="flag" type="hidden" value="${flag!0}" />
+		<input name="flag" type="radio" value="0" 
+		<#if flag = 0 >checked="checked" </#if>
+		onClick="top.location='${path!}/user/userList/1-null-0'">未认证</input>
+		<input name="flag" type="radio" value="1" 
+		<#if flag = 1 >checked="checked" </#if>
+		onClick="top.location='${path!}/user/userList/1-null-1'">已认证</input>
+		</td> 
+	</tr>
+	<tr>
+		<td width="500" align="right">
+			<label>根据注册邮箱查找</label>
+			<input type="text" id="email" name="email"/>
+			&nbsp;&nbsp;&nbsp;
+		</td>
+		<td align="left">
+			<button id="filter" onClick="filter()">查找</button>
+		</td>
+	</tr>	
+	</table>	
+		
+	<#include "../hout/user_list.html" />
+	<#include "/_paginate.html" />
+	<@paginate currentPage=userPage.pageNumber totalPage=userPage.totalPage actionUrl="${path!}/user/userList/" urlParas="-${email}-${flag}" />
+	</center>
+</body>
+</html>
+
+
+

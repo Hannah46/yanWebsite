@@ -1,0 +1,37 @@
+﻿<#include "header.html"/>
+<#include "footer.html"/>
+<@header logged/>
+
+	<center>
+		<form id="addPost" name="addPost" method="post" action="${path!}/post/doPost">
+			<table width="800" border="0">
+            	<tr>
+					<td colspan="3">
+						<input type="hidden" value="${(jobId)!}" name="postedNotification.id_jobs" />
+					</td>
+				</tr>
+                
+				<tr>
+					<td width="150" height="34"><div align="right">选择简历</div></td>
+					<td width="500" height="34">
+                    	<select name="postedNotification.id_resume">
+                    	<#list resumeList as resume>
+                    		<option value="${(resume.id)!}">${(resume.job)!}</option>
+                    	</#list>
+                    	</select>
+                    </td>
+					<td width="150" height="34">${resumeMsg!}</td>
+				</tr>
+                
+				<tr>
+					<td colspan="2"><div align="center">
+							<center>
+								<input type="submit" name="Submit" value="提交" />
+							</center>
+						</div></td>
+					<td></td>
+				</tr>
+			</table>
+		</form>
+	</center> 
+<@footer/>

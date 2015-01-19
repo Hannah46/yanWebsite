@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+	<center>
+			<table width="398" border="0">
+				<tr>
+					<td height="34"><div align="right">*电子邮箱</div></td>
+					<td><input type="text" id="m1_email" name="user.email" value="${(user.email)!}"/></td>
+					<td>${emailMsg!}</td>
+				</tr>
+				<tr>
+					<td><div align="right"></div></td>
+					<td colspan="2">&nbsp;</td>
+				</tr>
+				<tr>
+					<td><div align="right">*密码</div></td>
+					<td><input type="password" name="user.passwd" id="m1_password"/></td>
+					<td><label id="m1_errorMsg"></label></td>
+				</tr>
+				<tr>
+					<td><div align="right"></div></td>
+					<td colspan="2">&nbsp;</td>
+				</tr>
+				<tr>
+					<td colspan="3"><div align="center">
+							<center>
+								<input type="submit" name="Submit" onclick="m1_loginClick();" value="登录" />
+							</center>
+						</div></td>
+				</tr>
+			</table>
+	</center>
+</body>
+</html>

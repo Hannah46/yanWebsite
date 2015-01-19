@@ -1,0 +1,175 @@
+<table width="800" border="0">
+	<tr>
+		<td colspan="3">
+			<input type="hidden" value="${(job.id)!}" name="job.id" />
+		</td>
+	</tr>
+	<tr>
+		<td colspan="3">
+			<input type="hidden" value="${(job.id_company)!}" name="job.id_company" />
+		</td>
+	</tr>
+                
+	<tr>
+		<td width="150" height="34"><div align="right">职位</div></td>
+		<td width="500" height="34">
+        	<input type="text" id="job" value="${(job.job)!}" name="job.job" onkeypress="javascript:return false;" 
+    			onclick="selectJob()" /> 
+         </td>
+		<td width="150" height="34">${jobMsg!}</td>
+	</tr>
+    <tr>
+		<td width="150" height="34"><div align="right">行业</div></td>
+		<td width="500" height="34">
+            <input type="text" name="job.vocation" id="vocation" value="${(job.vocation)!}" onkeypress="javascript:return false;" 
+    			onclick="selectVocation()"/> 
+         </td>
+					<td width="150" height="34">${vocationMsg!}</td>
+				</tr>
+                <tr>
+					<td width="150" height="34"><div align="right">工作性质</div></td>
+					<td width="500" height="34">
+					<#if ((job.property)!0)=0>
+						<input type="radio" name="job.property" value="0" checked="checked"/>全职 
+					<#else>
+						<input type="radio" name="job.property" value="0" />全职 
+                    </#if>
+                    <#if ((job.property)!0)=1>
+						<input type="radio" name="job.property" value="1" checked="checked"/>兼职
+					<#else>
+						<input type="radio" name="job.property" value="1" />兼职
+                    </#if>
+                    <#if ((job.property)!0)=2>
+						<input type="radio" name="job.property" value="2" checked="checked"/>实习 
+					<#else>
+						<input type="radio" name="job.property" value="2" />实习 
+                    </#if>
+                    </td>
+					<td width="150" height="34">${propertyMsg!}</td>
+				</tr>
+                <tr>
+					<td width="150" height="34"><div align="right">学历学位</div></td>
+					<td width="500" height="34">
+                    	<select name="job.degree">
+                    		<#if ((job.degree)!0)=0> 
+                        		<option value="0" selected="selected">中专或相当学历</option>
+                        	<#else>
+                        		<option value="0">中专或相当学历</option>
+                        	</#if>
+                        	<#if ((job.degree)!0)=1> 
+                        		<option value="1" selected="selected">大专</option>
+                        	<#else>
+                        		<option value="1">大专</option>
+                        	</#if>
+                        	<#if ((job.degree)!0)=2> 
+                        		<option value="2" selected="selected">本科</option>
+                        	<#else>
+                        		<option value="2">本科</option>
+                        	</#if>
+                        	<#if ((job.degree)!0)=3> 
+                        		<option value="3" selected="selected">双学士</option>
+                        	<#else>
+                        		<option value="3">双学士</option>
+                        	</#if>
+                        	<#if ((job.degree)!0)=4> 
+                        		<option value="4" selected="selected">硕士</option>
+                        	<#else>
+                        		<option value="4">硕士</option>
+                        	</#if>
+                        	<#if ((job.degree)!0)=5> 
+                        		<option value="5" selected="selected">博士</option>
+                        	<#else>
+                        		<option value="5">博士</option>
+                        	</#if>
+                        	<#if ((job.degree)!0)=6> 
+                        		<option value="6" selected="selected">博士后</option>
+                        	<#else>
+                        		<option value="6">博士后</option>
+                        	</#if>
+                        </select>
+                    </td>
+					<td width="150" height="34">${degreeMsg!}</td>
+				</tr>
+                <tr>
+					<td width="150" height="34"><div align="right">工作地点</div></td>
+					<td width="500" height="34">
+                    	<input type="text" name="job.city" id="city" onkeypress="javascript:return false;" onclick="selectCity()" value="${(job.city)!}"/> 
+                    </td>
+					<td width="150" height="34">${cityMsg!}</td>
+				</tr>
+                <tr>
+					<td width="150" height="34"><div align="right">工作经验</div></td>
+					<td width="500" height="34">
+						<#if ((job.experience)!0)=0>
+							<input type="radio" name="job.experience" value="0" checked="checked"/>不要求工作经验
+							<input type="radio" name="job.experience" value="1" />要求工作经验 
+						<#else>
+							<input type="radio" name="job.experience" value="0" />不要求工作经验
+							<input type="radio" name="job.experience" value="1" checked="checked" />要求工作经验   
+	                    </#if>
+                    </td>
+					<td width="150" height="34">${experienceMsg!}</td>
+				</tr>
+                <tr>
+					<td width="150" height="34"><div align="right">年龄下限</div></td>
+					<td width="500" height="34">
+                    	<input type="text" name="job.age1" value="${(job.age1)!}" /> 
+                    </td>
+					<td width="150" height="34">${age1Msg!}</td>
+				</tr>
+                <tr>
+					<td width="150" height="34"><div align="right">年龄上限</div></td>
+					<td width="500" height="34">
+                    	<input type="text" name="job.age2" value="${(job.age2)!}" /> 
+                    </td>
+					<td width="150" height="34">${age2Msg!}</td>
+				</tr>
+                <tr>
+					<td width="150" height="34"><div align="right">性别</div></td>
+				  	<td width="500" height="34">
+					  	<#if ((job.sex)!2)=0>
+							<input type="radio" name="job.sex" value="0" checked="checked"/>男 
+						<#else>
+							<input type="radio" name="job.sex" value="0" />男
+	                    </#if>
+	                    <#if ((job.sex)!2)=1>
+							<input type="radio" name="job.sex" value="0" checked="checked"/>女 
+						<#else>
+							<input type="radio" name="job.sex" value="0" />女
+	                    </#if>
+	                    <#if ((job.sex)!2)=2>
+							<input type="radio" name="job.sex" value="0" checked="checked"/>不限
+						<#else>
+							<input type="radio" name="job.sex" value="0" />不限
+	                    </#if>
+                    </td>
+					<td width="150" height="34">${sexMsg!}</td>
+				</tr>
+                <tr>
+					<td width="150" height="34"><div align="right">工资待遇</div></td>
+					<td width="500" height="34">
+                    	<input type="text" name="job.sala" value="${(job.sala)!}" /> 
+                    </td>
+					<td width="150" height="34">${salaMsg!}</td>
+				</tr>
+                <tr>
+					<td width="150" height="34"><div align="right">人数</div></td>
+					<td width="500" height="34">
+                    	<input type="text" name="job.amount" value="${(job.amount)!}" /> 
+                    </td>
+					<td width="150" height="34">${amountMsg!}</td>
+				</tr>
+                
+				<tr>
+					<td colspan="3">&nbsp;</td>
+				</tr>
+		
+				<tr>
+					<td colspan="2"><div align="center">
+							<center>
+								<input type="submit" name="Submit" value="提交" />
+							</center>
+						</div></td>
+					<td></td>
+				</tr>
+			</table>

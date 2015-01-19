@@ -1,0 +1,37 @@
+﻿<#include "header.html"/>
+<#include "footer.html"/>
+<@header logged/>
+
+	<center>
+		<form id="addWilling" name="addWilling" method="post"
+			action="${path!}/willing/doAdd">
+			<table width="800" height="281" border="0">
+            	<tr>
+					<td colspan="3">
+						<input type="hidden" value="${(user.id)!}" name="willing.id_user" />
+					</td>
+				</tr>
+                
+				<tr>
+					<td width="150" height="34"><div align="right">我的愿望</div></td>
+					<td width="500" height="34">
+                    	<textarea rows="10" cols="90" name="willing.desc">${(willing.desc)!}</textarea>
+                    </td>
+					<td width="150" height="34">${descMsg!}</td>
+				</tr>
+				<tr>
+					<td colspan="3">&nbsp;</td>
+				</tr>
+		
+				<tr>
+					<td colspan="3"><div align="center">
+							<center>
+								<input type="submit" name="Submit" value="提交" />
+							</center>
+						</div></td>
+				</tr>
+			</table>
+		</form>
+	</center>
+
+<@footer/>	

@@ -1,0 +1,58 @@
+
+<center>
+<table width="800" border="0">
+	<tr>
+		<td colspan="3">
+			<input type="hidden" value="${(mail.id)!}" name="mail.id" />
+		</td>
+	</tr>
+  <tr>
+    <td width="119" height="34"><div align="right">收件人</div></td>
+    <td width="352" height="34">
+ 		<label>${(username)!}</label>
+    </td>
+    <td width="115" height="34">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td colspan="2">&nbsp;</td>
+    </tr>
+  <tr>
+    <td width="119" height="34"><div align="right">发送时间</div></td>
+    <td width="352" height="34">
+ 		<label>${(mail.pub_date)!}</label>
+    </td>
+    <td width="115" height="34">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td colspan="2">&nbsp;</td>
+    </tr>
+  <tr>
+    <td height="34"><div align="right">标题</div></td>
+    <td>
+    	<label>${(mail.title)!}</label>
+    </td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td colspan="2">&nbsp;</td>
+    </tr>
+  <tr>
+    <td height="34"><div align="right">邮件内容</div></td>
+    <td><textarea rows="30" cols="70" readonly="readonly">${(mail.content)!}</textarea></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td colspan="2">&nbsp;</td>
+    </tr>
+   <tr>
+    <td colspan="3">
+    	<a href="${(path)!}/mail/reply/${(mail.id)!}-${(username)}">回复</a>
+	</td>
+    </tr>
+    </table>
+</center>
+

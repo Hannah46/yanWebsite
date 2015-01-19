@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>无标题文档</title>
+<script type="text/javascript" src="../js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="../js/core.js"></script>
+<script type="text/javascript" src="../js/client.js"></script>
+<script type="text/javascript" src="../js/drag_v1.0.js"></script>
+<script type="text/javascript" src="../js/messageboxnotitle.js"></script>
+<link type="text/css" href="../css/commen.css" rel="stylesheet"/>
+
+<style type="text/css">
+    body{background:none;}
+    
+</style>
+<script type="text/javascript" language="javascript">
+function search() {
+	var sex = $("#sex option:selected").text();
+	var minheight = $("#minheight option:selected").text();
+	var maxheight = $("#maxheight option:selected").text();
+	var university = $("#university").val();
+	if ( parseInt(minheight) > parseInt(maxheight) ) {
+		alert("身高上限必须高于下限");
+		return;
+	}
+	//top.m.Close();
+	top.location='../user/search/'+ sex + '-' + minheight + '-' + maxheight + '-' + university;
+}
+
+function add(){
+var minheight=document.getElementById('minheight');//添加一个选项
+var maxheight=document.getElementById('maxheight');//添加一个选项
+for(var i=135;i<=200;i++) {
+minheight.add(new Option(i,i));//这个只能在IE中有效
+maxheight.add(new Option(i,i));//这个只能在IE中有效
+}
+//obj.options.add(new Option("text","value")); //这个兼容IE与firefox
+}
+
+function selectUniversity() {
+	window.m1 = new MessageBox(null, "");
+    m1.CloseButtonValue = "";
+    m1.Title = "";	
+    m1.InnerDivHeight = 300;
+    m1.InnerDivWidth = 825;
+    m1.ShowIframeDialog("../data3.html");
+}
+</script>
+</head>
+<body onload="add()">
+<div id="RegionJobBusinessTag1" style="display:none"></div>
+<div id="RegionJobBusinessTag2" style="display:none"></div>
+<div id="RegionJobBusinessTag3" style="display:none"></div>
+<!--区域弹出层-->
+
+<div  class="zhilei">
+ <div class="popupBox" style="height:238px">
+ 
+ <table>
+</tr>
+<tr >
+<td id="sex" width="100px">性别<br>
+<select><option>男</option>
+<option>女</option></option></select></td>
+<td width="100px">所在学校<br><input type="text" id="university" value="不限"></input></td>
+
+</tr>
+<tr><td width="230px" >身高<br>
+<select id="minheight">
+</select>厘米到
+<select id="maxheight">
+</select>厘米
+</td>
+</tr>
+</table>
+<br>
+<div class="tr" align="center">
+            <button onclick="search()" class="gbtn80 png">搜索</button>
+            <input type="button" class="gbtn80 png" onclick="top.m.Close()" value="取 消"/>
+          </div>
+</div>
+
+  
+
+</body>
+</html>

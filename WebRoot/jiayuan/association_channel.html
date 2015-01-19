@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<center>
+<table  border="0" align="center">
+  <tr>
+    <td width="177" align="center" valign="middle">频道名称</td>
+    <td colspan="2" align="center" valign="middle">操作</td>
+  </tr>
+  <tr>
+    <td valign="middle"><input type="text" id="new_channela" maxlength="20" />
+	<td width="36"><label></label></td>
+    <td width="37" valign="middle"><a onClick="add_channel(${association_id});">添加</a></td>
+  </tr>
+  <#list page.list as channela>
+  <tr>
+    <td valign="middle"><label id="channela_rowa${channela_index}">${(channela.name)!}</label><input name="channela.name" id="channela_rowb${channela_index}" type="text" value="${(channela.name)!}" maxlength="20" style="display:none"/>
+	<td><a id="edit${channela_index}" onclick="edit_channel(${channela.id},${channela_index},${page.pageNumber});">编辑</a></td>
+    <td valign="middle"><a onClick="del_channel(${channela.id},${page.pageNumber})">删除</a></td>
+  </tr>
+  </#list>
+  <tr>
+    <td colspan="8" align="right" valign="middle">
+	  <#include "_paginate.html" />
+	  <@paginate currentPage=page.pageNumber totalPage=page.totalPage actionUrl=".." />	</td>
+  </tr>
+</table>
+</center>
+</body>
+</html>

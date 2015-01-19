@@ -1,0 +1,64 @@
+<#macro header>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>家园 - 豫见</title>
+<link rel="Stylesheet" type="text/css" href="${path}/css_model/style_blog.css">
+</head>
+
+<body>
+<div id="container">
+<div id="content">
+  <!-- header -->
+  <div id="header">
+    <div id="header_login">&nbsp;</div>
+    <div id="header_nav">
+      <div id="nav_top">
+        <ul>
+<#if !logged?? || logged==0>
+<li><a href="${path}/jiayuan/login.html" target="_self">登录</a></li>
+<li><a href="${path}/mblog/list/1" target="_self">社团互动</a></li>
+<li><a href="${path}/mblog/list/1" target="_self">校园广播</a></li>
+<li><a href="${path}/mblog/list/1" target="_self">企业信息</a></li>
+<li><a href="${path}/mblog/list/1" target="_self">人气排名</a></li>
+<li><a href="${path}/mblog/list/1" target="_self">最新内容</a></li>
+<li><a href="${path}/mblog/to_new" target="_self">我要创建</a></li>
+
+<#elseif logged==1>
+<li><a href="${path}/mblog/list/1" target="_self">校园广播</a></li>
+<li><a href="${path}/mblog/list/1" target="_self">企业信息</a></li>
+<li><a href="${path}/mblog/list/1" target="_self">人气排名</a></li>
+<li><a href="${path}/mblog/list/1" target="_self">最新内容</a></li>
+<li><a href="${path}/mblog/list/1" target="_self">我要创建</a></li>
+<li><a href="${path}/friend/logout/3" target="_self">退出</a></li>
+
+<#elseif logged==2>
+<li><a href="${path}/mblog/list/1" target="_self">社团互动</a></li>
+<li><a href="${path}/mblog/list/1" target="_self">企业信息</a></li>
+<li><a href="${path}/mblog/list/1" target="_self">人气排名</a></li>
+<li><a href="${path}/mblog/list/1" target="_self">最新内容</a></li>
+<li><a href="${path}/mblog/list/1" target="_self">我要创建</a></li>
+<li><a href="${path}/friend/logout/3" target="_self">退出</a></li>
+
+
+<#elseif logged==3>
+<li><a href="${path}/mblog/list/1" target="_self">社团互动</a></li>
+<li><a href="${path}/mblog/list/1" target="_self">人气排名</a></li>
+<li><a href="${path}/mblog/list/1" target="_self">最新内容</a></li>
+<li><a href="${path}/mblog/list/1" target="_self">我要创建</a></li>
+<li><a href="${path}/association/menu" target="_self">我的协会</a></li>
+<li><a href="${path}/friend/logout/3" target="_self">退出</a></li>
+
+<#elseif logged==4>
+<li><a href="${path}/association/manage" target="_self">我的协会</a></li>
+<li><a href="${path}/friend/logout/3" target="_self">退出</a></li>
+</#if>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- main -->
+  <div id="main">
+
+</#macro>

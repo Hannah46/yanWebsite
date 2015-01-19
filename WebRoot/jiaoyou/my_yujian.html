@@ -1,0 +1,50 @@
+<#include "header.html"/>
+<#include "footer.html"/>
+<@header logged/>
+
+<link rel="stylesheet" href="${path}/jiayuan_cs_js/association_menu.css" type="text/css">
+<script src="${path}/user/jquery-1.11.1.min.js"></script>
+<script src="${path}/user/jquery.form.js"></script>
+<script src="${path}/jiayuan_cs_js/h_slide_menu.js"></script>
+<script src="${path}/jiayuan_cs_js/association_menu.js"></script>
+<script>
+$(function(){
+  $("#menu1").load("${path}/user/toPersonalInfo");
+  $("#menu2").load("${path}/user/toSelfIntro");
+  $("#menu3").load("${path}/user/toAppearance");
+  $("#menu4").load("${path}/user/toInterest");
+  $("#menu5").load("${path}/user/toPhoto");
+});
+</script>
+</head>
+
+<body>
+<div class="h_slide_menu" id="h_slide_menu">
+  <div class="title cf">
+    <h2 class="fl">我的豫见</h2>
+    <ul class="title-list fr cf ">
+      <li class="on">基本信息</li>
+      <li>自白</li>
+      <li>外貌</li>
+      <li>爱好</li>
+      <li>照片</li>
+      <p><b></b></p>  <!--red line-->  
+    </ul>
+  </div>
+  <div class="menu-wrap">
+    <!--menu1-->
+    <div class="menu show" id="menu1">
+    </div>
+    <!--menu2-->
+    <div class="menu" id="menu2">
+    </div>
+    <div class="menu" id="menu3">
+    </div>
+    <div class="menu" id="menu4">
+    </div>
+    <div class="menu" id="menu5">
+    </div>
+  </div>
+</div>
+
+<@footer/>

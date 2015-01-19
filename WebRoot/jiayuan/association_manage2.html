@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script type="text/javascript" src="../js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="../js/core.js"></script>
+<script type="text/javascript" src="../js/client.js"></script>
+<script type="text/javascript" src="../js/messageboxnotitle.js"></script>
+<script type="text/javascript" src="../js/drag_v1.0.js"></script>
+<script type="text/javascript" src="../js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="../jiayuan_cs_js/association_manage.js"></script>
+</head>
+<body>
+<center>学校:
+  <label id="univ_name"></label>
+</center>
+  <div id="list">
+  </div>
+  <div id="pages">
+  </div>
+
+
+<script type="text/javascript" language="javascript">
+
+$(function(){
+        univ_id = ${university_id};
+        $("#univ_name").html( "${university_name}" );
+	    //$("#list").html("");
+	    $("#list").load( '../association/list/' + univ_id + "-1" );
+})
+
+</script>    
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+﻿<#include "header.html"/>
+<#include "footer.html"/>
+<@header logged/>
+
+<div class="table_box" align="center">
+	<table width="800" class="list" border="0">
+	<tr>
+	<td><input type="hidden" value="${(resume.id)!}" /></td>
+	</tr>
+	<tr>
+	<a href="${path!}/experience/add/${(resume.id)!}">添加工作经验</a>
+	</tr>
+		<tbody>
+			<tr>
+            	<th width="1%"></th>
+				<th width="20%">企业名称</th>
+                <th width="8%">行业类别</th>
+                <th width="14%">职位名称</th>
+				<th width="14%">操作</th>
+			</tr>
+			
+			<#list experienceList as x>
+			<tr>
+            <td>
+            <input type="hidden" value="${(x.id)!}" />
+            </td>
+				<td style="text-align:center;">${(x.enterprise)!}</td>
+               <td style="text-align:center;">${(x.vocation)!}</td> 
+                <td style="text-align:center;">${(x.job)!}
+                </td>
+				<td style="text-align:center;">
+                	<a href="${path!}/experience/edit/${(x.id)!}">修改</a>
+					&nbsp;&nbsp;<a href="${path!}/experience/delete/${(x.id)!}">删除</a>
+				</td>
+			</tr>
+			</#list>
+		</tbody>
+	</table>
+</div>
+
+<@footer/>

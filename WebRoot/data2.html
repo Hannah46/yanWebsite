@@ -1,0 +1,1062 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+
+<link type="text/css" href="css/commen.css" rel="stylesheet"/>
+<style type="text/css">
+    body{background:none;}
+</style>
+
+</head>
+<body>
+<!--区域弹出层-->
+<script type="text/javascript" src="js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="js/jscommen.js"></script>
+
+<div >
+  <div class="zhilei  ">
+    <div class="popupBox" style="height:800px;">
+      <div class="lp"></div>
+      <div class="mp">
+        <div class="areaCon">
+          <div  class="tl">已选择：</div>
+          <div class="tm" id="selected"> </div>
+          <div class="promptBox" style=" margin-left:450px; margin-top:30px; position:absolute; display:none " id="AreaValadate">
+            <div class="arrowRedL png"></div>
+            <div class="promptConShadowL">
+              <div class="promptRedCon"> 您好，最多只能选择10个类别！ </div>
+            </div>
+          </div>
+          <div class="tr">
+            <button onclick="sub2()" class="gbtn80 png">确定</button>
+            <input type="button" class="gbtn80 png" onclick="top.m2.Close()" value="取 消"/>
+          </div>
+          <div class="popLine"></div>
+          <div id="province" class="smaCity"  >
+		  <div  style="background-color:#66CCFF;border:1px solid #CCCCCC;" id="hotcity"  onclick="hotcity();">热门城市</div>
+		  <div  class="fl" style="background-color: #FFFFFF" id="hotcity1" >
+<table>
+		  <tr><td width="124"><input type="checkbox"  onclick="selectCity(1201,'北京')" value="北京" id="1201"/>北京&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		 <td width="131"> <input type="checkbox"  onclick="selectCity(1202,'上海')" value="上海" id="1202"/>上海&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		  <td width="137"><input type="checkbox" onclick="selectCity(1203,'广州')" value="广州" id="1203"/>广州&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		  <td width="137"><input type="checkbox" onclick="selectCity(1204,'深圳')" value="深圳" id="1204"/>深圳&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		  <td width="124"><input type="checkbox" onclick="selectCity(1205,'天津')"  id="1205" value="天津" />天津&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		  <td width="124"><input type="checkbox"  onclick="selectCity(1206,'武汉')"  id="1206" value="武汉"/>武汉&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		  <td width="134"><input type="checkbox" onclick="selectCity(1207,'西安')"  id="1207" value="西安"/>西安&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+		  
+		  <tr><td height="23"><input type="checkbox" onclick="selectCity(1208,'成都')"  id="1208" value="成都"/>成都&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		  <td><input type="checkbox"onclick="selectCity(1209,'大连')"  id="1209"  value="大连"/>大连&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		 <td> <input type="checkbox"  onclick="selectCity(1210,'长春')"  id="1210" value="长春"/>长春&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		  <td><input type="checkbox"onclick="selectCity(1211,'沈阳')"  id="1211"  value="沈阳"/>沈阳&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		  <td><input type="checkbox" onclick="selectCity(1212,'南京')"  id="1212" value="南京"/>南京&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		  <td><input type="checkbox" onclick="selectCity(1213,'济南')"  id="1213" value="济南"/>济南&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		  <td><input type="checkbox"  onclick="selectCity(1214,'青岛')"  id="1214" value="青岛"/>青岛&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+		  
+		  <tr><td><input type="checkbox"onclick="selectCity(1215,'杭州')"  id="1215"  value="杭州"/>杭州&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		 <td><input type="checkbox" onclick="selectCity(1216,'苏州')"  id="1216" value="苏州"/>苏州&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		  <td><input type="checkbox" onclick="selectCity(1217,'无锡')"  id="1217" value="无锡"/>无锡&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		  <td><input type="checkbox"onclick="selectCity(1218,'宁波')"  id="1218"  value="宁波"/>宁波&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		  <td><input type="checkbox"onclick="selectCity(1219,'重庆')"  id="1219"  value="重庆"/>重庆&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		  <td><input type="checkbox" onclick="selectCity(1220,'郑州')"  id="1220" value="郑州"/>郑州&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		  <td><input type="checkbox"onclick="selectCity(1221,'长沙')"  id="1221"  value="长沙"/>长沙&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+		  
+		 <tr> <td><input type="checkbox"onclick="selectCity(1222,'福州')"  id="1222"  value="福州"/>福州&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		 <td> <input type="checkbox"onclick="selectCity(1223,'厦门')"  id="1223"  value="厦门"/>厦门
+		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		 <td> <input type="checkbox" onclick="selectCity(1224,'哈尔滨')"  id="1224" value="哈尔滨"/>哈尔滨&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		 <td> <input type="checkbox"onclick="selectCity(1225,'石家庄')"  id="1225"  value="石家庄"/>石家庄&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		  <td><input type="checkbox"onclick="selectCity(1226,'合肥')"  id="1226"  value="合肥"/>合肥&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		  <td><input type="checkbox"onclick="selectCity(1227,'惠州')"  id="1227"  value="惠州"/>惠州&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		  <td><input type="checkbox" onclick="selectCity(1228,'太原')"  id="1228" value="太原"/>太原&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+		  
+		 <tr> <td><input type="checkbox"onclick="selectCity(1229,'昆明')"  id="1229"  value="昆明"/>昆明&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		  <td><input type="checkbox" onclick="selectCity(1230,'烟台')"  id="1230" value="烟台"/>烟台&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		  <td><input type="checkbox" onclick="selectCity(1231,'佛山')"  id="1231" value="佛山"/>佛山&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		 <td> <input type="checkbox" onclick="selectCity(1232,'南昌')"  id="1232" value="南昌"/>南昌&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		 <td> <input type="checkbox"onclick="selectCity(1233,'贵阳')"  id="1233"  value="贵阳"/>贵阳&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td></td><td></td></tr>
+ </table>
+</div>
+		
+<div style="background-color:#66CCFF;border:1px solid #CCCCCC;" id="city"  onclick="city();">省市</div>
+<div  id="citys" >
+<table width="398"  id="table">
+<tr><td width="36" height="30" ><a  href="javascript:openCityJS('1000','江苏');">江苏</a></td>
+<td width="28"><a href="javascript:openCityGD('2000','广东');">广东 </a></td>
+<td width="28"><a href="javascript:openCityHB('3000','湖北');">湖北</a></td>
+ <td width="28"><a href="javascript:openCitySX('4000','山西');">山西 </a></td> 
+<td width="28"><a href="javascript:openCitySHX('5000','陕西');">陕西</a></td>
+<td width="28"><a href="javascript:openCityLN('6000','辽宁');">辽宁 </a></td>
+ <td width="112"><a href="javascript:openCityJL('7000','吉林');">吉林 </a></td>
+</tr>
+          
+<tr><td><a href="javascript:openCitySD('8000','山东');">山东 </a>
+</td> <td><a href="javascript:openCityZJ('9000','浙江');">浙江</a>
+</td> <td><a href="javascript:openCityGX('10000','广西');">广西</a>
+</td> 
+<td><a href="javascript:openCityAH('11000','安徽');">安徽 </a>
+ </td>
+<td><a href="javascript:openCityHEB('12000','河北');">河北 </a>
+ </td>
+<td><a href="javascript:openCityNM('13000','内蒙');">内蒙 </a>
+</td>
+<td><a href="javascript:openCityHLJ('14000','黑龙江');">黑龙江 </a></td></tr>
+
+<tr><td><a href="javascript:openCityFJ('15000','福建');">福建</a></td>
+ <td><a href="javascript:openCityJX('16000','江西');">江西</a></td>
+ <td><a href="javascript:openCityHEN('17000','河南');">河南</a></td>
+ <td><a href="javascript:openCityHN('18000','湖南');">湖南</a></td>
+ <td><a href="javascript:openCityHAIN('19000','海南');">海南</a></td>
+<td><a href="javascript:openCityGZ('20000','贵州');">贵州</a></td>
+<td><a href="javascript:openCityYN('21000','云南');">云南</a></td></tr>
+<tr><td><a href="javascript:openCityXZ('22000','西藏');">西藏</a></td>
+<td><a href="javascript:openCityGS('23000','甘肃');">甘肃</a></td>
+<td><a href="javascript:openCityQH('24000','青海');">青海</a></td>
+ <td><a href="javascript:openCityNX('25000','宁夏');">宁夏</a></td>
+ <td><a href="javascript:openCityXJ('26000','新疆');">新疆</a></td>
+ <td> <a href="javascript:openCitySC('30000','四川');">四川</a></td>
+<td> <input type="checkbox" onclick="selectCity(1234,'香港')"  id="1234"  value="香港"/>香港</td>
+</tr>
+
+<tr><td><input type="checkbox" onclick="selectCity(1235,'澳门 ')"  id="1235"  value="澳门"/>澳门</td>
+<td> <input type="checkbox" onclick="selectCity(1236,'台湾')"  id="1236"  value="台湾"/>台湾</td></tr>
+
+</table>
+</div>
+
+
+
+ <div  style="background-color:#66CCFF;border:1px solid #CCCCCC;" id="abroadcity"  onclick="abroadcity();">国外</div>
+ <div  class="fl" style="width:auto;" id="abroad" >
+<table>
+<tr><td><input type="checkbox"  onclick="selectCity(2001,'阿根廷')" value="阿根廷" id="2001"/>阿根廷&nbsp;&nbsp;&nbsp;&nbsp;</td>
+ <td> <input type="checkbox"  onclick="selectCity(2002,'澳大利亚')" value="澳大利亚" id="2002"/>澳大利亚&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td><input type="checkbox" onclick="selectCity(2003,'奥地利')" value="奥地利" id="2003"/>奥地利&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+ <td><input type="checkbox" onclick="selectCity(2004,'白俄罗斯')" value="白俄罗斯" id="2004"/>白俄罗斯&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		  <td><input type="checkbox" onclick="selectCity(2005,'比利时')"  id="2005" value="比利时" />比利时&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		  <td><input type="checkbox"  onclick="selectCity(2006,'巴西')"  id="2006" value="巴西"/>巴西&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		  <td><input type="checkbox" onclick="selectCity(2007,'保加利亚')"  id="2007" value="保加利亚"/>保加利亚&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+		  
+		  
+ <tr><td height="23"><input type="checkbox" onclick="selectCity(2008,'加拿大')"  id="2008" value="加拿大"/>加拿大&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td><input type="checkbox"onclick="selectCity(2009,'塞浦路斯')"  id="2009"  value="塞浦路斯"/>塞浦路斯&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		 <td> <input type="checkbox"  onclick="selectCity(2010,'捷克')"  id="2010" value="捷克"/>捷克&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		  <td><input type="checkbox"onclick="selectCity(2011,'丹麦')"  id="2011"  value="丹麦"/>丹麦&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		  <td><input type="checkbox" onclick="selectCity(2012,'埃及')"  id="2012" value="南京"/>埃及&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		  <td><input type="checkbox" onclick="selectCity(2013,'芬兰')"  id="2013" value="芬兰"/>芬兰&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		  <td><input type="checkbox"  onclick="selectCity(2014,'法国')"  id="2014" value="法国"/>法国&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+		  
+<tr><td><input type="checkbox"onclick="selectCity(2015,'德国')"  id="2015"  value="德国"/>德国&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		 <td><input type="checkbox" onclick="selectCity(2016,'希腊')"  id="2016" value="希腊"/>希腊&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		  <td><input type="checkbox" onclick="selectCity(2017,'爱尔兰')"  id="2017" value="匈牙利"/>爱尔兰&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		  <td><input type="checkbox"onclick="selectCity(2018,'匈牙利')"  id="2018"  value="匈牙利"/>匈牙利&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		  <td><input type="checkbox"onclick="selectCity(2019,'冰岛')"  id="1019"  value="冰岛"/>冰岛&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		  <td><input type="checkbox" onclick="selectCity(2020,'印度')"  id="1020" value="印度"/>印度&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		  <td><input type="checkbox"onclick="selectCity(2021,'印度尼西亚')"  id="1021"  value="印度尼西亚"/>印度尼西亚&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+	 
+<tr> <td><input type="checkbox"onclick="selectCity(2022,'以色列')"  id="2022"  value="以色列"/>以色列&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+ <td> <input type="checkbox"onclick="selectCity(2023,'以色列')"  id="2023"  value="以色列"/>以色列
+		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td> <input type="checkbox" onclick="selectCity(2024,'日本')"  id="2024" value="日本"/>日本&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td> <input type="checkbox"onclick="selectCity(2025,'韩国')"  id="2025"  value="韩国"/>韩国&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td><input type="checkbox"onclick="selectCity(2026,'科威特')"  id="2026"  value="科威特"/>科威特&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td><input type="checkbox"onclick="selectCity(2027,'马来西亚')"  id="2027"  value="马来西亚"/>马来西亚&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		  <td><input type="checkbox" onclick="selectCity(2028,'荷兰')"  id="2028" value="荷兰"/>荷兰&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+		  
+<tr> <td><input type="checkbox"onclick="selectCity(2029,'新西兰')"  id="2029"  value="新西兰"/>新西兰&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		  <td><input type="checkbox" onclick="selectCity(2030,'挪威')"  id="2030" value="挪威"/>挪威&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		  <td><input type="checkbox" onclick="selectCity(2031,'巴基斯坦')"  id="2031" value="巴基斯坦"/>巴基斯坦&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		 <td> <input type="checkbox" onclick="selectCity(2032,'波兰')"  id="波兰" value="波兰"/>波兰&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td> <input type="checkbox"onclick="selectCity(2033,'葡萄牙')"  id="2033"  value="葡萄牙"/>葡萄牙&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		 <td> <input type="checkbox"onclick="selectCity(2 034,'俄罗斯联邦')"  id="2034"  value="俄罗斯联邦"/>俄罗斯联邦&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		 <td> <input type="checkbox"onclick="selectCity(2035,'沙特阿拉伯')"  id="2035"  value="沙特阿拉伯"/>沙特阿拉伯&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr> 
+
+<tr> <td> <input type="checkbox"onclick="selectCity(2 036,'新加坡')"  id="2036"  value="新加坡"/>新加坡&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td> <input type="checkbox"onclick="selectCity(2037,'南非')"  id="2037"  value="南非"/>南非&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td><input type="checkbox"onclick="selectCity(2039,'西班牙')"  id="2038"  value="西班牙"/>西班牙&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td><input type="checkbox"onclick="selectCity(2040,'瑞典')"  id="2040"  value="瑞典"/>瑞典&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td><input type="checkbox"onclick="selectCity(2041,'泰国')"  id="2041"  value="泰国"/>泰国&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td><input type="checkbox"onclick="selectCity(2042,'瑞士')"  id="2042"  value="瑞士"/>瑞士&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td><input type="checkbox"onclick="selectCity(2043,'土耳其')"  id="2043"  value="土耳其"/>土耳其&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr> 
+
+<tr><td> <input type="checkbox"onclick="selectCity(2044,'乌克兰')"  id="2044"  value="乌克兰"/>乌克兰&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td><input type="checkbox"onclick="selectCity(2045,'英国')"  id="2045"  value="英国"/>英国&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td><input type="checkbox"onclick="selectCity(2046,'美国')"  id="2046"  value="美国"/>美国&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td><input type="checkbox"onclick="selectCity(2047,'越南')"  id="2047"  value="越南"/>越南&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td><input type="checkbox"onclick="selectCity(2048,'安哥拉')"  id="2048"  value="安哥拉"/>安哥拉&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td><input type="checkbox"onclick="selectCity(2049,'加纳')"  id="2049"  value="加纳"/>加纳&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>	
+<td><input type="checkbox"onclick="selectCity(2050,'尼日利亚')"  id="2050"  value="尼日利亚"/>尼日利亚&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr> 
+
+<tr> <td><input type="checkbox"onclick="selectCity(2051,'坦桑尼亚')"  id="2051"  value="坦桑尼亚"/>坦桑尼亚&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td><input type="checkbox"onclick="selectCity(2052,'乌干达')"  id="2052"  value="乌干达"/>乌干达&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td><input type="checkbox"onclick="selectCity(2053,'其他')"  id="2053"  value="乌干达"/>葡萄牙&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td><input type="checkbox"onclick="selectCity(2054,'塞内加尔')"  id="2054"  value="塞内加尔"/>塞内加尔&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td><input type="checkbox"onclick="selectCity(2055,'阿尔及利亚')"  id="2055"  value="其他"/>其他&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>	</tr> 
+ </table>
+</div>
+
+</div>
+          <div class="smaCityChild" id="hidden_div11" style="display:none;">
+            <div class="t png"></div>
+            <div class="m png">
+              <div class="tit" id="provincename"></div>
+              <div class="smaCityChildbox" id="theCity"></div>
+            </div>
+            <div class="bot">
+              <input type="button" class="close_sma" value=""  id="smaCityChildClose" />
+            </div>
+            <div class="b png"></div>
+          </div>
+        </div>
+      </div>
+      <div class="lp"></div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+    $(function () {
+        document.getElementById('selected').innerHTML= top.document.getElementById('RegionJobBusinessTag3').innerHTML;
+        $("#smaCityChildClose").click(function () {
+            $("#hidden_div11").hide();
+        });
+    });
+    function selectCity(id, name) {
+        //最大选择5个
+        var SelectedCount = 1;
+        $("#selected span").each(function () {
+            SelectedCount = SelectedCount + 1;
+        });
+        if (SelectedCount <= 10) {
+            if ($('#' + id).attr('checked') == true) {
+                var str = "";
+                str += "<span ty='r' id='" + id + "_ed'>";
+                str += "<a href=\"#\">" + name + "</a>";
+                str += "<input type='button' onclick='del(" + id + ")' name='selectedCity'  id='" + id + "_ch' class=\"city_det\" />";
+                str += "</span>";
+                if ($("#selected").html().indexOf(id) == -1) {
+                    $("#selected").append(str);
+                }
+                $("#AreaValadate").hide();
+            }
+            else {
+                $("#AreaValadate").hide();
+                del(id);
+            }
+        }
+        else {
+
+            $('#' + id).attr('checked', false);
+             del(id); 
+            $("#AreaValadate").show();
+                    
+        }
+    }
+    function del(id) {
+        $("#AreaValadate").hide();
+        $('#' + id).attr('checked', false);
+        $('#' + id + '_ed').remove();
+    }
+    function openCityJS(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'南京','Value':1301},{'Key':'苏州','Value':1302},{'Key':'昆山','Value':1303},{'Key':'常熟','Value':1304},{'Key':'张家港','Value':1305},{'Key':'无锡','Value':1306},{'Key':'徐州','Value':1307},{'Key':'常州','Value':1308},{'Key':'江阴','Value':1309},{'Key':'南通','Value':1310},{'Key':'连云港','Value':1311},{'Key':'淮安','Value':1312},{'Key':'盐城','Value':1313},{'Key':'扬州','Value':1314},{'Key':'镇江','Value':1315},{'Key':'泰州','Value':1316},{'Key':'靖江','Value':1317},{'Key':'宿迁','Value':1318},{'Key':'太仓市','Value':1319},{'Key':'句容','Value':1320},{'Key':'宜兴','Value':1321},{'Key':'如皋','Value':1322},{'Key':'丹阳','Value':1323},{'Key':'扬中','Value':1324},{'Key':'高邮','Value':1325},{'Key':'启东','Value':1326},{'Key':'泰兴','Value':1327},{'Key':'溧阳','Value':1328},{'Key':'盱眙','Value':1329},{'Key':'通州','Value':1330},{'Key':'金湖','Value':1331}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+ 
+ function openCityGD(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'广州','Value':1401},{'Key':'韶关','Value':1402},{'Key':'深圳','Value':1403},{'Key':'珠海','Value':1404},{'Key':'汕头','Value':1405},{'Key':'佛山','Value':1406},{'Key':'江门','Value':1407},{'Key':'湛江','Value':1408},{'Key':'茂名','Value':1409},{'Key':'肇庆','Value':1410},{'Key':'惠州','Value':1411},{'Key':'梅州','Value':1412},{'Key':'汕尾','Value':1413},{'Key':'河源','Value':1414},{'Key':'阳江','Value':1415},{'Key':'清远','Value':1416},{'Key':'东莞','Value':1417},{'Key':'中山','Value':1418},{'Key':'潮州','Value':1419},{'Key':'揭阳','Value':1420},{'Key':'云浮','Value':1421},{'Key':'台山','Value':1422},{'Key':'普宁','Value':1423},{'Key':'南沙开发区','Value':1424},{'Key':'龙川','Value':1425},{'Key':'鹤山','Value':1426},{'Key':'开平','Value':1427}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+
+
+
+function openCityHB(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'武汉','Value':1501},{'Key':'黄石','Value':1502},{'Key':'十堰','Value':1503},{'Key':'宜昌','Value':1504},{'Key':'襄阳','Value':1505},{'Key':'鄂州','Value':1506},{'Key':'荆门','Value':1507},{'Key':'孝感','Value':1508},{'Key':'荆州','Value':1509},{'Key':'黄冈','Value':1510},{'Key':'咸宁','Value':1511},{'Key':'公安','Value':1512},{'Key':'武穴','Value':1513},{'Key':'天门','Value':1514},{'Key':'仙桃','Value':1515},{'Key':'潜江','Value':1516},{'Key':'宜城','Value':1517},{'Key':'神农架','Value':1518},{'Key':'恩施土家族苗族自治州','Value':1519}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+
+
+function openCitySX(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'太原','Value':1601},{'Key':'大同','Value':1602},{'Key':'阳泉','Value':1603},{'Key':'长治','Value':1604},{'Key':'晋城','Value':1605},{'Key':'朔州','Value':1606},{'Key':'运城','Value':1607},{'Key':'晋中','Value':1608},{'Key':'忻州','Value':1609},{'Key':'临汾','Value':1610},{'Key':'吕梁','Value':1611},{'Key':'永济市','Value':1612},{'Key':'和顺','Value':1613}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	
+	
+	function openCitySHX(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'西安','Value':1701},{'Key':'铜川','Value':1702},{'Key':'宝鸡','Value':1703},{'Key':'咸阳','Value':1704},{'Key':'渭南','Value':1705},{'Key':'延安','Value':1706},{'Key':'延安','Value':1707},{'Key':'汉中','Value':1708},{'Key':'荆州','Value':1709},{'Key':'黄冈','Value':1710},{'Key':'咸宁','Value':1711},{'Key':'公安','Value':1712},{'Key':'武穴','Value':1713},{'Key':'榆林','Value':1714},{'Key':'安康','Value':1715},{'Key':'安康','Value':1716},{'Key':'商洛','Value':1717},{'Key':'兴平','Value':1718},{'Key':'杨凌','Value':1719}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+
+function openCityLN(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'大连','Value':1801},{'Key':'沈阳','Value':1802},{'Key':'鞍山','Value':1803},{'Key':'抚顺','Value':1804},{'Key':'本溪','Value':1805},{'Key':'丹东','Value':1806},{'Key':'锦州','Value':1807},{'Key':'营口','Value':1808},{'Key':'阜新','Value':1809},{'Key':'辽阳','Value':1810},{'Key':'盘锦','Value':1811},{'Key':'铁岭','Value':1812},{'Key':'朝阳','Value':1813},{'Key':'葫芦岛','Value':1814},{'Key':'兴城','Value':1815},{'Key':'海城','Value':1816},{'Key':'昌图','Value':1817},{'Key':'开原','Value':1818}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	function openCityJL(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'长春','Value':1901},{'Key':'吉林市','Value':1902},{'Key':'四平','Value':1903},{'Key':'辽源','Value':1904},{'Key':'通化','Value':1905},{'Key':'白山','Value':1906},{'Key':'松原','Value':1907},{'Key':'白城','Value':1908},{'Key':'公主岭','Value':1909},{'Key':'延边朝鲜族自治州','Value':1910}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+
+
+function openCitySD(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'济南','Value':2201},{'Key':'青岛','Value':2202},{'Key':'淄博','Value':2203},{'Key':'枣庄','Value':2204},{'Key':'东营','Value':2205},{'Key':'烟台','Value':2206},{'Key':'潍坊','Value':2207},{'Key':'济宁','Value':2208},{'Key':'泰安','Value':2209},{'Key':'威海','Value':2210},{'Key':'日照','Value':2211},{'Key':'莱芜','Value':2212},{'Key':'临沂','Value':2213},{'Key':'德州','Value':2214},{'Key':'聊城','Value':2215},{'Key':'滨州','Value':2216},{'Key':'菏泽','Value':2217},{'Key':'荣成','Value':2218},{'Key':'黄岛','Value':2219},{'Key':'乳山','Value':2220},{'Key':'肥城','Value':2221},{'Key':'兖州','Value':2222},{'Key':'胶州','Value':2223},{'Key':'海阳','Value':2224},{'Key':'胶南','Value':2225},{'Key':'平度','Value':2226},{'Key':'莱西','Value':2227}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+
+
+function openCityZJ(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'杭州','Value':2301},{'Key':'宁波','Value':2302},{'Key':'温州','Value':2303},{'Key':'嘉兴','Value':2304},{'Key':'湖州','Value':2305},{'Key':'绍兴','Value':2306},{'Key':'金华','Value':2307},{'Key':'衢州','Value':2308},{'Key':'舟山','Value':2309},{'Key':'台州','Value':2310},{'Key':'丽水','Value':2311},{'Key':'玉环县','Value':2312},{'Key':'义乌','Value':2313},{'Key':'平湖','Value':2314},{'Key':'永康','Value':2315},{'Key':'东阳','Value':2316},{'Key':'嘉善','Value':2317},{'Key':'余姚','Value':2318},{'Key':'慈溪','Value':2319},{'Key':'乐清','Value':230},{'Key':'永嘉','Value':2321},{'Key':'桐乡','Value':2322},{'Key':'瑞安','Value':2323},{'Key':'温岭','Value':2324},{'Key':'上虞','Value':2325},{'Key':'诸暨','Value':2326},{'Key':'海宁','Value':2327},{'Key':'宁海','Value':2328},{'Key':'三门','Value':2329},{'Key':'德清','Value':2330},{'Key':'象山','Value':2331},{'Key':'方家山','Value':2332},{'Key':'龙泉','Value':2333}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+
+
+
+function openCityGX(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'南宁','Value':2401},{'Key':'柳州','Value':2402},{'Key':'桂林','Value':2403},{'Key':'梧州','Value':2404},{'Key':'防城港','Value':2405},{'Key':'北海','Value':2406},{'Key':'钦州','Value':2407},{'Key':'贵港','Value':2408},{'Key':'玉林','Value':2409},{'Key':'百色','Value':24210},{'Key':'贺州','Value':2411},{'Key':'河池','Value':2412},{'Key':'义乌','Value':2413},{'Key':'来宾','Value':2414},{'Key':'崇左','Value':2415}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	
+	
+	function openCityAH(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'合肥','Value':2501},{'Key':'芜湖','Value':2502},{'Key':'蚌埠','Value':2503},{'Key':'淮南','Value':2504},{'Key':'马鞍山','Value':2505},{'Key':'淮北','Value':2506},{'Key':'铜陵','Value':2507},{'Key':'安庆','Value':2508},{'Key':'黄山','Value':2509},{'Key':'滁州','Value':2510},{'Key':'阜阳','Value':2511},{'Key':'宿州','Value':2512},{'Key':'巢湖','Value':2513},{'Key':'六安','Value':2514},{'Key':'亳州','Value':1015},{'Key':'池州','Value':1016},{'Key':'宣城','Value':1017},{'Key':'凤阳','Value':2518},{'Key':'广德','Value':2519},{'Key':'宿松','Value':2520}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	
+	
+	
+	function openCityHEB(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'石家庄','Value':2601},{'Key':'唐山','Value':2602},{'Key':'秦皇岛','Value':2603},{'Key':'邯郸','Value':2604},{'Key':'邢台','Value':2605},{'Key':'保定','Value':2606},{'Key':'张家口','Value':2607},{'Key':'承德','Value':2608},{'Key':'承德','Value':2609},{'Key':'沧州','Value':2610},{'Key':'廊坊','Value':2611},{'Key':'衡水','Value':2612},{'Key':'燕郊开发区','Value':2613},{'Key':'固安','Value':2614},{'Key':'遵化','Value':2615},{'Key':'香河','Value':2616},{'Key':'三河','Value':2617}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	
+	
+	function openCityNM(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'呼和浩特','Value':2701},{'Key':'包头','Value':2702},{'Key':'乌海','Value':2703},{'Key':'赤峰','Value':2704},{'Key':'通辽','Value':2705},{'Key':'鄂尔多斯','Value':2706},{'Key':'呼伦贝尔','Value':2707},{'Key':'兴安盟','Value':2708},{'Key':'锡林郭勒盟','Value':2709},{'Key':'乌兰察布','Value':2710},{'Key':'巴彦淖尔','Value':2711},{'Key':'阿拉善盟','Value':2712},{'Key':'乌审旗','Value':2713},{'Key':'满洲里','Value':2714}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	
+	
+	
+	
+	
+	function openCityHLJ(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'哈尔滨','Value':2801},{'Key':'齐齐哈尔','Value':2802},{'Key':'鸡西','Value':2803},{'Key':'鹤岗','Value':2804},{'Key':'双鸭山','Value':2805},{'Key':'大庆','Value':2806},{'Key':'伊春','Value':2807},{'Key':'佳木斯','Value':2808},{'Key':'七台河','Value':2809},{'Key':'牡丹江','Value':2810},{'Key':'黑河','Value':2811},{'Key':'绥化','Value':2812},{'Key':'大兴安岭','Value':2813},{'Key':'安达','Value':2814},{'Key':'双城','Value':2815},{'Key':'尚志','Value':2816},{'Key':'绥芬河','Value':2817},{'Key':'绥芬河','Value':2818}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	
+	
+	function openCityFJ(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'福州','Value':2901},{'Key':'厦门','Value':2902},{'Key':'莆田','Value':2903},{'Key':'三明','Value':2904},{'Key':'泉州','Value':2905},{'Key':'泉港区','Value':2906},{'Key':'南平','Value':2907},{'Key':'漳州','Value':2908},{'Key':'龙岩','Value':2909},{'Key':'宁德','Value':2910},{'Key':'福安','Value':2911},{'Key':'晋江','Value':2912}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	
+	
+	
+	function openCityJX(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'南昌','Value':3101},{'Key':'景德镇','Value':3102},{'Key':'萍乡','Value':3103},{'Key':'九江','Value':3104},{'Key':'新余','Value':3105},{'Key':'鹰潭','Value':3106},{'Key':'赣州','Value':3107},{'Key':'吉安','Value':3108},{'Key':'宜春','Value':3109},{'Key':'抚州','Value':3110},{'Key':'上饶','Value':3111},{'Key':'晋江','Value':3112}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	
+	
+	
+	
+	function openCityHEN(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'郑州','Value':3201},{'Key':'洛阳','Value':3202},{'Key':'开封','Value':3203},{'Key':'平顶山','Value':324},{'Key':'安阳','Value':3205},{'Key':'鹤壁','Value':3206},{'Key':'新乡','Value':3207},{'Key':'焦作','Value':3208},{'Key':'濮阳','Value':3209},{'Key':'许昌','Value':3210},{'Key':'漯河','Value':3211},{'Key':'三门峡','Value':3212},{'Key':'南阳','Value':3213},{'Key':'商丘','Value':3214},{'Key':'商丘','Value':3215},{'Key':'周口','Value':3216},{'Key':'驻马店','Value':3217},{'Key':'驻马店','Value':3218},{'Key':'济源','Value':3219},{'Key':'西平','Value':3220},{'Key':'长葛','Value':3221}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	
+	
+	
+	
+	function openCityHN(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'长沙','Value':3301},{'Key':'株洲','Value':3302},{'Key':'湘潭','Value':3303},{'Key':'衡阳','Value':3304},{'Key':'邵阳','Value':3305},{'Key':'岳阳','Value':3306},{'Key':'常德','Value':3307},{'Key':'张家界','Value':3308},{'Key':'益阳','Value':3309},{'Key':'郴州','Value':3310},{'Key':'永州','Value':3311},{'Key':'怀化','Value':3312},{'Key':'娄底','Value':3313},{'Key':'湘西土家族苗族自治州','Value':3314}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	
+	
+	function openCityHAIN(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'海口','Value':3401},{'Key':'琼海','Value':3402},{'Key':'三亚','Value':3403},{'Key':'儋州','Value':3404},{'Key':'五指山','Value':3405},{'Key':'文昌','Value':3406},{'Key':'东方','Value':3407},{'Key':'定安','Value':3408},{'Key':'屯昌','Value':3409},{'Key':'澄迈','Value':3410},{'Key':'临高','Value':3411},{'Key':'琼中黎族苗族自治县','Value':3412},{'Key':'洋浦市/洋浦经济开发区','Value':3413},{'Key':'保亭黎族苗族自治县','Value':3414},{'Key':'白沙黎族自治县','Value':3415},{'Key':'昌江黎族自治县','Value':3416},{'Key':'乐东黎族自治县','Value':3417},{'Key':'','Value':3418}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	
+	
+	function openCityGZ(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'贵阳','Value':3501},{'Key':'六盘水','Value':3502},{'Key':'遵义','Value':3503},{'Key':'安顺','Value':3504},{'Key':'铜仁','Value':3505},{'Key':'毕节','Value':3506},{'Key':'黔西南布依族苗族自治州','Value':3507},{'Key':'黔东南苗族侗族自治州','Value':3508},{'Key':'黔南布依族苗族自治州','Value':3509}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	
+	
+	function openCityYN(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'昆明','Value':3601},{'Key':'曲靖','Value':3602},{'Key':'玉溪','Value':3603},{'Key':'保山','Value':3604},{'Key':'昭通','Value':3605},{'Key':'楚雄彝族自治州','Value':3606},{'Key':'红河哈尼族彝族自治州','Value':3607},{'Key':'文山壮族苗族自治州','Value':3608},{'Key':'思茅','Value':3609},{'Key':'西双版纳傣族自治州','Value':3610},{'Key':'大理白族自治州','Value':3611},{'Key':'德宏傣族景颇族自治州','Value':3612},{'Key':'丽江','Value':3613},{'Key':'怒江傈僳族自治州','Value':3614},{'Key':'迪庆藏族自治州','Value':3615},{'Key':'临沧','Value':3616},{'Key':'普洱','Value':3617}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	
+	
+	
+	function openCityXZ(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'拉萨','Value':3701},{'Key':'昌都','Value':3702},{'Key':'山南','Value':3703},{'Key':'日喀则','Value':3704},{'Key':'那曲','Value':3705},{'Key':'阿里','Value':3706},{'Key':'林芝','Value':3707}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	
+	
+	function openCityGS(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'兰州','Value':3801},{'Key':'金昌','Value':3802},{'Key':'嘉峪关','Value':3803},{'Key':'白银','Value':3804},{'Key':'天水','Value':3805},{'Key':'武威','Value':3806},{'Key':'张掖','Value':3807},{'Key':'平凉','Value':3808},{'Key':'酒泉','Value':3809},{'Key':'庆阳','Value':3810},{'Key':'定西','Value':3811},{'Key':'陇南','Value':3812},{'Key':'临夏回族自治州','Value':3813},{'Key':'甘南藏族自治州','Value':3814}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	
+	
+	function openCityQH(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'西宁','Value':3901},{'Key':'海东','Value':3902},{'Key':'海北藏族自治州','Value':3903},{'Key':'黄南藏族自治州','Value':3904},{'Key':'海南藏族自治州','Value':3905},{'Key':'果洛藏族自治州','Value':3906},{'Key':'玉树藏族自治州','Value':3907},{'Key':'海西蒙古族藏族自治州','Value':3908}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	
+	
+	function openCityNX(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'银川','Value':4001},{'Key':'石嘴山','Value':4002},{'Key':'吴忠','Value':4003},{'Key':'固原','Value':4004},{'Key':'中卫','Value':4005}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	
+	
+	function openCityXJ(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'乌鲁木齐','Value':4101},{'Key':'克拉玛依','Value':4102},{'Key':'吐鲁番','Value':4103},{'Key':'哈密','Value':4104},{'Key':'昌吉回族自治州','Value':4105},{'Key':'博尔塔拉蒙古自治州','Value':4106},{'Key':'巴音郭楞蒙古自治州','Value':4107},{'Key':'阿克苏','Value':4105},{'Key':'克孜勒苏柯尔克孜自治州','Value':4108},{'Key':'喀什','Value':4109},{'Key':'和田','Value':4110},{'Key':'伊犁哈萨克自治州','Value':4111},{'Key':'塔城','Value':4112},{'Key':'阿勒泰','Value':4113},{'Key':'石河子','Value':4114},{'Key':'奎屯市','Value':4115},{'Key':'乌苏','Value':4116},{'Key':'阿拉尔','Value':4117},{'Key':'图木舒克','Value':4118},{'Key':'五家渠','Value':4119}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	
+	
+	function openCitySC(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'成都','Value':4201},{'Key':'自贡','Value':4202},{'Key':'攀枝花','Value':4203},{'Key':'泸州','Value':4204},{'Key':'德阳','Value':4205},{'Key':'绵阳','Value':4206},{'Key':'广元','Value':4207},{'Key':'遂宁','Value':4205},{'Key':'内江','Value':1008},{'Key':'乐山','Value':4209},{'Key':'南充','Value':4210},{'Key':'眉山','Value':4211},{'Key':'宜宾','Value':4212},{'Key':'广安','Value':4213},{'Key':'达州','Value':4214},{'Key':'雅安','Value':4215},{'Key':'巴中','Value':4216},{'Key':'资阳','Value':4217},{'Key':'阿坝藏族羌族自治州','Value':4218},{'Key':'甘孜藏族自治州','Value':4219},{'Key':'凉山彝族自治州','Value':4220},{'Key':'峨眉','Value':4221},{'Key':'西昌','Value':4222},{'Key':'简阳','Value':423}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+    function sub2() {
+        top.document.getElementById('RegionJobBusinessTag3').innerHTML = document.getElementById('selected').innerHTML;
+        var cityNames = "";
+        top.$("#RegionJobBusinessTag3 span a").each(function () {
+            cityNames += $(this).html() + " ";
+        });
+        top.$("#city").val(cityNames);
+		
+        var cityIDs = "";
+        top.$("#RegionJobBusinessTag3 span input").each(function () {
+            cityIDs += $(this).attr("id").toString().split('_')[0] + ",";
+        });
+        cityIDs = cityIDs.substring(0, cityIDs.length - 1);
+
+        top.m2.Close();
+    }
+
+        function request(paras) {
+        var url = location.href;
+        var paraString = url.substring(url.indexOf("?") + 1, url.length).split("&");
+        var paraObj = {}
+        for (i = 0; j = paraString[i]; i++) {
+            paraObj[j.substring(0, j.indexOf("=")).toLowerCase()] = j.substring(j.indexOf("=") + 1, j.length);
+        }
+        var returnValue = paraObj[paras.toLowerCase()];
+        if (typeof (returnValue) == "undefined") {
+            return "";
+        } else {
+            return returnValue;
+        }
+    }
+	
+	function hotcity(){
+$("#hotcity1").toggle();}
+
+	function city(){
+$("#citys").toggle();}
+
+	function abroadcity(){
+$("#abroad").toggle();}
+
+
+	
+	
+</script>
+</body>
+</html>

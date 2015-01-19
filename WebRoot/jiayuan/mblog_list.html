@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="${path}/js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="${path}/jiayuan_cs_js/mblog.js"></script></head>
+<body>
+<div id="blogs" >
+<#list pages.list as blogview>
+<div class="topic" style="width:540px;margin:0 auto;border-style:outset;margin-bottom:10px">
+  <div class="pict" style="float:left;width:128px">
+     <a href="${path}/mblog/comments_list/${blogview.id}-1">
+        <img name="p_logo" src="${path}/photo/show/${(blogview.pict1)!}" width="125" height="125">
+     </a>
+  </div>
+  <div style="float:left;width:400px">
+     <div class="nick"><a href="${path}/mblog/comments_list/${blogview.id}-1">${(blogview.name)!}</a></div>
+	 <div class="bcontent" style="min-height:140px">
+	    <div>${(blogview.content)!}</div>
+	    <#if blogview.photo1?? >
+	      <div><img name="b_photo" src="${path}/photo/show/${(blogview.photo1)!}"></div>
+	    </#if>
+	 </div>
+	 <div class="bpict">a</div>
+	 <div class="bfooter">
+	     <span style="float:left">
+		     <span>(${(blogview.pub_date)!})</span><span class="pipe"></span> <span onClick="report_it(${(blogview.id)!})">举报</span>
+		 </span>
+         <span style="float:right">
+		     <span id="agree${(blogview.id)!}" onClick="setCookie(${(blogview.id)!})">赞(${(blogview.agree)!})</span> <span class="pipe"></span> <span>评论(${(blogview.comments)!})</span>
+		 </span>
+     </div>
+</div>
+</#list>
+</div>
+<div style="clear:left;width:540px;margin:0 auto">
+	 <#include "_paginate.html" />
+	  <@paginate currentPage=pages.pageNumber totalPage=pages.totalPage actionUrl="" />
+</div>
+</body>
+
+
+</html>
+
+<script type="text/javascript">
+	function setCookie(id)
+	{		
+		//alert(document.cookie);
+			var cookieArray=document.cookie.split(";"); //得到分割的cookie名值对
+			for (var i=0;i<cookieArray.length;i++)
+			{
+				var arr=cookieArray[i].split("=");       //将名和值分开
+				if(arr[0]==id && arr[1]=="0")
+					{
+						alert("您操作的频率过于频繁，请休息一下吧！");
+						return;
+					}
+				}
+			agree(id);
+			var exp = new Date();
+			exp.setTime(exp.getTime() + 60*1000);
+			document.cookie = id + "=0" + ";expires=" + exp.toGMTString() + ";";
+		}
+</script>

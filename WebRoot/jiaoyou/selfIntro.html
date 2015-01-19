@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>自白</title>
+</head>
+
+<body>
+	<center>
+		<form id="selfIntro" name="selfIntro" method="post"
+			action="${path!}/user/updateSelfIntro">
+			<table width="925" height="281" border="0">
+            	<tr>
+					<td colspan="3">
+						<input type="hidden" value="${(user.id)!}" name="user.id" />
+					</td>
+				</tr>
+                
+				<tr>
+					<td width="82" height="34"><div align="right">自白</div></td>
+					<td width="168" height="34">
+                    	<textarea rows="10" cols="100" name="user.self_intro">${(user.self_intro)!}</textarea>
+                    </td>
+					<td width="174" height="34">${self_introMsg!}</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td colspan="2">&nbsp;</td>
+				</tr>
+		
+				<tr>
+					<td colspan="3"><div align="center">
+							<center>
+								<input type="submit" name="Submit" value="提交" />
+							</center>
+						</div></td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+				</tr>
+			</table>
+		</form>
+	</center>
+</body>
+</html>

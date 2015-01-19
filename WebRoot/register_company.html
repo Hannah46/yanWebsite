@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script type="text/javascript" src="${path!}/js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="${path!}/js/core.js"></script>
+<script type="text/javascript" src="${path!}/js/client.js"></script>
+<script type="text/javascript" src="${path!}/js/messageboxnotitle.js"></script>
+<script type="text/javascript" src="${path!}/js/drag_v1.0.js"></script>
+<script type="text/javascript" src="${path!}/js/jquery-1.4.4.min.js"></script>
+
+<title>用户注册</title>
+</head>
+
+<body>
+<div id="RegionJobBusinessTag3" style="display:none"></div>
+	<center>
+		<form id="form1" name="form1" method="post" action="${path!}/company/save">
+			<table width="398" border="0">
+				<tr>
+					<td width="82" height="34"><div align="right">*全称</div></td>
+					<td width="168" height="34"><input type="text"
+						name="company.fullname" value="${(company.fullname)!}"/></td>
+					<td width="134" height="34">${fullnameMsg!}</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td colspan="2">&nbsp;</td>
+				</tr>
+				<tr>
+					<td height="34"><div align="right">*城市</div></td>
+					<td><input id="city" name="company.city" type="text" value="${(company.city)!}" onkeypress="javascript:return false;" onclick="selectCity()" /></td>
+					<td>${cityMsg!}</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td colspan="2">&nbsp;</td>
+				</tr>
+				<tr>
+					<td height="34"><div align="right">*地址</div></td>
+					<td><input type="text" name="company.addr" value="${(company.addr)!}"/></td>
+					<td>${addrMsg!}</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td colspan="2">&nbsp;</td>
+				</tr>
+				<tr>
+					<td height="34"><div align="right">*联系人</div></td>
+					<td><input type="text" name="company.person" value="${(company.person)!}"/></td>
+					<td>${personMsg!}</td>
+				</tr>
+				<tr>
+					<td><div align="right"></div></td>
+					<td colspan="2">&nbsp;</td>
+				</tr>
+				<tr>
+					<td><div align="right">*电话</div></td>
+					<td><input type="tel" name="company.tel" value="${(company.tel)!}" /></td>
+					<td>${telMsg!}</td>
+				</tr>
+                <tr>
+					<td><div align="right"></div></td>
+					<td colspan="2">&nbsp;</td>
+				</tr>
+                <tr>
+					<td><div align="right">*电子邮件</div></td>
+					<td><input type="email" name="company.email" value="${(company.email)!}"/></td>
+					<td>${emailMsg!}</td>
+				</tr>
+				<tr>
+					<td><div align="right"></div></td>
+					<td colspan="2">&nbsp;</td>
+				</tr>
+                                <tr>
+					<td><div align="right">*密码</div></td>
+					<td><input type="password" name="company.passwd" /></td>
+					<td>${passwdMsg!}</td>
+				</tr>
+				<tr>
+					<td><div align="right"></div></td>
+					<td colspan="2">&nbsp;</td>
+				</tr>
+				<tr>
+					<td colspan="3"><div align="center">
+							<center>
+								<input type="submit" name="Submit" value="提交" />
+							</center>
+						</div></td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+				</tr>
+			</table>
+		</form>
+	</center>
+
+<script type="text/javascript">
+function selectCity() {
+        window.m2 = new MessageBox(null, "");
+        m2.CloseButtonValue = "";
+        m2.Title = "";
+        m2.InnerDivHeight = 850;
+        m2.InnerDivWidth = 825;
+        m2.ShowIframeDialog("${path!}/data2.html");
+};
+</script>    
+</body>
+</html>

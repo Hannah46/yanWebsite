@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+	<center>
+		<form id="companyDetail" name="companyDetail" method="post">
+			<table width="510" border="0">
+				<tr>
+					<td colspan="3">
+						<input type="hidden" value="${(company.id)!}" name="company.id" />
+					</td>
+				</tr>
+				<tr>
+					<td colspan="3">
+						<input type="hidden" value="${(company.pict1)!}" name="company.pict1" />
+					</td>
+				</tr>
+				<tr>
+					<td width="103" height="34"><div align="right">会员名称</div></td>
+					<td width="235" height="34"><input type="text"	name="company.membername" value="${(company.membername)!}"></input></td>
+					<td width="158" height="34">${membernameMsg!}</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td colspan="2">&nbsp;</td>
+				</tr>
+
+				<tr>
+					<td height="34"><div align="right">注册信息</div></td>
+					<td><textarea name="company.register" cols="30" rows="10">${(company.register)!}</textarea></td>
+					<td>${registerMsg!}</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td colspan="2">&nbsp;</td>
+				</tr>
+                <tr>
+					<td><div align="right">公司介绍</div></td>
+					<td><textarea name="company.intro" cols="30" rows="10">${(company.intro)!}</textarea></td>
+					<td>${introMsg!}</td>
+				</tr>
+				
+				<tr>
+					<td><div align="right"></div></td>
+					<td colspan="2">&nbsp;</td>
+				</tr>
+				<tr>
+					<td><div align="right">审核标志</div></td>
+					<td>
+					<#if company.flag>
+						<label>未审核</label>
+					<#else>
+						<label>已审核</label>
+					</#if>
+				</td>
+					<td></td>
+				</tr>
+				
+				<tr>
+					<td align="right"></td>
+					<td colspan="2">&nbsp;</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center">
+								<button type="button" onclick="save_detail()">提交</button>
+						</td>
+				</tr>
+		</table>
+		</form>	
+			
+		
+	</center>
+</body>
+</html>

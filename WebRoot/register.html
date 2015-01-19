@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>用户注册</title>
+</head>
+
+<body>
+	<center>
+		<form id="form1" name="form1" method="post" action="${path!}/user/doRegister">
+			<table width="398" border="0">
+				<tr>
+					<td width="82" height="34"><div align="right">*昵称</div></td>
+					<td width="168" height="34"><input type="text" id="user.nickname"
+						name="user.nickname" value="${(user.nickname)!}"/></td>
+					<td width="134" height="34">${nicknameMsg!}</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td colspan="2">&nbsp;</td>
+				</tr>
+				<tr>
+					<td height="34"><div align="right">*性别</div></td>
+					<td><input name="user.sex" type="radio" value="男"
+					<#if ((user.sex)!"男")="男">checked="checked" </#if> /> 男 
+					<input type="radio" name="user.sex" value="女" 
+					<#if ((user.sex)!"男")="女">checked="checked" </#if> /> 女</td>
+					<td>${sexMsg!}</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td colspan="2">&nbsp;</td>
+				</tr>
+				<tr>
+					<td height="34"><div align="right">*生日</div></td>
+					<td><input type="text" name="user.birth" value="${(user.birth)!}"/></td>
+					<td>${birthMsg!}</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td colspan="2">&nbsp;</td>
+				</tr>
+				<tr>
+					<td height="34"><div align="right">*电子邮箱</div></td>
+					<td><input type="text" name="user.email" value="${(user.email)!}"/></td>
+					<td>${emailMsg!}</td>
+				</tr>
+				<tr>
+					<td><div align="right"></div></td>
+					<td colspan="2">&nbsp;</td>
+				</tr>
+				<tr>
+					<td><div align="right">*密码</div></td>
+					<td><input type="password" name="user.passwd" /></td>
+					<td>${passwdMsg!}</td>
+				</tr>
+				<tr>
+					<td><div align="right"></div></td>
+					<td colspan="2">&nbsp;</td>
+				</tr>
+				<tr>
+					<td colspan="3"><div align="center">
+							<center>
+								<input type="submit" name="Submit" value="提交" />
+							</center>
+						</div></td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+				</tr>
+			</table>
+		</form>
+	</center>
+</body>
+</html>

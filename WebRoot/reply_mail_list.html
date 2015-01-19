@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>私信回复列表</title>
+</head>
+
+<table class="table_box" align="center" width="800">
+	<tr>
+		<td><input type="hidden" value="${(parent.id)!}" /></td>
+		<td><input type="hidden" value="${(self)!}" /></td>
+	</tr>
+	<tr>
+		<td align="center">话题发起人</td>
+		<td style="text-align:left;">
+			<label>${(from_name)!}</label>
+		</td>
+	</tr>
+	<tr>
+		<td align="center">主题</td>
+		<td><label>${(parent.title)!}</label></td>
+	</tr>
+	<tr>
+		<td align="center">内容</td>
+		<td><label>${(parent.content)!}</label></td>
+	</tr>
+</table>
+
+<div align="center"><hr style="width:80%"/>
+<div class="table_box" align="center">
+   <#list replyMailList as x>
+	<table class="list" width="800">
+		<tbody>
+			<tr>
+				<td><input type="hidden" value="${(x.id)!}" /></td>
+			</tr>
+			<tr>
+				<td style="text-align:left;" width="100">
+					<#if ((x.username)!) == (self!)>
+						<label>我</label>
+					<#else>
+						<label>${(x.username)!}</label>
+					</#if>
+				</td>
+				<td style="text-align:left;">${(x.pub_date)!}</td> 
+			</tr>
+			<tr>
+				<td align="left">&nbsp;</td>
+				<td style="text-align:left;">
+					<label>${(x.content)!}</label>
+				</td>
+			</tr>
+		</tbody>		
+	</table>
+	<div align="center"><hr style="width:80%"/>
+	</#list>
+
+	<table width="800">
+		<tr>
+			<td colspan="2" align="center"><textarea id="content" rows="10" cols="100" name="mail.content" value="${(mail.content)!}"></textarea></td>
+		</tr>
+		<tr>
+			<td colspan="2" align="right">
+				<input id="reply" type="submit" value="回复" onclick="reply()"/>
+			</td>
+		</tr>
+	</table>
+</div>
+
+<script type="text/javascript">
+function reply(){
+	var content = document.getElementById("content").value;
+	location.href="../reply/${(parent.id)!}-"+content+"";
+}
+</script>

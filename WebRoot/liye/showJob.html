@@ -1,0 +1,133 @@
+﻿<#include "header.html"/>
+<#include "footer.html"/>
+<@header logged/>
+
+	<center>
+			<table width="800" border="1">
+				<tr>
+					<td width="200" height="34"><div align="right">发布公司</div></td>
+					<td width="600" height="34">
+                    	${(job.fullname)!}
+                    </td>
+				</tr>
+            
+				<tr>
+					<td width="200" height="34"><div align="right">职位</div></td>
+					<td width="600" height="34">
+                    	${(job.job)!}
+                    </td>
+				</tr>
+				<tr>
+					<td width="200" height="34"><div align="right">行业</div></td>
+					<td width="600" height="34">
+                    	${(job.vocation)!}
+                    </td>
+				</tr>
+                <tr>
+					<td width="200" height="34"><div align="right">工作性质</div></td>
+					<td width="600" height="34">
+                    	<#if ((job.property)!0)=0>全职</#if>
+                    	<#if ((job.property)!0)=1>兼职</#if>
+                    	<#if ((job.property)!0)=2>实习</#if>
+                    </td>
+				</tr>
+				<tr>
+					<td width="200" height="34"><div align="right">学历学位</div></td>
+					<td width="600" height="34">
+                    	<#if ((job.degree)!0)=0>中专或相当学历</#if>
+                    	<#if ((job.degree)!0)=1>大专</#if>
+                    	<#if ((job.degree)!0)=2>本科</#if>
+                    	<#if ((job.degree)!0)=3>双学士</#if>
+                    	<#if ((job.degree)!0)=4>硕士</#if>
+                    	<#if ((job.degree)!0)=5>博士</#if>
+                    	<#if ((job.degree)!0)=6>博士后</#if>
+                    </td>
+				</tr>
+           		<tr>
+					<td width="200" height="34"><div align="right">工作地点</div></td>
+					<td width="600" height="34">
+                    	${(job.city)!}
+                    </td>
+				</tr>
+				<tr>
+					<td width="200" height="34"><div align="right">工作经验</div></td>
+					<td width="600" height="34">
+                    	<#if ((job.experience)!0)=0>不要求工作经验</#if>
+                    	<#if ((job.experience)!0)=1>要求工作经验</#if>
+                    </td>
+				</tr>
+               	<tr>
+					<td width="200" height="34"><div align="right">年龄下限</div></td>
+					<td width="600" height="34">
+                    	${(job.age1)!}
+                    </td>
+				</tr>
+				<tr>
+					<td width="200" height="34"><div align="right">年龄上限</div></td>
+					<td width="600" height="34">
+                    	${(job.age2)!}
+                    </td>
+				</tr>
+               	<tr>
+					<td width="200" height="34"><div align="right">性别</div></td>
+					<td width="600" height="34">
+                    	<#if ((job.sex)!2)=0>男</#if>
+                    	<#if ((job.sex)!2)=1>女</#if>
+                    	<#if ((job.sex)!2)=2>不限</#if>
+                    </td>
+				</tr>
+                <tr>
+					<td width="200" height="34"><div align="right">工资待遇</div></td>
+					<td width="600" height="34">
+                    	${(job.sala)!}
+                    </td>
+				</tr>
+                <tr>
+					<td width="200" height="34"><div align="right">人数</div></td>
+					<td width="600" height="34">
+                    	${(job.amount)!}
+                    </td>
+				</tr>
+				<tr>
+					<td width="200" height="34"><div align="right">发布时间</div></td>
+					<td width="600" height="34">
+                    	${(job.publishdate)!}
+                    </td>
+				</tr>
+				<tr>
+					<td colspan="3">&nbsp;</td>
+				</tr>
+				<tr>
+					<td align="center"><a href="/yanyuan/post/toPost/${(job.id)!}">投递简历</a></td>
+					<td colspan="2" align="center">
+					<div id="collect">
+						<#if isCollected ??>已收藏
+						<#else>
+							<#if id_user ??>
+								<a href="javascript:collect(${job.id},${id_user})">收藏该职位</a>
+							</#if>
+						</#if>
+					</div>
+					</td>
+				</tr>     
+			</table>
+	</center>
+  
+<script type="text/JavaScript" src="${path!}/user/jquery-1.11.1.min.js"></script>
+<script type="text/JavaScript" >
+function collect(id_jobs,id_user){
+	$.ajax({
+        type: "GET",
+        url: "${path!}/collection/add/"+id_user+"-"+id_jobs,
+        success: function(data){
+        	alert(data);
+        	$("#collect").html("已收藏");
+        },
+		error: function (XMLHttpRequest, textStatus, errorThrown) { 
+			alert("呃，操作失败了，请待会再试试！");
+		} 
+    });
+}
+</script>
+
+<@footer/>

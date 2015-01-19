@@ -1,0 +1,145 @@
+﻿<#include "header.html"/>
+<#include "footer.html"/>
+<@header logged/>
+
+<center>
+
+<table width="600" border="0">
+	<caption>个人简历</caption>
+  <tr>
+    <td width="200" height="34"><div align="right">姓名</div></td>
+    <td width="400" height="34">${(resumeUser.name)!}</td>
+  </tr>
+  <tr>
+    <td height="34"><div align="right">性别</div></td>
+    <td>${(resumeUser.sex)!'男'}</td>
+  </tr>
+  <tr>
+    <td height="34"><div align="right">出生日期</div></td>
+    <td>${(resumeUser.birth)!}</td>
+  </tr>
+    <tr>
+    <td><div align="right">期待工作性质</div></td>
+    <td><#if ((resume.property)!0) = 0>全职</#if>
+     <#if ((resume.property)!0) = 1>兼职</#if>
+     <#if ((resume.property)!0) = 2>实习</#if></td>
+  </tr>
+  <tr>
+  <tr>
+    <td><div align="right" >行业类别</div></td>
+    <td>${(resume.vocation)!}</td>
+  </tr>
+    <tr>
+    <td><div align="right">职位</div></td>
+    <td>${(resume.job)!}</td>
+  </tr>
+    <tr>
+    <td><div align="right">期待薪金</div></td>
+    <td>
+    <#if ((resume.sala)!0) = 1>1000元/月以下</#if>
+    <#if ((resume.sala)!0) = 2>1000-2000元/月</#if>
+    <#if ((resume.sala)!0) = 3>2001-4000元/月</#if>
+   	<#if ((resume.sala)!0) = 4>4001-6000元/月</#if>
+    <#if ((resume.sala)!0) = 5>6001-8000元/月</#if>
+    <#if ((resume.sala)!0) = 6>8001-10000元/月</#if>
+    <#if ((resume.sala)!0) = 7>10001-15000元/月</#if>
+    <#if ((resume.sala)!0) = 8>15001-25000元/月</#if>
+    <#if ((resume.sala)!0) = 9>25000元以上/月</#if>
+    <#if ((resume.sala)!0) = 10>面议</#if>
+	</td>
+  </tr>
+      <tr>
+    <td height="34"><div align="right">自我评价</div></td>
+    <td>${(resume.self_intro)!}</td>
+  </tr>
+    <tr>
+	<td colspan="2"><label>最高学历</label></td>
+</tr>
+    <tr>
+    <td><div align="right">入学时间</div></td>
+    <td>${(resume.year1)!}
+    <label>年</label>
+    ${(resume.month1)!}
+    <label>月 </label>
+    </td>
+    </tr>
+    <tr>
+    <td><div align="right">毕业时间</div></td>
+    <td>
+    ${(resume.year2)!}
+    <label>年</label>
+    ${(resume.month2)!}
+    <label>月</label>
+    </td>
+  </tr>
+  <tr>
+    <td><div align="right">学校名称</div></td>
+    <td>${(resume.university)!}</td>
+  </tr>
+    <tr>
+    <td><div align="right">专业名称</div></td>
+    <td>${(resume.major)!}</td>
+  </tr>
+      <tr>
+    <td><div align="right">学历学位</div></td>
+    <td>
+    <#if ((resume.degree)!0) = 1>大专</#if>
+    <#if ((resume.degree)!0) = 2>本科</#if>
+    <#if ((resume.degree)!0) = 3>硕士</#if>
+    <#if ((resume.degree)!0) = 4>博士</#if>
+    <#if ((resume.degree)!0) = 5>MBA</#if>
+    <#if ((resume.degree)!0) = 6>EMBA</#if>
+    <#if ((resume.degree)!0) = 7>中专</#if>
+    <#if ((resume.degree)!0) = 8>中技</#if>
+    <#if ((resume.degree)!0) = 9>高中</#if>
+    <#if ((resume.degree)!0) = 10>初中</#if>
+    <#if ((resume.degree)!0) = 11>其他</#if>
+    </td>
+  </tr>
+  <tr>
+  <td colspan="3"><a href="${path!}/experience/${(resume.id)!}">查看工作经验</a>
+  </td></tr>
+</table>
+<div id="op">
+<#if post.refused=0>
+<form method="post" action="${path!}/post/doCompanyOp">
+<table width="600">
+<tr>
+	<td colspan="2"><input type="hidden" name="postedNotification.id" value="${(post.id)!}"></td>
+</tr>
+<tr>
+	<td><input type="radio" name="postedNotification.refused" value="3"/>录用</td>
+	<td><input type="radio" name="postedNotification.refused" value="1"/>拒绝</td>
+</tr>
+<tr>
+	<td width="200">附言</td>
+	<td width="400"><textarea name="postedNotification.desc1"></textarea></td>
+</tr>
+<tr>
+	<td width="200">通知有效期</td>
+	<td width="400"><input type="text" name="postedNotification.days" />天</td>
+</tr>
+<tr>
+	<td clospan="2" align="center"><input type="submit" value="提交"/></td>
+</tr>
+</table>
+</form>
+<#else>
+	<table width="600">
+	<tr>	
+		<td width="200" align="right">当前状态：</td>
+		<td width="400">
+			<#if post.refused=1>已拒绝</#if>
+			<#if post.refused=2>求职者已拒绝</#if>
+			<#if post.refused=3>已录用</#if>
+		</td>
+	</tr>
+	<tr>	
+		<td width="200" align="right">求职者附言：</td>
+		<td width="400">${(post.desc2)!}</td>
+	</tr>
+	</table>
+</#if>
+</div>
+</center>
+<@footer/>

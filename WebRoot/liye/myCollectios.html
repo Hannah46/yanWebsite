@@ -1,0 +1,46 @@
+﻿<#include "header.html"/>
+<#include "footer.html"/>
+<@header logged/>
+
+<center>
+<table border="1">
+	<caption>收藏列表</caption>
+	<tr>
+		<th>职位</th>
+		<th>收藏时间</th>
+		<th>查看职位</th>
+		<th>取消收藏</th>
+	</tr>
+		
+	<#list collectionPage.getList() as collection>
+		<tr>
+			<td>${(collection.job)!}</td>
+			<td>${(collection.collect_date)!}</td>
+			<td><a href="${path!}/job/showJob/${(collection.id_jobs)!}">查看职位</a></td>
+			<td><a href="javascript:deleteCollection(${(collection.id)!})">取消收藏</a></td>
+		</tr>
+	</#list>
+</table>
+
+<#include "/_paginate.html" />
+<@paginate currentPage=collectionPage.pageNumber totalPage=collectionPage.totalPage actionUrl="${path!}/collection/myCollections/" />
+</center>
+
+<script type="text/JavaScript" src="${path!}/user/jquery-1.11.1.min.js"></script>
+<script type="text/JavaScript" >
+function deleteCollection(id){
+	$.ajax({
+        type: "GET",
+        url: "${path!}/collection/delete/"+id,
+        success: function(data){
+        	alert(data);
+        	location.reload();
+        },
+		error: function (XMLHttpRequest, textStatus, errorThrown) { 
+			alert("呃，操作失败了，请待会再试试！");
+		} 
+    });
+}
+</script>
+
+<@footer/>

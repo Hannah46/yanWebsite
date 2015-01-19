@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="${path}/js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="${path}/jiayuan_cs_js/mblog.js"></script></head>
+<body>
+
+<div style="width:540px;margin:0 auto;border-style:outset">
+  <div class="pict" style="float:left;width:128px">
+     <img name="p_logo" src="${path}/photo/show/${(topic.pict1)!}" width="125" height="125">
+  </div>
+  <div style="float:left;width:400px">
+    <div>${(topic.name)!}</div>
+	<div>${(topic.intro)!}</div>
+  </div>
+  <div style="clear:both"/>
+</div>
+
+<div class="bfooter" style="clear:both;width:540px;margin:0 auto;border-style:none">
+	     <span style="float:left">
+		     <span>(${(topic.pub_date)!})</span><span class="pipe"></span> <span>举报</span>
+		 </span>
+         <span style="float:right">
+		     <span>赞(${(topic.agree)!})</span> <span class="pipe"></span> <span>评论(${(topic.comments)!})</span>
+		 </span>
+</div>
+
+<div style="clear:both;width:540px;margin:0 auto">
+<form method="post" action="${path}/mblog/add_comment/${(topic.id)!}-1">
+<textarea name="mblog.content" cols="60"></textarea>
+<input type="submit" name="Submit" value="发表评论">
+</form>
+</div>
+
+<div id="blogs" >
+<#list pages.list as blogview>
+<div class="topic" style="width:540px;margin:0 auto;clear:both">
+  <div class="pict" style="float:left;width:32px">
+     <img name="p_logo" src="${path}/photo/show/${(blogview.pict1)!}" width="32" height="32">
+  </div>
+  <div style="float:left;width:400px">
+     <div class="nick" style="min-height:60px">${(blogview.name)!}:${(blogview.content)!}</div>
+	 <div class="bfooter">
+	     <span style="float:right">
+		     <span>(${(blogview.pub_date)!})</span><span class="pipe"></span> <span>举报</span>
+		 </span>
+     </div>
+</div>
+</#list>
+</div>
+<div style="clear:left">
+	 <#include "_paginate_original.html" />
+	  <@paginate currentPage=pages.pageNumber totalPage=pages.totalPage actionUrl="${path}/mblog/comments_list/${(topic.id)!}-" />
+</div>
+</body>
+
+
+</html>
+

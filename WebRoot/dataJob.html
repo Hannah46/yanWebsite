@@ -1,0 +1,1922 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+</head>
+<body>
+<!--区域弹出层-->
+<script type="text/javascript" src="js/jquery-1.4.4.min.js"></script>
+<link type="text/css" href="css/commen.css" rel="stylesheet"/>
+<script type="text/javascript" src="js/jscommen.js"></script>
+<style type="text/css">
+    body{background:none;}
+    
+</style>
+<div >
+  <div class="zhilei">
+    <div class="popupBox"  >
+      <div class="lp"></div>
+      <div class="mp">
+        <div class="areaCon">
+          <div  class="tl">已选择：</div>
+          <div class="tm" id="selected" > </div>
+          <div class="promptBox" style=" margin-left:450px; margin-top:30px; position:absolute; display:none " id="AreaValadate">
+            <div class="arrowRedL png"></div>
+            <div class="promptConShadowL">
+              <div class="promptRedCon"> 您好，最多只能选择5个类别！</div>
+            </div>
+          </div>
+          <div class="tr">
+            <button onclick="sub()" class="gbtn80 png">确定</button>
+            <input type="button" class="gbtn80 png" onclick="top.m.Close();" value="取 消"/>
+          </div>
+ <div class="popLine"></div>
+ <div id="province" class="smaCity" style="width:780px;">
+<div id="city1" class="bigCity"  style="height:87x;">销售|客服|市场 </div>
+<div  style="float:left;width:655px;height:87px;padding:6px 0;">
+<span><a href="javascript:openCity01('9200','销售管理');">销售业务 </a>
+</span> <span><a href="javascript:openCity02('2000','销售管理');">销售管理 </a>
+</span> <span><a href="javascript:openCity03('3000','销售行政/商务');">销售行政/商务</a>
+</span> <span><a href="javascript:openCity04('4000','客服/售前/售后技术支持');">客服/售前/售后技术支持 </a>
+</span> <span><a href="javascript:openCity05('5000','市场');">市场 </a></span> 
+<span><a href="javascript:openCity06('6000','公关/媒介');">公关/媒介 </a>
+</span> <span><a href="javascript:openCity07('7000','广告/会展');">广告/会展 </a></span></div>
+
+<div id="city2" class="bigCity"  style="height:15px;">财务|人力资源|行政 </div>
+<div  style="float:left;height:15px;width:655px;padding:7px 0;"><span><a href="javascript:openCity11('1000','财务/审计/税务');">财务/审计/税务 </a>
+</span> <span><a href="javascript:openCity12('2000','人力资源');">人力资源 </a>
+</span> <span><a href="javascript:openCity13('3000','行政/后勤/文秘');">行政/后勤/文秘</a></div>
+
+
+<div id="city3" class="bigCity"  style="height:37px;">项目|质量|高级管理 </div>
+<div  style="float:left;height:37px;width:655px;padding:6px 0;"><span><a href="javascript:openCity21('1000','项目管理/项目协调');">项目管理/项目协调 </a>
+</span> <span><a href="javascript:openCity22('2000','质量管理/安全防护');">质量管理/安全防护 </a>
+</span> <span><a href="javascript:openCity23('3000','高级管理');">高级管理</a></span>
+<span><a href="javascript:openCity24('1000','软件/互联网开发/系统集成');">软件/互联网开发/系统集成 </a>
+</span> <span><a href="javascript:openCity25('2000','硬件开发');">硬件开发 </a>
+</span> <span><a href="javascript:openCity26('3000','互联网产品/运营管理');">互联网产品/运营管理</a></span>
+</div>
+
+<div id="city3" class="bigCity"  style="height:30px;">IT|互联网|通信</div>
+<div  style="float:left;height:30px;width:655px;padding:5px 0;;"><span><a href="javascript:openCity31('1000','软件/互联网开发/系统集成');">IT质量管理/测试/配置管理 </a></span> 
+
+ <span><a href="javascript:openCity32('4000','IT质量管理/测试/配置管理');">IT运维/技术支持</a></span>
+ <span><a href="javascript:openCity33('5000','IT管理/项目协调');">IT管理/项目协调</a></span>
+ <span><a href="javascript:openCity34('6000','电信/通信技术开发及应用');">电信/通信技术开发及应用</a></span>
+</div>
+
+<div id="city2" class="bigCity"  style="height:14px;">房产|建筑|物业管理</div>
+<div  style="float:left;height:14px;width:655px;padding:7px 0;"><span><a href="javascript:openCity41('1000','房地产开发/经纪/中介');">房地产开发/经纪/中介</a>
+</span> <span><a href="javascript:openCity42('2000','土木/建筑/装修/市政工程');">土木/建筑/装修/市政工程</a>
+</span> <span><a href="javascript:openCity43('3000','物业管理');">物业管理</a></span>
+</div>
+<div id="city4" class="bigCity"  style="height:28px;">金融</div>
+<div  style="float:left;height:28px;width:655px;padding:10px 0;"><span><a href="javascript:openCity51('1000','银行');">银行 </a>
+</span> <span><a href="javascript:openCity52('2000','证券/期货/投资管理/服务');">证券/期货/投资管理/服务</a>
+</span> <span><a href="javascript:openCity53('3000','保险');">保险</a></span>
+ <span><a href="javascript:openCity54('4000','信托/担保/拍卖/典当');">信托/担保/拍卖/典当</a></span>
+</div>
+
+<div id="city5" class="bigCity"  style="height:40px;">采购|贸易|交通|物流</div>
+<div  style="float:left;height:40px;width:655px;padding:7px 0;"><span><a href="javascript:openCity61('1000','采购/贸易');">采购/贸易 </a>
+</span> <span><a href="javascript:openCity62('2000','交通运输服务');">交通运输服务</a>
+</span> <span><a href="javascript:openCity63('3000','物流/仓储');">物流/仓储</a></span>
+ <span><a href="javascript:openCity64('4000','电子/电器/半导体/仪器仪表');">电子/电器/半导体/仪器仪表</a></span>
+ <span><a href="javascript:openCity65('5000','汽车制造');">汽车制造</a></span> 
+</div>
+
+<div id="city6" class="bigCity"  style="height:45px;">生产|制造</div>
+<div  style="float:left;height:45px;width:655px;padding:8px 0;"><span><a href="javascript:openCity71('1000','汽车销售与服务');">汽车销售与服务 </a>
+</span> <span><a href="javascript:openCity72('2000','机械设计/制造/维修');">机械设计/制造/维修</a>
+</span> <span><a href="javascript:openCity73('3000','服装/纺织/皮革设计/生产');">服装/纺织/皮革设计/生产</a></span>
+ <span><a href="javascript:openCity74('4000','技工/操作工');">技工/操作工</a></span>
+ <span><a href="javascript:openCity75('5000','生物/制药/医疗器械');">生物/制药/医疗器械</a></span> 
+<span><a href="javascript:openCity76('6000','化工');">化工</a></span> 
+</div>
+
+<div id="city4" class="bigCity"  style="height:15px;">传媒|印刷|艺术|设计</div>
+<div  style="float:left;height:15px;width:655px;padding:7px 0;"><span><a href="javascript:openCity81('1000','`影视/媒体/出版/印刷');">影视/媒体/出版/印刷 </a>
+</span> <span><a href="javascript:openCity82('2000','艺术/设计');">艺术/设计</a>
+</span> 
+
+
+</div>
+
+<div id="city4" class="bigCity"  style="height:45px;">咨询|法律|教育|翻译</div>
+<div  style="float:left;height:45px;width:655px;padding:8px 0;"><span><a href="javascript:openCity91('1000','`咨询/顾问/调研/数据分析');">咨询/顾问/调研/数据分析 </a>
+</span> <span><a href="javascript:openCity92('2000','教育/培训');">教育/培训</a>
+</span> <span><a href="javascript:openCity93('3000','律师/法务/合规');">律师/法务/合规</a></span>
+ <span><a href="javascript:openCity94('4000','翻译（口译与笔译）');">翻译（口译与笔译）</a></span>
+</div>
+
+<div id="city4" class="bigCity"  style="height:50px;">服务业</div>
+<div  style="float:left;height:50px;width:655px;padding:8px 0;"><span><a href="javascript:openCity101('1000','`商超/酒店/娱乐管理/服务');">商超/酒店/娱乐管理/服务 </a>
+</span> <span><a href="javascript:openCity102('2000','旅游/度假/出入境服务');">旅游/度假/出入境服务</a>
+</span> <span><a href="javascript:openCity103('3000','烹饪/料理/食品研发');">烹饪/料理/食品研发</a></span>
+ <span><a href="javascript:openCity104('4000','保健/美容/美发/健身）');">保健/美容/美发/健身</a></span>
+ <span><a href="javascript:openCity105('5000','医院/医疗/护理');">医院/医疗/护理</a></span>
+ <span><a href="javascript:openCity106('6000','社区/居民/家政服务');">社区/居民/家政服务</a></span>
+</div>
+
+<div id="city4" class="bigCity"  style="height:45px;">能源|环保|农业|科研</div>
+<div  style="float:left;height:45px;width:655px;padding:10px 0;"><span><a href="javascript:openCity111('1000','`能源/矿产/地质勘查');">能源/矿产/地质勘查 </a>
+</span> <span><a href="javascript:openCity112('2000','环境科学/环保');">环境科学/环保</a>
+</span> <span><a href="javascript:openCity113('3000','农/林/牧/渔业');">农/林/牧/渔业</a></span>
+ <span><a href="javascript:openCity114('4000','公务员/事业单位/科研机构');">公务员/事业单位/科研机构</a></span>
+ 
+</div>
+<div id="city4" class="bigCity"  style="height:22px;">兼职|实习|社工|其他</div>
+<div  style="float:left;height:22px;width:655px;padding:7px 0;"><span><a href="javascript:openCity121('1000','`实习生/培训生/储备干部');">实习生/培训生/储备干部</a>
+</span> <span><a href="javascript:openCity122('2000','志愿者/社会工作者');">志愿者/社会工作者</a>
+</span> <span><a href="javascript:openCity123('3000','兼职/临时');">兼职/临时</a></span>
+ <span><a href="javascript:openCity124('4000','其他');">其他</a></span>
+ 
+</div></div>
+
+          <div class="smaCityChild" id="hidden_div11" style="display:none;">
+            <div class="t png"></div>
+            <div class="m png">
+              <div class="tit" id="provincename"></div>
+              <div class="smaCityChildbox" id="theCity"></div>
+            </div>
+            <div class="bot">
+              <input type="button" class="close_sma" value=""  id="smaCityChildClose" />
+            </div>
+            <div class="b png"></div>
+          </div>
+        </div>
+      </div>
+      <div class="lp"></div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+    $(function () {
+        document.getElementById('selected').innerHTML= top.document.getElementById('RegionJobBusinessTag1').innerHTML;
+        $("#smaCityChildClose").click(function () {
+            $("#hidden_div11").hide();
+        });
+    });
+    function selectCity(id, name) {
+        //最大选择5个
+        var SelectedCount = 1;
+        $("#selected span").each(function () {
+            SelectedCount = SelectedCount + 1;
+        });
+
+        if (SelectedCount <= 5) {
+            if ($('#' + id).attr('checked') == true) {
+                var str = "";
+                str += "<span ty='r' id='" + id + "_ed'>";
+                str += "<a href=\"#\">" + name + "</a>";
+                str += "<input type='button' onclick='del(" + id + ")' name='selectedCity'  id='" + id + "_ch' class=\"city_det\" />";
+                str += "</span>";
+                if ($("#selected").html().indexOf(id) == -1) {
+                    $("#selected").append(str);
+                }
+                $("#AreaValadate").hide();
+            }
+            else {
+                $("#AreaValadate").hide();
+                del(id);
+            }
+        }
+        else {
+
+            $('#' + id).attr('checked', false);
+            del(id);  
+           $("#AreaValadate").show();           
+        }
+    }
+    function del(id) {
+        $("#AreaValadate").hide();
+        $('#' + id).attr('checked', false);
+        $('#' + id + '_ed').remove();
+    }
+
+
+
+
+function openCity01(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'销售代表','Value':1301},{'Key':'客户代表','Value':1302},{'Key':'销售工程师','Value':1303},{'Key':'渠道/分销专员','Value':1304},{'Key':'大客户销售代表','Value':1305},{'Key':'电话销售','Value':1306},{'Key':'网络/在线销售','Value':1307},{'Key':'团购业务员','Value':1308},{'Key':'销售业务跟单','Value':1309},{'Key':'医药代表','Value':1313},{'Key':'其他','Value':1311}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+
+
+
+function openCity02(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'销售总监','Value':1401},{'Key':'销售经理','Value':1402},{'Key':'销售主管','Value':1403},{'Key':'客户总监','Value':1404},{'Key':'客户经理','Value':1405},{'Key':'客户主管','Value':1406},{'Key':'渠道/分销总监','Value':1407},{'Key':'渠道/分销经理/主管','Value':1408},{'Key':'区域销售总监','Value':1409},{'Key':'区域销售经理/主管','Value':1414},{'Key':'业务拓展经理/主管','Value':1411},{'Key':'大客户销售经理','Value':1412},{'Key':'医药销售经理/主管','Value':1413},{'Key':'医药销售经理/主管','Value':1414},{'Key':'其他','Value':1415}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+
+
+function openCity03(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'销售行政经理/主管','Value':1501},{'Key':'销售行政专员/助理','Value':1502},{'Key':'销售运营经理/主管','Value':1503},{'Key':'销售运营专员/助理','Value':1504},{'Key':'商务经理/主管','Value':1505},{'Key':'商务专员/助理','Value':1506},{'Key':'销售数据分析','Value':1507},{'Key':'销售培训师/讲师','Value':1508},{'Key':'其他','Value':1509}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	
+function openCity04(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'客户服务总监','Value':1601},{'Key':'客户服务经理','Value':1602},{'Key':'客户服务主管','Value':1603},{'Key':'客户服务专员/助理','Value':1604},{'Key':'客户关系/投诉协调人员','Value':1605},{'Key':'客户咨询热线/呼叫中心人员','Value':1606},{'Key':'网络/在线客服','Value':1607},{'Key':'渠道/分销经理/主管','Value':1608},{'Key':'售前/售后技术支持工程师','Value':1609},{'Key':'其他','Value':1610}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+function openCity05(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'市场总监','Value':1701},{'Key':'市场经理','Value':1702},{'Key':'市场主管','Value':1703},{'Key':'市场专员/助理','Value':1704},{'Key':'市场营销经理','Value':1705},{'Key':'市场营销主管','Value':1706},{'Key':'市场营销专员/助理','Value':1707},{'Key':'业务拓展经理/主管','Value':1708},{'Key':'业务拓展专员/助理','Value':1709},{'Key':'产品经理','Value':1710},{'Key':'产品主管','Value':1711},{'Key':'产品专员/助理','Value':1712},{'Key':'品牌经理','Value':1713},{'Key':'品牌主管','Value':1714},{'Key':'品牌专员/助理','Value':1715},{'Key':'市场策划/企划经理/主管','Value':1716},{'Key':'市场策划/企划专员/助理','Value':1717} ,{'Key':'市场文案策划','Value':1718},{'Key':'活动策划','Value':1719},{'Key':'活动执行','Value':1720},{'Key':'促销主管/督导','Value':1721},{'Key':'促销员','Value':1722},{'Key':'网站推广','Value':1723},{'Key':'学术推广','Value':1724},{'Key':'SEO/SEM','Value':1725},{'Key':'选址拓展/新店开发','Value':1726},{'Key':'市场调研与分析','Value':1727},{'Key':'其他','Value':1726}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+function openCity06(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'公关总监','Value':1801},{'Key':'公关经理/主管','Value':1802},{'Key':'公关专员/助理','Value':1803},{'Key':'媒介经理/主管','Value':1804},{'Key':'媒介策划/管理','Value':1805},{'Key':'媒介策划/管理','Value':1806},{'Key':'政府事务管理','Value':1807},{'Key':'其他','Value':1808}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	
+
+function openCity07(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'广告创意/设计总监','Value':1901},{'Key':'广告创意/设计经理/主管','Value':1902},{'Key':'广告创意/设计师','Value':1903},{'Key':'广告文案策划','Value':1904},{'Key':'广告美术指导','Value':1905},{'Key':'广告制作执行','Value':1906},{'Key':'广告客户总监','Value':1907},{'Key':'广告客户经理','Value':1908},{'Key':'广告客户主管','Value':1909},{'Key':'广告客户代表','Value':1910},{'Key':'广告/会展业务拓展','Value':1911},{'Key':'会务专员/助理','Value':1912},{'Key':'广告/会展项目管理','Value':1913},{'Key':'其他','Value':1914}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	
+function openCity07(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'首席财务官CFO','Value':2301},{'Key':'财务总监','Value':2302},{'Key':'财务经理','Value':2303},{'Key':'财务主管/总帐主管','Value':2304},{'Key':'财务顾问','Value':2305},{'Key':'财务助理','Value':2306},{'Key':'财务分析经理/主管','Value':2307},{'Key':'财务分析员','Value':2308},{'Key':'会计经理/主管','Value':2309},{'Key':'会计/会计师','Value':2310},{'Key':'会计助理/文员','Value':2311},{'Key':'出纳员','Value':2312},{'Key':'审计经理/主管','Value':2313},{'Key':'税务经理/主管','Value':2315},{'Key':'税务专员/助理','Value':2316},{'Key':'税务专员/助理','Value':2317},{'Key':'成本会计','Value':2318},{'Key':'资产/资金管理','Value':2319},{'Key':'资金专员','Value':2320},{'Key':'统计员','Value':2321},{'Key':'其他','Value':2322}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	
+	function openCity11(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'广告创意/设计总监','Value':2401},{'Key':'广告创意/设计经理/主管','Value':2402},{'Key':'广告创意/设计师','Value':2403},{'Key':'广告文案策划','Value':2404},{'Key':'广告美术指导','Value':2405},{'Key':'广告制作执行','Value':2406},{'Key':'广告客户总监','Value':2407},{'Key':'广告客户经理','Value':2408},{'Key':'广告客户主管','Value':2409},{'Key':'广告客户代表','Value':2410},{'Key':'广告/会展业务拓展','Value':2411},{'Key':'会务专员/助理','Value':2412},{'Key':'广告/会展项目管理','Value':2413},{'Key':'其他','Value':2414}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	
+	function openCity12(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'人力资源总监','Value':2501},{'Key':'人力资源经理','Value':2502},{'Key':'人力资源主管','Value':2503},{'Key':'人力资源专员/助理','Value':2504},{'Key':'培训经理/主管','Value':2505},{'Key':'培训专员/助理','Value':2506},{'Key':'招聘经理/主管','Value':2507},{'Key':'招聘专员/助理','Value':2508},{'Key':'薪酬福利经理/主管','Value':2509},{'Key':'薪酬福利专员/助理','Value':2510},{'Key':'绩效考核经理/主管','Value':2511},{'Key':'出纳员','Value':2512},{'Key':'审计经理/主管','Value':2513},{'Key':'税务经理/主管','Value':2515},{'Key':'绩效考核专员/助理','Value':2516},{'Key':'员工关系/企业文化/工会','Value':2517},{'Key':'企业培训师/讲师','Value':2518},{'Key':'人事信息系统(HRIS)管理','Value':2519},{'Key':'猎头顾问/助理','Value':2520},{'Key':'其他','Value':2521}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	
+	
+	function openCity13(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'行政总监','Value':2601},{'Key':'行政经理/主管/办公室主任','Value':2602},{'Key':'行政专员/助理','Value':2603},{'Key':'助理/秘书/文员','Value':2604},{'Key':'助理/秘书/文员','Value':2605},{'Key':'前台/总机/接待','Value':2606},{'Key':'文档/资料管理','Value':2607},{'Key':'电脑操作/打字/录入员','Value':2608},{'Key':'后勤人员','Value':2609},{'Key':'其他','Value':2610}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	
+	function openCity21(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'项目总监','Value':2701},{'Key':'项目经理/项目主管','Value':2702},{'Key':'项目专员/助理','Value':2703},{'Key':'广告/会展项目管理','Value':2704},{'Key':'IT项目总监','Value':2705},{'Key':'IT项目经理/主管','Value':2706},{'Key':'IT项目执行/协调人员','Value':2707},{'Key':'通信项目管理','Value':2708},{'Key':'房地产项目配套工程师','Value':2709},{'Key':'房地产项目管理','Value':2710},{'Key':'证券/投资项目管理','Value':2711},{'Key':'保险项目经理/主管','Value':2712},{'Key':'生产项目经理/主管','Value':2713},{'Key':'生产项目工程师','Value':2715},{'Key':'汽车工程项目管理','Value':2716},{'Key':'电子/电器项目管理','Value':2717},{'Key':'服装/纺织/皮革项目管理','Value':2718},{'Key':'医药项目管理','Value':2719},{'Key':'化工项目管理','Value':2720},{'Key':'物流/仓储项目管理','Value':2721},{'Key':'咨询项目管理','Value':2722},{'Key':'能源/矿产项目管理','Value':2723},{'Key':'其他','Value':2724}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	
+	
+
+function openCity22(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'质量管理/测试经理','Value':2801},{'Key':'质量管理/测试主管','Value':2802},{'Key':'质量管理/测试工程师','Value':2803},{'Key':'质量检验员/测试员','Value':2804},{'Key':'化验/检验','Value':2805},{'Key':'认证/体系工程师/审核员','Value':2806},{'Key':'环境/健康/安全经理/主管','Value':2807},{'Key':'环境/健康/安全工程师','Value':2808},{'Key':'供应商/采购质量管理','Value':2809},{'Key':'安全管理','Value':2810},{'Key':'安全消防','Value':2811},{'Key':'其他','Value':2812}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	
+	
+function openCity23(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'首席执行官CEO/总裁/总经理','Value':2901},{'Key':'首席运营官COO','Value':2902},{'Key':'首席财务官CFO','Value':2903},{'Key':'CTO/CIO','Value':2904},{'Key':'副总裁/副总经理','Value':2905},{'Key':'分公司/代表处负责人','Value':2906},{'Key':'部门/事业部管理','Value':2907},{'Key':'环境/健康/安全工程师','Value':2908},{'Key':'供应商/采购质量管理','Value':2909},{'Key':'安全管理','Value':2910},{'Key':'总裁助理/总经理助理','Value':2911},{'Key':'总编/副总编','Value':2912},{'Key':'行长/副行长','Value':2913},{'Key':'工厂厂长/副厂长','Value':2914},{'Key':'校长/副校长','Value':2915},{'Key':'合伙人','Value':2916},{'Key':'其他','Value':2917}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	
+	function openCity24(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'高级软件工程师','Value':3301},{'Key':'软件工程师','Value':3302},{'Key':'软件研发工程师','Value':3303},{'Key':'需求工程师','Value':3304},{'Key':'系统架构设计师','Value':3305},{'Key':'系统分析员','Value':3306},{'Key':'数据库开发工程师','Value':3307},{'Key':'ERP技术/开发应用','Value':3308},{'Key':'互联网软件工程师','Value':3309},{'Key':'手机软件开发工程师','Value':3310},{'Key':'嵌入式软件开发','Value':3311},{'Key':'总编/副总编','Value':3312},{'Key':'行长/副行长','Value':3313},{'Key':'工厂厂长/副厂长','Value':3314},{'Key':'移动互联网开发','Value':3315},{'Key':'WEB前端开发','Value':3316},{'Key':'语音/视频/图形开发','Value':3317},{'Key':'用户界面（UI）设计','Value':3318},{'Key':'用户体验（UE/UX）设计','Value':3319},{'Key':'网页设计/制作/美工','Value':3320},{'Key':'游戏设计/开发','Value':3321},{'Key':'游戏策划','Value':3322},{'Key':'游戏界面设计','Value':3323},{'Key':'系统集成工程师','Value':3324},{'Key':'其他','Value':3325}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	
+	
+	
+	function openCity25(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'高级硬件工程师','Value':3401},{'Key':'硬件工程师','Value':3402},{'Key':'嵌入式硬件开发','Value':3403},{'Key':'其他','Value':3404}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	
+	
+	function openCity26(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'互联网产品经理/主管','Value':3501},{'Key':'电子商务经理/主管','Value':3502},{'Key':'电子商务专员/助理','Value':3503},{'Key':'网络运营管理','Value':3504},{'Key':'网络运营专员/助理','Value':3505},{'Key':'网站编辑','Value':3506},{'Key':'SEO/SEM','Value':3507},{'Key':'其他','Value':3508},{'Key':'互联网产品专员/助理','Value':3509}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	
+	
+	
+	function openCity31(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'IT质量管理经理/主管','Value':3601},{'Key':'IT质量管理工程师','Value':3602},{'Key':'系统测试','Value':3603},{'Key':'软件测试','Value':3604},{'Key':'硬件测试','Value':3605},{'Key':'配置管理工程师','Value':3606},{'Key':'信息技术标准化工程师','Value':3607},{'Key':'其他','Value':3608}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	
+	
+	function openCity32(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'信息技术经理/主管','Value':3701},{'Key':'信息技术专员','Value':3702},{'Key':'系统测试','Value':3703},{'Key':'软件测试','Value':3704},{'Key':'硬件测试','Value':3705},{'Key':'配置管理工程师','Value':3706},{'Key':'IT技术支持/维护经理','Value':3707},{'Key':'系统工程师','Value':3708},{'Key':'系统管理员','Value':3709},{'Key':'网络管理员','Value':3710},{'Key':'网络与信息安全工程师','Value':3711},{'Key':'数据库管理员','Value':3712},{'Key':'计算机硬件维护工程师','Value':3713},{'Key':'ERP实施顾问','Value':3714},{'Key':'IT技术文员/助理','Value':3715},{'Key':'IT文档工程师','Value':3716},{'Key':'Helpdesk','Value':3717},{'Key':'其他','Value':3718}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	
+	
+	
+function openCity33(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'CTO/CIO','Value':3801},{'Key':'IT技术/研发总监','Value':3802},{'Key':'IT项目经理/主管','Value':3803},{'Key':'IT项目总监','Value':3804},{'Key':'IT项目执行/协调人员','Value':3805},{'Key':'其他','Value':3806}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	
+	
+	
+	
+	
+	function openCity34(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'通信技术工程师','Value':3901},{'Key':'通信研发工程师','Value':3902},{'Key':'数据通信工程师','Value':3903},{'Key':'移动通信工程师','Value':3904},{'Key':'电信网络工程师','Value':3905},{'Key':'电信交换工程师','Value':3906},{'Key':'有线传输工程师','Value':3907},{'Key':'无线/射频通信工程师','Value':3908},{'Key':'通信电源工程师','Value':3909},{'Key':'通信标准化工程师','Value':3910},{'Key':'通信项目管理','Value':3911},{'Key':'其他','Value':3912}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	
+	
+	function openCity41(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'房地产项目策划经理/主管','Value':4201},{'Key':'房地产项目策划专员/助理','Value':4202},{'Key':'房地产项目招投标','Value':4203},{'Key':'房地产项目开发报建','Value':4204},{'Key':'房地产项目配套工程师','Value':4205},{'Key':'房地产销售经理','Value':4206},{'Key':'房地产销售主管','Value':4207},{'Key':'房地产销售/置业顾问','Value':4208},{'Key':'房地产评估','Value':4209},{'Key':'房地产中介/交易','Value':4242},{'Key':'房地产项目管理','Value':4211},{'Key':'其他','Value':4212}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+
+
+
+function openCity42(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'高级建筑工程师/总工','Value':4301},{'Key':'建筑工程师','Value':4302},{'Key':'土木/土建/结构工程师','Value':4303},{'Key':'建筑设计师','Value':4304},{'Key':'岩土工程','Value':4305},{'Key':'建筑制图','Value':4306},{'Key':'建筑工程测绘/测量','Value':4307},{'Key':'道路/桥梁/隧道工程技术','Value':4308},{'Key':'水利/港口工程技术','Value':4309},{'Key':'架线和管道工程技术','Value':4310},{'Key':'给排水/暖通/空调工程','Value':4311},{'Key':'智能大厦/布线/弱电/安防','Value':4312},{'Key':'室内装潢设计','Value':4313},{'Key':'幕墙工程师','Value':4314},{'Key':'园林/景观设计','Value':4315},{'Key':'城市规划与设计','Value':4316},{'Key':'市政工程师','Value':4317},{'Key':'工程监理/质量管理','Value':4318},{'Key':'工程造价/预结算','Value':4319},{'Key':'工程资料管理','Value':4320},{'Key':'建筑施工现场管理','Value':4321},{'Key':'施工队长','Value':4321},{'Key':'施工员','Value':4322},{'Key':'工程资料管理','Value':4323},{'Key':'建筑工程安全管理','Value':4324},{'Key':'其他','Value':4325}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+
+
+
+function openCity43(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'物业经理/主管','Value':4401},{'Key':'物业管理专员/助理','Value':4402},{'Key':'物业租赁/销售','Value':4403},{'Key':'物业维修','Value':4404},{'Key':'物业顾问','Value':4405},{'Key':'物业招商管理','Value':4406},{'Key':'其他','Value':4407}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+
+
+
+
+function openCity51(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'行长/副行长','Value':4501},{'Key':'银行经理/主任','Value':4502},{'Key':'银行大堂经理','Value':4503},{'Key':'银行客户总监','Value':4504},{'Key':'银行客户经理','Value':4505},{'Key':'银行客户主管','Value':4506},{'Key':'银行客户代表','Value':4507},{'Key':'银行客户服务','Value':4508},{'Key':'综合业务经理/主管','Value':4509},{'Key':'综合业务专员/助理','Value':4510},{'Key':'银行会计/柜员','Value':4511},{'Key':'公司业务','Value':4512},{'Key':'个人业务','Value':4513},{'Key':'银行卡/电子银行业务推广','Value':4514},{'Key':'信贷管理/资信评估/分析','Value':4515},{'Key':'信审核查','Value':4516},{'Key':'外汇交易','Value':4517},{'Key':'进出口/信用证结算','Value':4518},{'Key':'清算人员','Value':4519},{'Key':'风险控制','Value':4520},{'Key':'其他','Value':4521}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+function openCity52(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'证券总监/部门经理','Value':4601},{'Key':'证券/期货/外汇经纪人','Value':4602},{'Key':'证券/投资客户总监','Value':4603},{'Key':'证券/投资客户经理','Value':4604},{'Key':'证券/投资客户主管','Value':4605},{'Key':'证券/投资客户代表','Value':4606},{'Key':'证券分析/金融研究','Value':4607},{'Key':'投资/理财服务','Value':4608},{'Key':'投资银行业务','Value':4609},{'Key':'融资总监','Value':4610},{'Key':'融资经理/主管','Value':4611},{'Key':'融资专员/助理','Value':4612},{'Key':'股票/期货操盘手','Value':4613},{'Key':'资产评估','Value':4614},{'Key':'风险管理/控制/稽查','Value':4615},{'Key':'储备经理人','Value':4616},{'Key':'证券/投资项目管理','Value':4617},{'Key':'其他','Value':4618}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	
+	
+	
+	
+
+	function openCity53(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'保险业务管理','Value':4701},{'Key':'保险代理/经纪人/客户经理','Value':4702},{'Key':'保险顾问/财务规划师','Value':4703},{'Key':'保险产品开发/项目策划','Value':4704},{'Key':'保险培训师','Value':4705},{'Key':'保险契约管理','Value':4706},{'Key':'核保理赔','Value':4707},{'Key':'汽车定损/车险理赔','Value':4708},{'Key':'保险精算师','Value':4709},{'Key':'客户服务/续期管理','Value':4710},{'Key':'保险内勤','Value':4711},{'Key':'保险项目经理/主管','Value':4712},{'Key':'储备经理人','Value':4713},{'Key':'其他','Value':4714}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	
+
+function openCity54(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'信托服务','Value':4801},{'Key':'担保业务','Value':4802},{'Key':'拍卖师','Value':4803},{'Key':'典当业务','Value':4804},{'Key':'珠宝/收藏品鉴定','Value':4805},{'Key':'其他','Value':4806}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	
+function openCity61(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'采购总监','Value':4901},{'Key':'采购经理/主管','Value':4902},{'Key':'供应商开发','Value':4903},{'Key':'供应链管理','Value':4904},{'Key':'买手','Value':4905},{'Key':'报关员','Value':4906},{'Key':'报关员','Value':4907},{'Key':'其他','Value':4908},{'Key':'采购专员/助理','Value':4909},{'Key':'外贸/贸易专员/助理','Value':4910},{'Key':'外贸/贸易经理/主管','Value':4911}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	function openCity62(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'机动车司机/驾驶','Value':5101},{'Key':'列车驾驶/操作','Value':5102},{'Key':'船舶驾驶/操作','Value':5103},{'Key':'飞机驾驶/操作','Value':5104},{'Key':'公交/地铁乘务','Value':5105},{'Key':'列车乘务','Value':5106},{'Key':'船舶乘务','Value':5107},{'Key':'船员/水手','Value':5108},{'Key':'地勤人员','Value':5109},{'Key':'航空乘务','Value':5110},{'Key':'其他','Value':5111}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	
+	
+	function openCity63(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'物流总监','Value':5201},{'Key':'物流经理/主管','Value':5202},{'Key':'物流专员/助理','Value':5203},{'Key':'货运代理','Value':5204},{'Key':'运输经理/主管','Value':5205},{'Key':'快递员/速递员','Value':5206},{'Key':'水运/空运/陆运操作','Value':5207},{'Key':'集装箱业务','Value':5208},{'Key':'报关员','Value':5209},{'Key':'单证员','Value':5210},{'Key':'仓库经理/主管','Value':5211},{'Key':'理货/分拣/打包','Value':5212},{'Key':'物流/仓储项目管理','Value':5213},{'Key':'搬运工','Value':5214},{'Key':'其他','Value':5215}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	
+	
+	function openCity64(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'工厂厂长/副厂长','Value':5301},{'Key':'生产总监','Value':5302},{'Key':'生产经理/车间主任','Value':5303},{'Key':'生产主管/督导/组长','Value':5304},{'Key':'生产运营管理','Value':5305},{'Key':'生产项目经理/主管','Value':5306},{'Key':'生产项目工程师','Value':5307},{'Key':'产品管理','Value':5308},{'Key':'生产计划','Value':5309},{'Key':'制造工程师','Value':5310},{'Key':'工艺/制程工程师','Value':5311},{'Key':'工业工程师','Value':5312},{'Key':'生产设备管理','Value':5313},{'Key':'生产物料管理（PMC）','Value':5314},{'Key':'包装工程师','Value':5315},{'Key':'技术文档工程师','Value':5316},{'Key':'其他','Value':5317}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	function openCity65(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'电子技术研发工程师','Value':5401},{'Key':'电子/电器工程师','Value':5402},{'Key':'电器研发工程师','Value':5403},{'Key':'电子/电器工艺/制程工程师','Value':5404},{'Key':'电路工程师/技术员','Value':5405},{'Key':'模拟电路设计/应用工程师','Value':5406},{'Key':'版图设计工程师','Value':5407},{'Key':'电子元器件工程师','Value':5408},{'Key':'IC验证工程师','Value':5409},{'Key':'集成电路IC设计/应用工程师','Value':5410},{'Key':'集成电路IC设计/应用工程师','Value':5411},{'Key':'无线电工程师','Value':5412},{'Key':'激光/光电子技术','Value':5413},{'Key':'光源/照明工程师）','Value':5414},{'Key':'变压器与磁电工程师','Value':5415},{'Key':'电池/电源开发','Value':5416},{'Key':'家用电器/数码产品研发','Value':5417},{'Key':'空调工程/设计','Value':5418},{'Key':'音频/视频工程师/技术员','Value':5419},{'Key':'安防系统工程师','Value':5420},{'Key':'电子/电器设备工程师','Value':5421},{'Key':'电子/电器维修/保养','Value':5422},{'Key':'电子/电器项目管理','Value':5423},{'Key':'电气工程师','Value':5424},{'Key':'电气设计','Value':5425},{'Key':'电气线路设计','Value':5426},{'Key':'线路结构设计','Value':5427},{'Key':'半导体技术','Value':5428},{'Key':'仪器/仪表/计量工程师','Value':5429},{'Key':'自动化工程师','Value':5430},{'Key':'测试/可靠性工程师','Value':5431},{'Key':'现场应用工程师（FAE）','Value':5432},{'Key':'其他','Value':5433}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	
+	function openCity66(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'汽车动力系统工程师','Value':5501},{'Key':'汽车底盘/总装工程师','Value':5502},{'Key':'车身设计工程师','Value':5503},{'Key':'车身设计工程师','Value':5504},{'Key':'汽车电子工程师','Value':5505},{'Key':'汽车机械工程师','Value':5506},{'Key':'汽车零部件设计师','Value':5507},{'Key':'汽车装配工艺工程师','Value':5508},{'Key':'安全性能工程师','Value':5509},{'Key':'汽车工程项目管理','Value':5510},{'Key':'其他','Value':5511}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	function openCity71(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'汽车销售','Value':5601},{'Key':'汽车零配件销售','Value':5602},{'Key':'汽车售后服务/客户服务','Value':5603},{'Key':'汽车维修/保养','Value':5604},{'Key':'汽车质量管理/检验检测','Value':5605},{'Key':'汽车定损/车险理赔','Value':5606},{'Key':'汽车装饰美容','Value':5606},{'Key':'二手车评估师','Value':5608},{'Key':'4S店管理','Value':5609},{'Key':'其他','Value':5610}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	function openCity72(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'工程机械经理','Value':6701},{'Key':'工程机械主管','Value':6702},{'Key':'机械设备经理','Value':6703},{'Key':'机械设备工程师','Value':6704},{'Key':'机械工程师','Value':6705},{'Key':'机械设计师','Value':6706},{'Key':'机械制图员','Value':6707},{'Key':'机械研发工程师','Value':6708},{'Key':'气动工程师','Value':6709},{'Key':'机械结构工程师','Value':6710},{'Key':'机械工艺/制程工程师','Value':6711},{'Key':'CNC/数控工程师','Value':6712},{'Key':'模具工程师','Value':6713},{'Key':'夹具工程师','Value':6714},{'Key':'注塑工程师','Value':6715},{'Key':'铸造/锻造工程师/技师','Value':6716},{'Key':'铸造/锻造工程师/技师','Value':6717},{'Key':'机电工程师','Value':6718},{'Key':'材料工程师','Value':6719},{'Key':'机械维修/保养','Value':6720},{'Key':'飞机设计与制造','Value':6721},{'Key':'飞机维修/保养','Value':6722},{'Key':'列车设计与制造','Value':6723},{'Key':'船舶设计与制造','Value':6724},{'Key':'船舶维修/保养','Value':6725},{'Key':'列车维修/保养','Value':6726},{'Key':'CNC/数控工程师','Value':6728},{'Key':'其他','Value':6728}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	function openCity73(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'服装/纺织品设计','Value':6801},{'Key':'服装打样/制版','Value':6802},{'Key':'服装/纺织/皮革工艺师','Value':6803},{'Key':'电脑放码员','Value':6804},{'Key':'裁床','Value':6805},{'Key':'样衣工','Value':6806},{'Key':'面料辅料开发/采购','Value':6807},{'Key':'服装/纺织/皮革跟单','Value':6808},{'Key':'服装/纺织品/皮革销售','Value':6809},{'Key':'服装/纺织品/皮革质量管理','Value':6868},{'Key':'服装/纺织品/皮革质量管理','Value':6811},{'Key':'服装/纺织/皮革项目管理','Value':6812},{'Key':'其他','Value':6813}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	function openCity74(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'车床/磨床/铣床/冲床工','Value':6901},{'Key':'模具工','Value':6902},{'Key':'钳工/机修工/钣金工','Value':6903},{'Key':'电焊工/铆焊工','Value':6904},{'Key':'电工','Value':6905},{'Key':'水工/木工/油漆工','Value':6906},{'Key':'铲车/叉车工','Value':6907},{'Key':'空调工/电梯工/锅炉工','Value':6908},{'Key':'汽车维修/保养','Value':6909},{'Key':'服装/纺织品/皮革质量管理','Value':6910},{'Key':'服装/纺织品/皮革质量管理','Value':6911},{'Key':'服装/纺织/皮革项目管理','Value':6912},{'Key':'其他','Value':6913}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	function openCity74(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+		var data = eval("[{'Key':'车床/磨床/铣床/冲床工','Value':7001},{'Key':'模具工','Value':7002},{'Key':'钳工/机修工/钣金工','Value':7003},{'Key':'电焊工/铆焊工','Value':7004},{'Key':'电工','Value':7005},{'Key':'水工/木工/油漆工','Value':7006},{'Key':'铲车/叉车工','Value':7007},{'Key':'空调工/电梯工/锅炉工','Value':7008},{'Key':'汽车维修/保养','Value':7009},{'Key':'服装/纺织品/皮革质量管理','Value':7010},{'Key':'服装/纺织品/皮革质量管理','Value':7011},{'Key':'服装/纺织/皮革项目管理','Value':7012},{'Key':'其他','Value':7013}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	
+	function openCity75(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+				var data = eval("[{'Key':'医药代表','Value':7101},{'Key':'医药销售经理/主管','Value':7102},{'Key':'药品市场推广经理/主管','Value':7103},{'Key':'药品市场推广专员/助理','Value':7104},{'Key':'医疗器械销售','Value':7105},{'Key':'医疗器械推广','Value':7106},{'Key':'医药学术推广','Value':7107},{'Key':'医药招商','Value':7108},{'Key':'医药项目管理','Value':7109},{'Key':'医药项目招投标管理','Value':7110},{'Key':'生物工程/生物制药','Value':7111},{'Key':'药品研发','Value':7112},{'Key':'医疗器械研发','Value':7113},{'Key':'临床研究员','Value':7114},{'Key':'临床协调员','Value':7115},{'Key':'医药化学分析','Value':7116},{'Key':'医药技术研发管理人员','Value':7117},{'Key':'药品注册','Value':7118},{'Key':'医疗器械注册','Value':7119},{'Key':'药品生产/质量管理','Value':7120},{'Key':'医疗器械生产/质量管理','Value':7121},{'Key':'医疗器械维修/保养','Value':7122},{'Key':'其他','Value':7123}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	
+
+	function openCity76(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+				var data = eval("[{'Key':'化工工程师','Value':7201},{'Key':'化工研发工程师','Value':7202},{'Key':'化学技术应用','Value':7203},{'Key':'化学分析','Value':7204},{'Key':'化学操作','Value':7205},{'Key':'化学制剂研发','Value':7206},{'Key':'油漆/化工涂料研发','Value':7207},{'Key':'塑料工程师','Value':7208},{'Key':'化学实验室技术员/研究员','Value':7209},{'Key':'化工项目管理','Value':7210},{'Key':'其他','Value':7211}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	function openCity81(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+				var data = eval("[{'Key':'导演/编导','Value':7401},{'Key':'总编/副总编','Value':7402},{'Key':'艺术指导/舞美设计','Value':7403},{'Key':'摄影师/摄像师','Value':7404},{'Key':'化妆师/造型师/服装/道具','Value':7405},{'Key':'主持人/司仪','Value':7406},{'Key':'演员/模特','Value':7407},{'Key':'配音员','Value':7408},{'Key':'音效师','Value':7409},{'Key':'后期制作','Value':7410},{'Key':'经纪人/星探','Value':7411},{'Key':'经纪人/星探','Value':7412},{'Key':'放映管理','Value':7413},{'Key':'作家/编剧/撰稿人','Value':7414},{'Key':'文字编辑/组稿','Value':7415},{'Key':'美术编辑/美术设计','Value':7416},{'Key':'美术编辑/美术设计','Value':7417},{'Key':'记者/采编','Value':7418},{'Key':'文案策划','Value':7419},{'Key':'校对/录入','Value':7420},{'Key':'发行管理','Value':7421},{'Key':'排版设计','Value':7419},{'Key':'印刷排版/制版','Value':7422},{'Key':'印刷操作','Value':7423},{'Key':'其他','Value':7423}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	
+	function openCity82(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+				var data = eval("[{'Key':'设计管理人员','Value':7501},{'Key':'艺术/设计总监','Value':7502},{'Key':'绘画','Value':7503},{'Key':'原画师','Value':7504},{'Key':'CAD设计/制图','Value':7505},{'Key':'平面设计','Value':7506},{'Key':'三维/3D设计/制作','Value':7507},{'Key':'Flash设计/开发','Value':7508},{'Key':'特效设计','Value':7509},{'Key':'视觉设计','Value':7510},{'Key':'用户体验（UE/UX）设计','Value':7511},{'Key':'美术编辑/美术设计','Value':7512},{'Key':'多媒体/动画设计','Value':7513},{'Key':'包装设计','Value':7514},{'Key':'家具设计','Value':7515},{'Key':'家居用品设计','Value':7516},{'Key':'工艺品/珠宝设计','Value':7517},{'Key':'玩具设计','Value':7518},{'Key':'店面/展览/展示/陈列设计','Value':7519},{'Key':'校对/录入','Value':7520},{'Key':'发行管理','Value':7521},{'Key':'排版设计','Value':7519},{'Key':'工业设计','Value':7522},{'Key':'其他','Value':7522}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	
+	function openCity91(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+				var data = eval("[{'Key':'咨询总监','Value':7601},{'Key':'咨询经理/主管','Value':7602},{'Key':'咨询顾问/咨询员','Value':7603},{'Key':'专业顾问','Value':7604},{'Key':'调研员','Value':7605},{'Key':'数据分析师','Value':7606},{'Key':'情报信息分析','Value':7607},{'Key':'猎头顾问/助理','Value':7608},{'Key':'咨询项目管理','Value':7609},{'Key':'其他','Value':7610}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	
+	
+	
+	function openCity92(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+				var data = eval("[{'Key':'幼教','Value':7701},{'Key':'小学教师','Value':7702},{'Key':'初中教师','Value':7703},{'Key':'高中教师','Value':7704},{'Key':'大学教师','Value':7705},{'Key':'职业技术教师','Value':7706},{'Key':'家教','Value':7707},{'Key':'兼职教师','Value':7708},{'Key':'理科教师','Value':7709},{'Key':'文科教师','Value':7710},{'Key':'外语教师','Value':7711},{'Key':'音乐教师','Value':7712},{'Key':'美术教师','Value':7713},{'Key':'体育老师/教练','Value':7714},{'Key':'校长/副校长','Value':7715},{'Key':'教学/教务管理人员','Value':7716},{'Key':'培训督导','Value':7717},{'Key':'培训策划','Value':7718},{'Key':'培训助理/助教','Value':7719},{'Key':'教育产品开发','Value':7720},{'Key':'其他','Value':7721}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	
+	function openCity93(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+				var data = eval("[{'Key':'法务经理/主管','Value':7801},{'Key':'法务专员/助理','Value':7802},{'Key':'律师','Value':7803},{'Key':'律师助理','Value':7804},{'Key':'企业律师/合规顾问','Value':7805},{'Key':'合同管理','Value':7806},{'Key':'知识产权/专利顾问/代理人','Value':7807},{'Key':'其他','Value':7808}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	
+	function openCity94(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+				var data = eval("[{'Key':'英语翻译','Value':7901},{'Key':'日语翻译','Value':7902},{'Key':'法语翻译','Value':7903},{'Key':'德语翻译','Value':7904},{'Key':'俄语翻译','Value':7905},{'Key':'西班牙语翻译','Value':7906},{'Key':'意大利语翻译','Value':7907},{'Key':'葡萄牙语翻译','Value':7908},{'Key':'韩语/朝鲜语翻译','Value':7909},{'Key':'阿拉伯语翻译','Value':7910},{'Key':'其他','Value':7911}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	
+	
+	function openCity801(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+				var data = eval("[{'Key':'店长/卖场管理','Value':8001},{'Key':'楼面管理','Value':8002},{'Key':'品牌/连锁招商管理','Value':8003},{'Key':'大堂经理/领班','Value':8004},{'Key':'客房管理','Value':8005},{'Key':'酒店管理','Value':8006},{'Key':'收银主管','Value':8007},{'Key':'收银员','Value':8008},{'Key':'店员/营业员/导购员','Value':8009},{'Key':'理货员','Value':8010},{'Key':'促销员','Value':8011},{'Key':'促销主管/督导','Value':8012},{'Key':'品类管理','Value':8013},{'Key':'前厅接待/礼仪/迎宾','Value':8014},{'Key':'预订员','Value':8015},{'Key':'行李员','Value':8016},{'Key':'防损员/内保','Value':8017},{'Key':'服务员','Value':8018},{'Key':'奢侈品销售','Value':8019},{'Key':'主持人/司仪','Value':8020},{'Key':'其他','Value':8021}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	function openCity102(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+				var data = eval("[{'Key':'旅游产品销售','Value':8101},{'Key':'旅游顾问','Value':8102},{'Key':'导游/票务','Value':8103},{'Key':'旅游计划调度','Value':8104},{'Key':'旅游产品/线路策划','Value':8105},{'Key':'签证业务办理','Value':8106},{'Key':'其他','Value':8107}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	
+	
+	function openCity103(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+				var data = eval("[{'Key':'厨师/面点师','Value':8201},{'Key':'食品加工/处理','Value':8202},{'Key':'调酒师/茶艺师/咖啡师','Value':8203},{'Key':'营养师','Value':8204},{'Key':'食品/饮料研发','Value':8205},{'Key':'厨工','Value':8206},{'Key':'食品/饮料检验','Value':8207},{'Key':'其他','Value':8207}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	
+	
+	function openCity104(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+				var data = eval("[{'Key':'美发/发型师','Value':8301},{'Key':'化妆师','Value':8302},{'Key':'美容师/美甲师','Value':8303},{'Key':'美容顾问(BA)','Value':8304},{'Key':'健身/美体/舞蹈教练','Value':8305},{'Key':'按摩/足疗','Value':8306},{'Key':'救生员','Value':8307},{'Key':'其他','Value':8308}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	
+	
+	
+	
+	function openCity105(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+				var data = eval("[{'Key':'医疗管理人员','Value':8401},{'Key':'综合门诊/全科医生','Value':8402},{'Key':'内科医生','Value':8403},{'Key':'外科医生','Value':8404},{'Key':'儿科医生','Value':8405},{'Key':'牙科医生','Value':8406},{'Key':'美容整形科医生','Value':8407},{'Key':'中医科医生','Value':8408},{'Key':'麻醉医生','Value':8409},{'Key':'心理医生','Value':8410},{'Key':'眼科医生/验光师','Value':8411},{'Key':'医学影像/放射科医师','Value':8412},{'Key':'化验/检验科医师','Value':8413},{'Key':'药房管理/药剂师','Value':8414},{'Key':'理疗师','Value':8415},{'Key':'兽医','Value':8416},{'Key':'护士/护理人员','Value':8417},{'Key':'营养师','Value':8418},{'Key':'针灸/推拿','Value':8419},{'Key':'其他','Value':8420}]");
+		ObjSubject.html('');               
+$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	
+	function openCity106(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+				var data = eval("[{'Key':'保安经理','Value':8501},{'Key':'保安','Value':8502},{'Key':'家政人员','Value':8503},{'Key':'婚礼/庆典策划服务','Value':8504},{'Key':'保姆/母婴护理','Value':8505},{'Key':'宠物护理和美容','Value':8506},{'Key':'搬运工','Value':8507},{'Key':'保洁','Value':8508},{'Key':'其他','Value':8509}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	
+	function openCity111(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+				var data = eval("[{'Key':'石油/天然气技术人员','Value':8601},{'Key':'空调/热能工程师','Value':8602},{'Key':'核力/火力工程师','Value':8603},{'Key':'水利/水电工程师','Value':8604},{'Key':'电力工程师/技术员','Value':8605},{'Key':'地质勘查/选矿/采矿','Value':8606},{'Key':'能源/矿产项目管理','Value':8607},{'Key':'其他','Value':8608}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	
+	
+	function openCity112(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+				var data = eval("[{'Key':'环保技术工程师','Value':8701},{'Key':'环境评价工程师','Value':8702},{'Key':'水处理工程师','Value':8703},{'Key':'环境监测工程师','Value':8704},{'Key':'固废处理工程师','Value':8705},{'Key':'废气处理工程师','Value':8706},{'Key':'环境管理/园林景区保护','Value':8707},{'Key':'生态治理/规划','Value':8708},{'Key':'其他','Value':8709}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	
+	
+	
+	
+	function openCity113(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+				var data = eval("[{'Key':'农艺师','Value':8801},{'Key':'林业技术人员','Value':8802},{'Key':'园艺师','Value':8803},{'Key':'畜牧师','Value':8804},{'Key':'动物育种/养殖','Value':8805},{'Key':'动物营养/饲料研发','Value':8806},{'Key':'饲料销售','Value':8807},{'Key':'其他','Value':8808}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	
+	
+	function openCity114(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+				var data = eval("[{'Key':'公务员/事业单位人员','Value':8901},{'Key':'科研管理人员','Value':8902},{'Key':'科研人员','Value':8903},{'Key':'其他','Value':8904}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	
+
+	
+	
+	function openCity121(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+				var data = eval("[{'Key':'实习生','Value':9001},{'Key':'培训生','Value':9002},{'Key':'储备干部','Value':9003},{'Key':'其他','Value':9004}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	
+	function openCity122(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+				var data = eval("[{'Key':'志愿者/义工','Value':9001},{'Key':'社会工作者/社工','Value':1002},{'Key':'其他','Value':1003}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	
+	
+	function openCity123(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+				var data = eval("[{'Key':'兼职','Value':9101},{'Key':'临时','Value':9102},{'Key':'其他','Value':9103}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+	
+	
+	function openCity124(id, provincename) {
+        var ObjSubject = $('#theCity');
+        var cityList = request("cl");
+        var selected = $("#selected").html();
+        if (selected != "") {
+            cityList = selected;
+        }
+				var data = eval("[{'Key':'其他','Value':9201}]");
+		ObjSubject.html('');               
+
+		$.each(data, function (i, item) {
+			var str = "<div class='fl'>";                  
+			if (cityList.indexOf(item.Value) > -1) {
+				str += '<input type="checkbox" checked="checked" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+			else {
+				str += '<input type="checkbox" onclick="selectCity(\'' + item.Value + '\',\'' + item.Key + '\')" name="sCity" id="' + item.Value + '" />';
+			}
+
+			str += "<label>" + item.Key + "</label>";
+			str += "</div>";
+			ObjSubject.append(str);
+		});
+		$("#provincename").html(provincename);
+		$("#hidden_div11").show();
+    }
+    function sub() {
+        
+     top.document.getElementById('RegionJobBusinessTag1').innerHTML = document.getElementById('selected').innerHTML;
+        var cityNames = "";
+        top.$("#RegionJobBusinessTag1 span a").each(function () {
+            cityNames += $(this).html() + " ";
+        });
+        top.$("#job").val(cityNames);
+
+        var cityIDs = "";
+        top.$("#RegionJobBusinessTag1 span input").each(function () {
+            cityIDs += $(this).attr("id").toString().split('_')[0] + ",";
+        });
+        cityIDs = cityIDs.substring(0, cityIDs.length - 1);
+    top.m.Close();
+
+    }
+
+        function request(paras) {
+        var url = location.href;
+        var paraString = url.substring(url.indexOf("?") + 1, url.length).split("&");
+        var paraObj = {}
+        for (i = 0; j = paraString[i]; i++) {
+            paraObj[j.substring(0, j.indexOf("=")).toLowerCase()] = j.substring(j.indexOf("=") + 1, j.length);
+        }
+        var returnValue = paraObj[paras.toLowerCase()];
+        if (typeof (returnValue) == "undefined") {
+            return "";
+        } else {
+            return returnValue;
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<center>
+<table width="800" border="0">
+	<tr>
+		<td>
+			<input type="hidden" value="${(mail.id_from)!0}" name="mail.id_from" />
+		<input type="hidden" value="${(mail.from_type)!0}" name="mail.from_type" />
+		</td>
+		<td>
+			<input type="hidden" value="${(mail.id_to)!0}" name="mail.id_to" />
+		</td>
+		<td>
+			<input type="hidden" value="${(mail.reply_to_id)!0}" name="mail.reply_to_id" />
+		</td>
+	</tr>
+
+  <tr>
+    <td width="119" height="34"><div align="right">收件人</div></td>
+    <td width="352" height="34">
+ 		<input type="radio" name="mail.to_type" value="1" <#if ((mail.to_type)!2) = 1>checked="checked"</#if> ></input>个人
+    	<input type="radio" name="mail.to_type" value="2" <#if ((mail.to_type)!2) = 2>checked="checked"</#if> ></input>企业
+    </td>
+    <td width="115" height="34">${(usernameMsg)!}</td>
+  </tr>
+    <tr>
+    <td width="119" height="34"></div></td>
+    <td width="352" height="34">
+ 		<input type="text" name="username" value="${(username)!}" />
+    </td>
+    <td width="115" height="34">${(usernameMsg)!}</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td colspan="2">&nbsp;</td>
+    </tr>
+
+  <tr>
+    <td height="34"><div align="right">标题</div></td>
+    <td>
+    	<input type="text" name="mail.title" value="${(mail.title)!}" />
+    </td>
+    <td>${(titleMsg)!}</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td colspan="2">&nbsp;</td>
+    </tr>
+  <tr>
+    <td height="34"><div align="right">邮件内容</div></td>
+    <td><textarea rows="30" cols="70" name="mail.content" value="${(mail.content)!}"></textarea></td>
+    <td>${(contentMsg)!}</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td colspan="2">&nbsp;</td>
+    </tr>
+
+  <tr>
+    <td colspan="3"><div align="center">
+	    <center>
+        <input type="submit" name="Submit" value="提交" />
+		</center>
+    </div></td>
+    </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+    </table>
+</center>

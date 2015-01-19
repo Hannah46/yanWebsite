@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>求职照片</title>
+<script type="text/JavaScript" src="${path!}/user/jquery-1.11.1.min.js"></script>
+<script type="text/JavaScript" src="${path!}/user/jquery.form.js"></script>
+<script type="text/JavaScript" src="${path!}/user/photoJob.js"></script>
+</head>
+
+<body>
+<center>
+	<div id="showPhotoJob">
+		<#if (user.photo_job)??> <a href="${path!}/photo/show/${user.photo_job}" target="_blank">
+		<img src="${path!}/photo/show/${user.photo_job2}" /></a></#if>
+	</div>
+	<form id="photoJob_qiNiu" method="post" action="http://up.qiniu.com/" 
+		enctype="multipart/form-data">
+	<table width="631">
+		<tr><td width="42">
+			<input name="key" id="key" type="hidden" />
+  			<input name="token" id="token" type="hidden" />
+  			<input type="hidden" name="MAX_FILE_SIZE" value="4096" />
+  			</td>
+	<td>求职照片<input type="file" name="file" /></td>
+	<td width="96"><button type="button" id="button1" onclick="submitPhotoJob()">上传</button></td>
+	</tr>
+    </table>
+</form>
+<form id="photoJob_my" name="photoJob_my" method="post" action="updatePhotoJob">
+	<input type="hidden" value="${(user.id)!}" name="user.id" id="userId" />
+	<input id="user.photo_job" name="user.photo_job" type="hidden"/>
+</form>
+</center>
+</body>
+</html>

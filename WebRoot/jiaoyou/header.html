@@ -1,0 +1,42 @@
+<#macro header log_flag>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>遇见 - 豫见</title>
+<link rel="Stylesheet" type="text/css" href="${path}/css_model/style_love.css">
+</head>
+
+<body>
+<div id="RegionJobBusinessTag1" style="display:none"></div>
+<div id="container">
+<div id="content">
+  <!-- header -->
+  <div id="header">
+    <div id="header_login">&nbsp;</div>
+    <div id="header_nav">
+      <div id="nav_top">
+        <ul>
+           <li><a href="${path}/user/toSearch" target="_self">搜索</a></li>
+           <li><a href="${path}/mblog/list/1" target="_self">活动</a></li>
+           <li><a href="${path}/willing/list" target="_self">许愿墙</a></li>
+           <#if !log_flag?? || log_flag==0>
+             <li><a href="${path}/jiayuan/login.html" target="_self">登录</a></li>
+             <li><a href="${path}/mblog/to_new" target="_self">注册</a></li>
+             <li><a href="${path}/willing/toAdd" target="_self">我要许愿</a></li>
+           <#elseif log_flag==1>
+             <li><a href="${path}/willing/toAdd" target="_self">我要许愿</a></li>
+             <li><a href="${path}/friend/my_yujian" target="_self">我的豫见</a></li>
+             <li><a href="${path}/friend/logout/1" target="_self">退出</a></li>
+           <#elseif log_flag>1>
+             <li><a href="${path}/friend/logout/1" target="_self">退出</a></li>
+           </#if>        
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- main -->  
+  <div id="main">
+  </#macro>
